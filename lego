@@ -1,0 +1,77 @@
+#!/usr/bin/php
+<?php
+
+$options = getopt("p:f:t:h");
+
+if(isset($options['h'])){
+  echo "Copyright by phongvh
+Usage: ./lego [-p path1,path2,...] [-f file] [-t filetype1,filetype2,...] [-h]\n
+Without any arguments, it counts the LOC of the directory in which this script is located\n
+  -p: calculate the LOC (Lines Of Code) of files/directories in path1, path2... Use a comma to separate among the paths without spaces
+  -f: get the file/directory paths to calculate LOC from a file. Each path should be one line in the file. Can be used along with -p
+  -t: filter the file types in directory path which should be calculated LOC
+  -h: display this help\n\n";
+  exit;
+}
+
+$path_list = $list1 = $list2 = $file_type = array();
+
+if(isset($options['p']) && $options['p']){
+  $list1 = explode(',', $options['p']);
+}
+
+if(isset($options['f']) && $options['f']){
+  $list2 = file($options['f'], FILE_IGNORE_NEW_LINES);
+}
+
+if(isset($options['t']) && $options['t']){
+  $file_type = explode(',', $options['t']);
+}
+
+$path_list = array_merge($list1, $list2);
+
+if(empty($path_list)) $path_list = array(__DIR__);
+
+$loc = 0;
+
+foreach($path_list as $item){
+    $loc += count_loc($item, $file_type);
+}
+
+echo "Total Lines of Code: $loc\n";
+
+
+function count_loc($path, $file_type)
+{
+  $loc = 0;
+  if(is_file($path)) {
+    $loc = count(file($path));
+    echo $path . ": $loc\n";
+    return $loc;
+  }
+  
+  if(!is_dir($path)) {
+    echo "$path: Path not found\n";
+    return 0;
+  }
+	
+  $dir = new DirectoryIterator($path); 	
+  
+  foreach ( $dir as $node )
+  {
+    if ( $node->isDir() && !$node->isDot() )
+    {
+      $loc += count_loc( $node->getPathname(), $file_type );
+    }
+    else if ( $node->isFile() )
+    {
+      if(empty($file_type) || in_array($node->getExtension(), $file_type)){
+        $_loc = count(file($node->getPathname()));
+        $loc += $_loc;
+        echo $node->getPathname().": $_loc\n";
+      }
+    }
+  }
+  return $loc;
+}
+
