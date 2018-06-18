@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export default (props) => 
   <div className="navbar-brand mr-auto">

@@ -1,6 +1,6 @@
-import React from 'react';
-import Logo from '../common/Logo';
-import Nav from '../common/Nav';
+import React from 'react'
+import Logo from '../common/Logo'
+import Nav from '../common/Nav'
 
 export default (props) => 
   <header className="site-header">

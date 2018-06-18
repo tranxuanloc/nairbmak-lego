@@ -1,1 +1,1 @@
-it('test');
+it('test')

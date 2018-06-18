@@ -1,5 +1,5 @@
-import React from 'react';
-import NavItem from './NavItem';
+import React from 'react'
+import NavItem from './NavItem'
 
 export default (props) => 
       <nav className="navbar">

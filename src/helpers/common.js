@@ -1,3 +1,3 @@
-const path = require('path')
+// const path = require('path')
 
-const root = filePath => path.resolve(__dirname, filePath)
+// const root = filePath => path.resolve(__dirname, filePath)
