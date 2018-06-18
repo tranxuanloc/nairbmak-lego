@@ -1,7 +1,8 @@
 import React from 'react';
-import lego from '../../lego.png';
-import icon from '../../static/svg/ic-gift-box.svg';
-import Button from '../components/common/Button';
+
+import lego from 'static/lego.png';
+import icon from 'static/svg/ic-gift-box.svg';
+import Button from 'views/components/common/Button';
 
 export default () => 
   <div className="main">

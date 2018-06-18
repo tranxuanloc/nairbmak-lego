@@ -1,10 +1,10 @@
 // import Helper from './helpers/common';
 import React, { Component } from 'react';
-import './static/css/index.css';
-import logo from './logo.svg';
-import Header from './views/components/header';
-import Footer from './views/components/footer';
-import Home from './views/pages/Home';
+import 'static/css/index.css';
+import logo from 'logo.svg';
+import Header from 'views/components/header';
+import Footer from 'views/components/footer';
+import Home from 'views/pages/Home';
 
 class App extends Component {
   state = {
