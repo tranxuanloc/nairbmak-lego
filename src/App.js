@@ -7,16 +7,19 @@ import Footer from 'views/components/footer'
 import Home from 'views/pages/Home'
 
 export default class App extends Component {
-  state = {
-    logo: {
-      url: '/',
-      image: logo
-    },
-    nav: [
-      { url: '/', title: 'Kambria.io' },
-      { url: 'https://google.com', title: 'How to use' },
-      { url: 'https://facebook.com', title: 'Components' }
-    ]
+  constructor(props){
+    super(props)
+    this.state = {
+      logo: {
+        url: '/',
+        image: logo
+      },
+      nav: [
+        { url: '/', title: 'Kambria.io' },
+        { url: 'https://google.com', title: 'How to use' },
+        { url: 'https://facebook.com', title: 'Components' }
+      ]
+    }
   }
 
   render() {
