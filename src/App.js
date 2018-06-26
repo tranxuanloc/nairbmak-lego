@@ -1,11 +1,11 @@
-// import Helper from './helpers/common'
 import React, { Component } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import config from 'config';
-import { updateInfo } from "redux/actions/blockchain.action";
+import Metamask from 'helpers/metamask.class.js';
+import Token from 'helpers/token.class.js';
 
 import 'static/css/index.css';
 import logo from 'logo.svg';
@@ -16,11 +16,8 @@ import NavItem from 'views/components/common/NavItem';
 import routes from 'routes';
 import {PrivateRouteWithRender} from 'routes/types';
 import Fail from 'views/auth/Fail';
-
-import _Metamask from 'helpers/metamask.class.js';
-import _Token from 'helpers/token.class.js';
-
 import Error404 from './views/errors/404';
+import { updateInfo } from "redux/actions/blockchain.action";
 
 class App extends Component {
   constructor(props) {
@@ -38,8 +35,9 @@ class App extends Component {
       ]
     };
 
-    this.metamask = new _Metamask();
-    this.token = new _Token(config.eth.KATT.ABI, config.eth.KATT.ADDRESS, config.eth.KATT.DECIMALS, this.metamask.web3);
+    this.metamask = new Metamask();
+    this.token = new Token(config.eth.KATT.ABI, config.eth.KATT.ADDRESS, config.eth.KATT.DECIMALS, this.metamask.web3);
+    this.tWatcher = null;
     
     this.init();
   }
@@ -53,45 +51,51 @@ class App extends Component {
 
   // init
   init() {
-    // this.metamask.metaStatus().then((re) => console.log(re)).catch(er => {
-    //   console.error(er);
-    // });
     // Fetch metamask
-    this.metamask.metaStatus().then(re => {
+    this.metamask.fetch().then(re => {
       this.props.updateInfo(re);
+      this.token.watch(re.ACCOUNT).then(tWatcher => {
+        this.tWatcher = tWatcher;
+        this.tWatcher.event.on('data', re => {
+          this.props.updateInfo({TOKEN_BALANCE: re.BALANCE});
+        });
+        tWatcher.event.on('error', er => {
+          console.log(er);
+          this.props.updateInfo({TOKEN_BALANCE: 0});
+        });
+      });
     }).catch(er => {
-      console.error(er);
+      console.log(er);
+      this.props.updateInfo({NETWORK: null, ACCOUNT: null, BALANCE: null});
     });
-    // Watch metamask
+
+    // Watch metamask & token
     this.metamask.watch().then(watcher => {
       watcher.event.on('data', re => {
         this.props.updateInfo(re);
+        if (re.CHANGED === 'account') {
+          // Stop watching
+          if(this.tWatcher) this.tWatcher.stopWatching();
+          // Watch balance
+          this.token.watch(re.ACCOUNT).then(tWatcher => {
+            this.tWatcher = tWatcher;
+            this.tWatcher.event.on('data', re => {
+              this.props.updateInfo({TOKEN_BALANCE: re.BALANCE});
+            });
+            this.tWatcher.event.on('error', er => {
+              console.log(er);
+              this.props.updateInfo({TOKEN_BALANCE: 0});
+            });
+          });
+        }
       });
       watcher.event.on('error', er => {
-        console.error(er);
+        console.log(er);
+        this.props.updateInfo({NETWORK: null, ACCOUNT: null, BALANCE: null});
       });
     }).catch(er => {
-      console.error(er);
-    });
-
-    // Get coinbase
-    this.metamask.getAccount().then(coinbase => {
-      // Get balance
-      this.token.balanceOf(coinbase).then(balance => {
-        this.props.updateInfo({TOKEN_BALANCE: balance});
-      }).catch(er => {
-        console.error(er);
-      });
-      // Watch balance
-      var watchBalance = this.token.watchBalance(coinbase);
-      watchBalance.event.on('data', re => {
-        this.props.updateInfo({TOKEN_BALANCE: re.BALANCE});
-      });
-      watchBalance.event.on('error', er => {
-        console.error(er);
-      });
-    }).catch(er => {
-      console.error(er);
+      console.log(er);
+      this.props.updateInfo({NETWORK: null, ACCOUNT: null, BALANCE: null});
     });
   }
 

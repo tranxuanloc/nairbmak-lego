@@ -152,6 +152,7 @@ class Metamask {
 
       var stopWatching = function () {
         clearInterval(watchCurrentAccount);
+        self.emitter.removeAllListeners();
       };
 
       return resolve({ stopWatching: stopWatching, event: self.emitter });
