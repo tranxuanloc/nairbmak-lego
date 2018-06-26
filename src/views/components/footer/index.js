@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default () => 
   <footer className="footer">
@@ -6,4 +6,4 @@ export default () =>
       <div className="item copyright">Copyright © 2018 Kambria.io</div>
       <div className="item contact"><a href="mailto:info@kambria.io" className="color-gray color-base-hover">info@kambria.io</a></div>
     </div>
-  </footer>
+  </footer>;

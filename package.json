@@ -17,7 +17,8 @@
   "scripts": {
     "start": "REACT_APP_ENV=development react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "pretest": "eslint --ignore-path .gitignore .",
+    "test": "REACT_APP_ENV=development react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
