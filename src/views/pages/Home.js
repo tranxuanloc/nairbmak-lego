@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import lego from 'static/lego.png'
-import icon from 'static/svg/ic-gift-box.svg'
-import Button from 'views/components/common/Button'
+import lego from 'static/images/lego.png';
+import icon from 'static/svg/ic-gift-box.svg';
+import Button from 'views/components/common/Button';
 
 export default () => 
   <div className="main">
@@ -17,4 +17,4 @@ export default () =>
         <Button className="btn-lg btn-secondary" icon={icon}>Learn More</Button> 
       </p>
     </div>
-  </div>
+  </div>;

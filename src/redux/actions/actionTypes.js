@@ -1,0 +1,1 @@
+export const UPDATE_TOKEN_INFO = 'UPDATE_TOKEN_INFO';

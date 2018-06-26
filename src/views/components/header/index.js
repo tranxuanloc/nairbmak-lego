@@ -1,5 +1,5 @@
-import React from 'react'
-import Logo from '../common/Logo'
+import React from 'react';
+import Logo from '../common/Logo';
 
 export default (props) => 
   <header className="site-header">
@@ -9,4 +9,4 @@ export default (props) =>
         { props.children }
       </div>
     </div>
-  </header>
+  </header>;
