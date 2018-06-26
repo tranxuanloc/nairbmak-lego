@@ -1,13 +1,1 @@
-export const FETCH_INFO = 'FETCH_INFO';
-export const FETCH_INFO_OK = 'FETCH_INFO_OK';
-export const FETCH_INFO_FAIL = 'FETCH_INFO_FAIL';
-
-export const WATCH_INFO = 'WATCH_INFO';
-export const WATCH_INFO_OK = 'WATCH_INFO_OK';
-export const WATCH_INFO_FAIL = 'WATCH_INFO_FAIL';
-
-export const TRANSFER_TOKEN = 'TRANSFER_TOKEN';
-export const TRANSFER_TOKEN_OK = 'TRANSFER_TOKEN_OK';
-export const TRANSFER_TOKEN_FAIL = 'TRANSFER_TOKEN_FAIL';
-
 export const UPDATE_TOKEN_INFO = 'UPDATE_TOKEN_INFO';
