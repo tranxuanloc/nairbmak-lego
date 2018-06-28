@@ -31,6 +31,21 @@ Lego use [ESLint] (https://eslint.org/) with config from [eslint-config-react-ap
 [Semicolons or not] (https://hackernoon.com/an-open-letter-to-javascript-leaders-regarding-no-semicolons-82cec422d67d)
 
 ---
+### Git commit hook
+This is to run eslint check before every commit. If it doesn't pass eslint check, it will fail to commit  
+`cp .git/hooks/pre-commit.sample .git/hooks/pre-commit`  
+Open .git/hooks/pre-commit, go to the end of the file and edit like this:
+
+`set -e
+npm run pretest
+// If there are whitespace errors, print the offending file names and fail.
+exec git diff-index --check --cached $against --`  
+
+Now it will run `eslint --ignore-path .eslintignore .` every time you commit  
+You can run that command manually anytime by this shortcut `npm run pretest`  
+Or ask eslint to run auto fix with `npm run pretest -- --fix`  
+
+---
 ### CSS Naming Convention  
 We use [BEM (Block__Element–Modifier)] (https://medium.freecodecamp.org/css-naming-conventions-that-will-save-you-hours-of-debugging-35cea737d849)
 
