@@ -1,51 +1,219 @@
 #!/usr/bin/php
 <?php
 
-$commands = ['loc', 'page', 'component'];
+const PAGE_TEMPLATE = "
+import React from 'react';
+
+const %%NAME%% = () =>
+  <main className='main'>
+    <div id='content' className='container'>
+      Page %%NAME%%
+    </div>
+  </main>;
+
+export default %%NAME%%;
+";
+
+const PAGE_TEMPLATE_CLASS = "
+import React from 'react';
+
+class %%NAME%% extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      isLoaded: true
+    };
+    console.log(props);
+  }
+
+  componentDidMount() {
+
+  }
+
+  render() {
+    return <main className='main'>
+      <div id='content' className='container'>
+        Page %%NAME%%
+      </div>
+    </main>;
+  }
+}
+
+export default %%NAME%%;
+";
+
+const PAGE_TEMPLATE_REDUX = "
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import {sampleAction} from 'redux/actions/sample.action.js';
+
+class %%NAME%% extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      isLoaded: true
+    };
+    console.log(props);
+  }
+
+  componentDidMount() {
+
+  }
+
+  render() {
+    return <main className='main'>
+      <div id='content' className='container'>
+        <a className='btn btn-sm btn-success' onClick={() => this.props.sampleAction('Hello World!')}>Sample Action: {this.props.sample.text}</a>
+      </div>
+    </main>;
+  }
+}
+
+const mapStateToProps = state => ({
+  sample: state.sample
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  sampleAction
+}, dispatch);
+
+export default withRouter(connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(%%NAME%%));
+";
+
+const COMPONENT_TEMPLATE = "
+import React from 'react';
+
+const %%NAME%% = (props) =>
+  <div className='component' style={{border: '1px solid #ccc'}}>
+    Sample Component
+  </div>;
+
+export default %%NAME%%;
+";
+
+const REDUX_ACTION_TEMPLATE = "
+import * as types from './actionTypes';
+
+export const %%ACTION%% = (param) => {
+  return dispatch => {
+    console.log(param);
+    dispatch({ type: types.%%ACTION%%, data: {text: param}, extra: 'More info' });
+  };
+};
+";
+
+const REDUX_REDUCER_TEMPLATE = "
+import * as types from '../actions/actionTypes';
+
+const defaultState = {};
+
+export default (state = defaultState, action) => {
+  switch (action.type) {
+    case types.%%REDUCER%%:
+      console.log(action.extra);
+      alert(action.data.text);
+      return { ...state, ...action.data };
+    default:
+      return state;
+  }
+};
+";
+
+$commands = ['loc', 'page', 'component', 'redux'];
 
 $command = isset($argv[1]) ? $argv[1] : '';
 
-$options = getopt("p:f:t:h");
+$options = getopt("p:f:t:hv");
 
-if(isset($options['h']) || !$options.length){
-  echo "Copyright by phongvh
-Usage: ./lego [-p path1,path2,...] [-f file] [-t filetype1,filetype2,...] [-h]\n
-Without any arguments, it counts the LOC of the directory in which this script is located\n
-  -p: calculate the LOC (Lines Of Code) of files/directories in path1, path2... Use a comma to separate among the paths without spaces
-  -f: get the file/directory paths to calculate LOC from a file. Each path should be one line in the file. Can be used along with -p
-  -t: filter the file types in directory path which should be calculated LOC
-  -h: display this help\n\n";
+if(isset($options['h']) || !in_array($command, $commands)){
+  echo "Utility Command for Lego project. Copyright by phongvh\n
+Usage: php lego <loc | page | component | redux> <name> [--class | --redux]\n
+  - loc: (without argument) calculate the LOC (Lines Of Code) of all js file in src folder
+  - page: (require argument) create a new page with provided name
+    + (no option): create a functional page
+    + --class: create a class page
+    + --redux: create a page connecting to redux
+  - redux: (require argument) create a new action & reducer with provided name
+  - (no sub command): display this help\n\n";
   exit;
 }
 
 $path_list = $list1 = $list2 = $file_type = array();
 
-if(isset($options['p']) && $options['p']){
-  $list1 = explode(',', $options['p']);
+if($command === 'loc') {
+
+  if(isset($options['p']) && $options['p']){
+    $list1 = explode(',', $options['p']);
+  }
+
+  if(isset($options['f']) && $options['f']){
+    $list2 = file($options['f'], FILE_IGNORE_NEW_LINES);
+  }
+
+  if(isset($options['t']) && $options['t']){
+    $file_type = explode(',', $options['t']);
+  }
+
+  if(empty($file_type)) $file_type = ['js'];
+
+  $path_list = array_merge($list1, $list2);
+
+  if(empty($path_list)) $path_list = ['src'];
+
+  //if(empty($path_list)) $path_list = array(__DIR__);
+
+  $loc = 0;
+
+  foreach($path_list as $item){
+      $loc += count_loc($item, $file_type);
+  }
+
+  echo "===\nTotal Lines of ". strtoupper(implode(',',$file_type)) ." code in '" . implode(',',$path_list) . "' folder: $loc\n";
+} else {
+  $path = isset($argv[2]) ? $argv[2] : '';
+  if(!$path) echo "Error: Please provide a name";
+  else{
+    $path_arr = explode('/', $path);
+    $name = array_pop($path_arr);
+    $dir = implode('/', $path_arr);
+
+    if($command === 'page'){
+      $template = PAGE_TEMPLATE;
+      if(in_array('--class', $argv)) $template = PAGE_TEMPLATE_CLASS;
+      else if(in_array('--redux', $argv)) $template = PAGE_TEMPLATE_REDUX;
+
+      if (!file_exists('./src/views/pages/'.$dir)) {
+        mkdir('./src/views/pages/'.$dir, 0777, true);
+      }
+      file_put_contents("./src/views/pages/$path.js", TemplateEngine($template, $name));
+      echo "A new page created at ./src/views/pages/$path.js\n";
+      echo "\nNEXT STEP:\n===
+      Go to ./src/routes/index.js to register this page\n===";
+    } else if($command === 'redux'){
+      file_put_contents("./src/redux/actions/$name.action.js", TemplateEngine(REDUX_ACTION_TEMPLATE, strtoupper($name)));
+      file_put_contents("./src/redux/reducers/$name.reducer.js", TemplateEngine(REDUX_REDUCER_TEMPLATE, strtoupper($name)));
+      echo "A new action created at ./src/redux/actions/$name.action.js\n";
+      echo "A new reducer created at ./src/redux/reducers/$name.reducer.js\n";
+      echo "\nNEXT STEP:\n===
+      Add new ACTION TYPE to ./src/redux/actions/actionTypes.js
+      Add new REDUCER to ./src/redux/reducers/index.js\n===";
+    } else if($command === 'component'){
+      if (!file_exists('./src/views/components/'.$dir)) {
+        mkdir('./src/views/components/'.$dir, 0777, true);
+      }
+      file_put_contents("./src/views/components/$path.js", TemplateEngine(COMPONENT_TEMPLATE, $name));
+      echo "A new component created at ./src/views/components/$path.js\n";
+    }
+  }
 }
 
-if(isset($options['f']) && $options['f']){
-  $list2 = file($options['f'], FILE_IGNORE_NEW_LINES);
-}
-
-if(isset($options['t']) && $options['t']){
-  $file_type = explode(',', $options['t']);
-}
-
-$path_list = array_merge($list1, $list2);
-
-if(empty($path_list)) $path_list = array(__DIR__);
-
-$loc = 0;
-
-foreach($path_list as $item){
-    $loc += count_loc($item, $file_type);
-}
-
-echo "Total Lines of Code: $loc\n";
-
-
-function count_loc($path, $file_type)
+function count_loc($path, $file_type, $verbose=true)
 {
   $loc = 0;
   if(is_file($path)) {
@@ -53,29 +221,34 @@ function count_loc($path, $file_type)
     echo $path . ": $loc\n";
     return $loc;
   }
-  
+
   if(!is_dir($path)) {
     echo "$path: Path not found\n";
     return 0;
   }
-	
-  $dir = new DirectoryIterator($path); 	
-  
+
+  $dir = new DirectoryIterator($path);
+
   foreach ( $dir as $node )
   {
     if ( $node->isDir() && !$node->isDot() )
     {
-      $loc += count_loc( $node->getPathname(), $file_type );
+      $loc += count_loc( $node->getPathname(), $file_type, $verbose );
     }
     else if ( $node->isFile() )
     {
       if(empty($file_type) || in_array($node->getExtension(), $file_type)){
         $_loc = count(file($node->getPathname()));
         $loc += $_loc;
-        echo $node->getPathname().": $_loc\n";
+        if($verbose)
+          echo $node->getPathname().": $_loc\n";
       }
     }
   }
   return $loc;
 }
 
+function TemplateEngine ($tpl, $data) {
+  $re = '/%%([^%%]+)?%%/';
+  return preg_replace($re, $data, $tpl);
+}

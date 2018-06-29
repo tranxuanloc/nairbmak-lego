@@ -1,1 +1,2 @@
+export const SAMPLE_ACTION = 'SAMPLE_ACTION';
 export const UPDATE_TOKEN_INFO = 'UPDATE_TOKEN_INFO';

@@ -1,6 +1,10 @@
 import React from 'react';
+import Card from '../components/common/card/Card';
 
-export default () => 
+export default () =>
   <div className="main">
-    <h1>Components</h1>
+    <div className="container">
+      <h1>Components</h1>
+      <Card className='component'>Sample Component</Card>
+    </div>
   </div>;
