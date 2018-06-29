@@ -126,4 +126,5 @@ html, body {
   width: 200px;
   padding: 20px;
   text-align: center;
+  border: 1px solid #ccc;
 }

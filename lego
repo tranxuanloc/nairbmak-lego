@@ -174,7 +174,7 @@ if($command === 'loc') {
       $loc += count_loc($item, $file_type);
   }
 
-  echo "===\nTotal Lines of ". strtoupper(implode(',',$file_type)) ." code from '" . implode(',',$path_list) . "': $loc\n";
+  echo "===\nTotal Lines of ". strtoupper(implode(',',$file_type)) ." code in '" . implode(',',$path_list) . "' folder: $loc\n";
 } else {
   $path = isset($argv[2]) ? $argv[2] : '';
   if(!$path) echo "Error: Please provide a name";
