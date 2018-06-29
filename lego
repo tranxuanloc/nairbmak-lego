@@ -133,13 +133,14 @@ $options = getopt("p:f:t:hv");
 
 if(isset($options['h']) || !in_array($command, $commands)){
   echo "Utility Command for Lego project. Copyright by phongvh\n
-Usage: php lego <loc | page | component | redux> <name> [--class | --redux]\n
-  - loc: (without argument) calculate the LOC (Lines Of Code) of all js file in src folder
-  - page: (require argument) create a new page with provided name
+Usage: php lego <loc | page | component | redux> <name|path> [--class | --redux]\n
+  - loc: (no argument required) calculate the LOC (Lines Of Code) of all js file in src folder
+  - page: (a name/path required) create a new page with provided name
     + (no option): create a functional page
     + --class: create a class page
     + --redux: create a page connecting to redux
-  - redux: (require argument) create a new action & reducer with provided name
+  - component: (a name/path required)
+  - redux: (a name required) create a new action & reducer with provided name
   - (no sub command): display this help\n\n";
   exit;
 }
