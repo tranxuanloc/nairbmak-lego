@@ -139,9 +139,9 @@ Usage: php lego <loc | page | component | redux> <name|path> [--class | --redux]
     + (no option): create a functional page
     + --class: create a class page
     + --redux: create a page connecting to redux
-  - component: (a name/path required)
+  - component: (a name/path required) create a new component
   - redux: (a name required) create a new action & reducer with provided name
-  - (no sub command): display this help\n\n";
+  - -h: display help text\n\n";
   exit;
 }
 
