@@ -5,8 +5,93 @@ const PAGE_TEMPLATE = "
 import React from 'react';
 
 const %%NAME%% = () =>
-  <div className='main'>
-    <h1>%%NAME%%</h1>
+  <main className='main'>
+    <div id='content' className='container'>
+      Page %%NAME%%
+    </div>
+  </main>;
+
+export default %%NAME%%;
+";
+
+const PAGE_TEMPLATE_CLASS = "
+import React from 'react';
+
+class %%NAME%% extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      isLoaded: true
+    };
+    console.log(props);
+  }
+
+  componentDidMount() {
+
+  }
+
+  render() {
+    return <main className='main'>
+      <div id='content' className='container'>
+        Page %%NAME%%
+      </div>
+    </main>;
+  }
+}
+
+export default %%NAME%%;
+";
+
+const PAGE_TEMPLATE_REDUX = "
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import {sampleAction} from 'redux/actions/sample.action.js';
+
+class %%NAME%% extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      isLoaded: true
+    };
+    console.log(props);
+  }
+
+  componentDidMount() {
+
+  }
+
+  render() {
+    return <main className='main'>
+      <div id='content' className='container'>
+        <a className='btn btn-sm btn-success' onClick={() => this.props.sampleAction('Hello World!')}>Sample Action: {this.props.sample.text}</a>
+      </div>
+    </main>;
+  }
+}
+
+const mapStateToProps = state => ({
+  sample: state.sample
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  sampleAction
+}, dispatch);
+
+export default withRouter(connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(%%NAME%%));
+";
+
+const COMPONENT_TEMPLATE = "
+import React from 'react';
+
+const %%NAME%% = (props) =>
+  <div className='component' style={{border: '1px solid #ccc'}}>
+    Sample Component
   </div>;
 
 export default %%NAME%%;
@@ -15,9 +100,10 @@ export default %%NAME%%;
 const REDUX_ACTION_TEMPLATE = "
 import * as types from './actionTypes';
 
-export const %%ACTION%% = (data) => {
+export const %%ACTION%% = (param) => {
   return dispatch => {
-    dispatch({ type: types.%%ACTION%%, data });
+    console.log(param);
+    dispatch({ type: types.%%ACTION%%, data: {text: param}, extra: 'More info' });
   };
 };
 ";
@@ -30,6 +116,8 @@ const defaultState = {};
 export default (state = defaultState, action) => {
   switch (action.type) {
     case types.%%REDUCER%%:
+      console.log(action.extra);
+      alert(action.data.text);
       return { ...state, ...action.data };
     default:
       return state;
@@ -84,26 +172,41 @@ if($command === 'loc') {
   }
 
   echo "===\nTotal Lines of ". strtoupper(implode(',',$file_type)) ." code from '" . implode(',',$path_list) . "': $loc\n";
-} else if($command === 'page'){
-  $name = isset($argv[2]) ? $argv[2] : '';
-  if(!$name) echo "Error: Please provide a page name";
-  else {
-    file_put_contents("./src/views/pages/$name.js", TemplateEngine(PAGE_TEMPLATE, $name));
-    echo "A new page created at ./src/views/pages/$name.js\n";
-    echo "\nNEXT STEP:\n===
-    Go to ./src/routes/index.js to register this page\n===";
-  }
-} else if($command === 'redux'){
-  $name = isset($argv[2]) ? $argv[2] : '';
-  if(!$name) echo "Error: Please provide a redux name";
-  else {
-    file_put_contents("./src/redux/actions/$name.action.js", TemplateEngine(REDUX_ACTION_TEMPLATE, strtoupper($name)));
-    file_put_contents("./src/redux/reducers/$name.reducer.js", TemplateEngine(REDUX_REDUCER_TEMPLATE, strtoupper($name)));
-    echo "A new action created at ./src/redux/actions/$name.action.js\n";
-    echo "A new reducer created at ./src/redux/reducers/$name.reducer.js\n";
-    echo "\nNEXT STEP:\n===
-    Add new ACTION TYPE to ./src/redux/actions/actionTypes.js
-    Add new REDUCER to ./src/redux/reducers/index.js\n===";
+} else {
+  $path = isset($argv[2]) ? $argv[2] : '';
+  if(!$path) echo "Error: Please provide a name";
+  else{
+    $path_arr = explode('/', $path);
+    $name = array_pop($path_arr);
+    $dir = implode('/', $path_arr);
+
+    if($command === 'page'){
+      $template = PAGE_TEMPLATE;
+      if(in_array('--class', $argv)) $template = PAGE_TEMPLATE_CLASS;
+      else if(in_array('--redux', $argv)) $template = PAGE_TEMPLATE_REDUX;
+
+      if (!file_exists('./src/views/pages/'.$dir)) {
+        mkdir('./src/views/pages/'.$dir, 0777, true);
+      }
+      file_put_contents("./src/views/pages/$path.js", TemplateEngine($template, $name));
+      echo "A new page created at ./src/views/pages/$path.js\n";
+      echo "\nNEXT STEP:\n===
+      Go to ./src/routes/index.js to register this page\n===";
+    } else if($command === 'redux'){
+      file_put_contents("./src/redux/actions/$name.action.js", TemplateEngine(REDUX_ACTION_TEMPLATE, strtoupper($name)));
+      file_put_contents("./src/redux/reducers/$name.reducer.js", TemplateEngine(REDUX_REDUCER_TEMPLATE, strtoupper($name)));
+      echo "A new action created at ./src/redux/actions/$name.action.js\n";
+      echo "A new reducer created at ./src/redux/reducers/$name.reducer.js\n";
+      echo "\nNEXT STEP:\n===
+      Add new ACTION TYPE to ./src/redux/actions/actionTypes.js
+      Add new REDUCER to ./src/redux/reducers/index.js\n===";
+    } else if($command === 'component'){
+      if (!file_exists('./src/views/components/'.$dir)) {
+        mkdir('./src/views/components/'.$dir, 0777, true);
+      }
+      file_put_contents("./src/views/components/$path.js", TemplateEngine(COMPONENT_TEMPLATE, $name));
+      echo "A new component created at ./src/views/components/$path.js\n";
+    }
   }
 }
 
@@ -115,14 +218,14 @@ function count_loc($path, $file_type, $verbose=true)
     echo $path . ": $loc\n";
     return $loc;
   }
-  
+
   if(!is_dir($path)) {
     echo "$path: Path not found\n";
     return 0;
   }
-	
-  $dir = new DirectoryIterator($path); 	
-  
+
+  $dir = new DirectoryIterator($path);
+
   foreach ( $dir as $node )
   {
     if ( $node->isDir() && !$node->isDot() )

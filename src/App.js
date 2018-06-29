@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -19,10 +19,10 @@ import Fail from 'views/auth/Fail';
 import Error404 from './views/errors/404';
 import { updateInfo } from "redux/actions/blockchain.action";
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       logo: {
         url: '/',
@@ -30,7 +30,7 @@ class App extends Component {
       },
       nav: [
         { url: '/', title: 'Kambria.io', exact: true },
-        { url: '/howtouse', title: 'How to use', exact: false },
+        { url: '/redux', title: 'Redux', exact: false },
         { url: '/components', title: 'Components', exact: false }
       ]
     };
@@ -38,7 +38,7 @@ class App extends Component {
     this.metamask = new Metamask();
     this.token = new Token(config.eth.KATT.ABI, config.eth.KATT.ADDRESS, config.eth.KATT.DECIMALS, this.metamask.web3);
     this.tWatcher = null;
-    
+
     this.init();
   }
 
@@ -108,7 +108,7 @@ class App extends Component {
           </Nav>
         </Header>
         <Switch>
-          { 
+          {
             routes.map((route, i) => route.type === 'public' ? <Route exact key={i} path={route.path} component={route.component} /> : <PrivateRouteWithRender exact key={i} condition={this.validateUser()} path={route.path} success={route.component} failure={Fail} />)
           }
           <Route component={Error404} />
