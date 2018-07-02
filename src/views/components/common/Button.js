@@ -1,6 +1,10 @@
 import React from 'react';
 
-export default (props) => 
-  <button className={`btn ${props.className}`} style={props.style}>
-    <img src={props.icon} alt="" /> {props.children}
-  </button>;
+export default (props) =>
+  props.disabled ?
+    <button className={`btn btn-${props.type} btn-${props.size}`} style={{color: props.color, backgroundColor: props.bgColor}} disabled>
+      {props.icon ? props.icon : ''}{props.children}
+    </button> :
+    <button className={`btn btn-${props.type} btn-${props.size}`} style={{color: props.color, backgroundColor: props.bgColor}}>
+      {props.icon ? props.icon : ''}{props.children}
+    </button>;
