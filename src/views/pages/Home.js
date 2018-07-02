@@ -1,12 +1,12 @@
 import React from 'react';
 
-import lego from 'static/lego.png';
+import lego from 'static/images/lego.png';
 import icon from 'static/svg/ic-gift-box.svg';
 import Button from 'views/components/common/Button';
 
 export default () =>
   <div className="main">
-    <div className="container">
+    <div className="container text-center">
       <img src={lego} className="lego-logo" alt="Lego logo" />
       <hr />
       <h1>Welcome to Kambria Lego!</h1>
