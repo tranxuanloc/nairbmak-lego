@@ -45,7 +45,7 @@ class Token {
 
   /**
    * Get token balance
-   * @param {*} address 
+   * @param {*} address
    */
   balanceOf(address) {
     var self = this;
@@ -61,8 +61,8 @@ class Token {
 
   /**
    * Transfer token
-   * @param {*} to 
-   * @param {*} amount 
+   * @param {*} to
+   * @param {*} amount
    */
   transfer(to, amount) {
     var self = this;
