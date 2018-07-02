@@ -11,7 +11,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "mocha --require mocha-snapshots --reporter spec src/config/test.js src/tests/*.test.js",
+    "test": "mocha --require mocha-snapshots --reporter spec src/config/test.js $(find src/tests -name '*.test.js')",
     "test:watch": "npm test -- --watch",
     "eject": "react-scripts eject"
   },

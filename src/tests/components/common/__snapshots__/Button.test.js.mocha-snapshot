@@ -1,0 +1,52 @@
+exports["snapshot for Button(0)"] = {
+  "node": {
+    "nodeType": "host",
+    "type": "button",
+    "props": {
+      "className": "btn undefined",
+      "children": [
+        {
+          "type": "img",
+          "props": {
+            "alt": ""
+          },
+          "_store": {}
+        },
+        " ",
+        "Test"
+      ]
+    },
+    "rendered": [
+      {
+        "nodeType": "host",
+        "type": "img",
+        "props": {
+          "alt": ""
+        }
+      },
+      " ",
+      "Test"
+    ]
+  },
+  "type": "button",
+  "props": {
+    "className": "btn undefined"
+  },
+  "children": [
+    {
+      "node": {
+        "nodeType": "host",
+        "type": "img",
+        "props": {
+          "alt": ""
+        }
+      },
+      "type": "img",
+      "props": {
+        "alt": ""
+      }
+    },
+    " ",
+    "Test"
+  ]
+};

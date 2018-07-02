@@ -1,0 +1,517 @@
+exports["snapshot for Home(0)"] = {
+  "node": {
+    "nodeType": "host",
+    "type": "div",
+    "props": {
+      "className": "main",
+      "children": {
+        "type": "div",
+        "props": {
+          "className": "container",
+          "children": [
+            {
+              "type": "img",
+              "props": {
+                "src": {},
+                "className": "lego",
+                "alt": "Lego logo"
+              },
+              "_store": {}
+            },
+            {
+              "type": "hr",
+              "props": {},
+              "_store": {}
+            },
+            {
+              "type": "h1",
+              "props": {
+                "children": "Welcome to Kambria Lego!"
+              },
+              "_store": {}
+            },
+            {
+              "type": "p",
+              "props": {
+                "className": "App",
+                "children": [
+                  "To get started, edit ",
+                  {
+                    "type": "code",
+                    "props": {
+                      "children": "src/App.js"
+                    },
+                    "_store": {}
+                  },
+                  " and save to reload."
+                ]
+              },
+              "_store": {}
+            },
+            {
+              "type": "p",
+              "props": {
+                "children": {
+                  "type": "[function]",
+                  "props": {
+                    "className": "btn btn",
+                    "icon": {},
+                    "children": "Learn More"
+                  },
+                  "_store": {}
+                }
+              },
+              "_store": {}
+            }
+          ]
+        },
+        "_store": {}
+      }
+    },
+    "rendered": {
+      "nodeType": "host",
+      "type": "div",
+      "props": {
+        "className": "container",
+        "children": [
+          {
+            "type": "img",
+            "props": {
+              "src": {},
+              "className": "lego",
+              "alt": "Lego logo"
+            },
+            "_store": {}
+          },
+          {
+            "type": "hr",
+            "props": {},
+            "_store": {}
+          },
+          {
+            "type": "h1",
+            "props": {
+              "children": "Welcome to Kambria Lego!"
+            },
+            "_store": {}
+          },
+          {
+            "type": "p",
+            "props": {
+              "className": "App",
+              "children": [
+                "To get started, edit ",
+                {
+                  "type": "code",
+                  "props": {
+                    "children": "src/App.js"
+                  },
+                  "_store": {}
+                },
+                " and save to reload."
+              ]
+            },
+            "_store": {}
+          },
+          {
+            "type": "p",
+            "props": {
+              "children": {
+                "type": "[function]",
+                "props": {
+                  "className": "btn btn",
+                  "icon": {},
+                  "children": "Learn More"
+                },
+                "_store": {}
+              }
+            },
+            "_store": {}
+          }
+        ]
+      },
+      "rendered": [
+        {
+          "nodeType": "host",
+          "type": "img",
+          "props": {
+            "src": {},
+            "className": "lego",
+            "alt": "Lego logo"
+          }
+        },
+        {
+          "nodeType": "host",
+          "type": "hr",
+          "props": {}
+        },
+        {
+          "nodeType": "host",
+          "type": "h1",
+          "props": {
+            "children": "Welcome to Kambria Lego!"
+          },
+          "rendered": "Welcome to Kambria Lego!"
+        },
+        {
+          "nodeType": "host",
+          "type": "p",
+          "props": {
+            "className": "App",
+            "children": [
+              "To get started, edit ",
+              {
+                "type": "code",
+                "props": {
+                  "children": "src/App.js"
+                },
+                "_store": {}
+              },
+              " and save to reload."
+            ]
+          },
+          "rendered": [
+            "To get started, edit ",
+            {
+              "nodeType": "host",
+              "type": "code",
+              "props": {
+                "children": "src/App.js"
+              },
+              "rendered": "src/App.js"
+            },
+            " and save to reload."
+          ]
+        },
+        {
+          "nodeType": "host",
+          "type": "p",
+          "props": {
+            "children": {
+              "type": "[function]",
+              "props": {
+                "className": "btn btn",
+                "icon": {},
+                "children": "Learn More"
+              },
+              "_store": {}
+            }
+          },
+          "rendered": {
+            "nodeType": "function",
+            "type": "[function]",
+            "props": {
+              "className": "btn btn",
+              "icon": {},
+              "children": "Learn More"
+            },
+            "rendered": "Learn More"
+          }
+        }
+      ]
+    }
+  },
+  "type": "div",
+  "props": {
+    "className": "main"
+  },
+  "children": [
+    {
+      "node": {
+        "nodeType": "host",
+        "type": "div",
+        "props": {
+          "className": "container",
+          "children": [
+            {
+              "type": "img",
+              "props": {
+                "src": {},
+                "className": "lego",
+                "alt": "Lego logo"
+              },
+              "_store": {}
+            },
+            {
+              "type": "hr",
+              "props": {},
+              "_store": {}
+            },
+            {
+              "type": "h1",
+              "props": {
+                "children": "Welcome to Kambria Lego!"
+              },
+              "_store": {}
+            },
+            {
+              "type": "p",
+              "props": {
+                "className": "App",
+                "children": [
+                  "To get started, edit ",
+                  {
+                    "type": "code",
+                    "props": {
+                      "children": "src/App.js"
+                    },
+                    "_store": {}
+                  },
+                  " and save to reload."
+                ]
+              },
+              "_store": {}
+            },
+            {
+              "type": "p",
+              "props": {
+                "children": {
+                  "type": "[function]",
+                  "props": {
+                    "className": "btn btn",
+                    "icon": {},
+                    "children": "Learn More"
+                  },
+                  "_store": {}
+                }
+              },
+              "_store": {}
+            }
+          ]
+        },
+        "rendered": [
+          {
+            "nodeType": "host",
+            "type": "img",
+            "props": {
+              "src": {},
+              "className": "lego",
+              "alt": "Lego logo"
+            }
+          },
+          {
+            "nodeType": "host",
+            "type": "hr",
+            "props": {}
+          },
+          {
+            "nodeType": "host",
+            "type": "h1",
+            "props": {
+              "children": "Welcome to Kambria Lego!"
+            },
+            "rendered": "Welcome to Kambria Lego!"
+          },
+          {
+            "nodeType": "host",
+            "type": "p",
+            "props": {
+              "className": "App",
+              "children": [
+                "To get started, edit ",
+                {
+                  "type": "code",
+                  "props": {
+                    "children": "src/App.js"
+                  },
+                  "_store": {}
+                },
+                " and save to reload."
+              ]
+            },
+            "rendered": [
+              "To get started, edit ",
+              {
+                "nodeType": "host",
+                "type": "code",
+                "props": {
+                  "children": "src/App.js"
+                },
+                "rendered": "src/App.js"
+              },
+              " and save to reload."
+            ]
+          },
+          {
+            "nodeType": "host",
+            "type": "p",
+            "props": {
+              "children": {
+                "type": "[function]",
+                "props": {
+                  "className": "btn btn",
+                  "icon": {},
+                  "children": "Learn More"
+                },
+                "_store": {}
+              }
+            },
+            "rendered": {
+              "nodeType": "function",
+              "type": "[function]",
+              "props": {
+                "className": "btn btn",
+                "icon": {},
+                "children": "Learn More"
+              },
+              "rendered": "Learn More"
+            }
+          }
+        ]
+      },
+      "type": "div",
+      "props": {
+        "className": "container"
+      },
+      "children": [
+        {
+          "node": {
+            "nodeType": "host",
+            "type": "img",
+            "props": {
+              "src": {},
+              "className": "lego",
+              "alt": "Lego logo"
+            }
+          },
+          "type": "img",
+          "props": {
+            "src": {},
+            "className": "lego",
+            "alt": "Lego logo"
+          }
+        },
+        {
+          "node": {
+            "nodeType": "host",
+            "type": "hr",
+            "props": {}
+          },
+          "type": "hr",
+          "props": {}
+        },
+        {
+          "node": {
+            "nodeType": "host",
+            "type": "h1",
+            "props": {
+              "children": "Welcome to Kambria Lego!"
+            },
+            "rendered": "Welcome to Kambria Lego!"
+          },
+          "type": "h1",
+          "props": {},
+          "children": [
+            "Welcome to Kambria Lego!"
+          ]
+        },
+        {
+          "node": {
+            "nodeType": "host",
+            "type": "p",
+            "props": {
+              "className": "App",
+              "children": [
+                "To get started, edit ",
+                {
+                  "type": "code",
+                  "props": {
+                    "children": "src/App.js"
+                  },
+                  "_store": {}
+                },
+                " and save to reload."
+              ]
+            },
+            "rendered": [
+              "To get started, edit ",
+              {
+                "nodeType": "host",
+                "type": "code",
+                "props": {
+                  "children": "src/App.js"
+                },
+                "rendered": "src/App.js"
+              },
+              " and save to reload."
+            ]
+          },
+          "type": "p",
+          "props": {
+            "className": "App"
+          },
+          "children": [
+            "To get started, edit ",
+            {
+              "node": {
+                "nodeType": "host",
+                "type": "code",
+                "props": {
+                  "children": "src/App.js"
+                },
+                "rendered": "src/App.js"
+              },
+              "type": "code",
+              "props": {},
+              "children": [
+                "src/App.js"
+              ]
+            },
+            " and save to reload."
+          ]
+        },
+        {
+          "node": {
+            "nodeType": "host",
+            "type": "p",
+            "props": {
+              "children": {
+                "type": "[function]",
+                "props": {
+                  "className": "btn btn",
+                  "icon": {},
+                  "children": "Learn More"
+                },
+                "_store": {}
+              }
+            },
+            "rendered": {
+              "nodeType": "function",
+              "type": "[function]",
+              "props": {
+                "className": "btn btn",
+                "icon": {},
+                "children": "Learn More"
+              },
+              "rendered": "Learn More"
+            }
+          },
+          "type": "p",
+          "props": {},
+          "children": [
+            {
+              "node": {
+                "nodeType": "function",
+                "type": "[function]",
+                "props": {
+                  "className": "btn btn",
+                  "icon": {},
+                  "children": "Learn More"
+                },
+                "rendered": "Learn More"
+              },
+              "type": "Component",
+              "props": {
+                "className": "btn btn",
+                "icon": {}
+              },
+              "children": [
+                "Learn More"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
