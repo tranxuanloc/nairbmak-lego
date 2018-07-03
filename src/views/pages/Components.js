@@ -2,10 +2,12 @@ import React from 'react';
 import Card from '../components/common/card/Card';
 import Button from '../components/common/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import NotificationsViewer from '../components/NotificationsViewer';
 
 export default () =>
   <div className="main">
     <div className="container">
+      <NotificationsViewer />
       <h1>Components</h1>
       <Card className='component'>Sample Component</Card>
       <hr />
