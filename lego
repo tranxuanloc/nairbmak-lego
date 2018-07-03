@@ -97,13 +97,29 @@ const %%NAME%% = (props) =>
 export default %%NAME%%;
 ";
 
+const TEST_COMPONENT_TEMPLATE = "
+import React from 'react';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import { expect } from 'chai';
+import sinon from 'sinon';
+
+import %%NAME%% from 'views/components/%%PATH%%';
+
+Enzyme.configure({ adapter: new Adapter() });
+
+describe('Component: <%%NAME%% />', () => {
+  it('should have unit test here');
+});
+";
+
 const REDUX_ACTION_TEMPLATE = "
 import * as types from './actionTypes';
 
-export const %%ACTION%% = (param) => {
+export const do_%%NAME%% = (param) => {
   return dispatch => {
     console.log(param);
-    dispatch({ type: types.%%ACTION%%, data: {text: param}, extra: 'More info' });
+    dispatch({ type: types.%%NAME%%, data: {text: param}, extra: 'More info' });
   };
 };
 ";
@@ -115,7 +131,7 @@ const defaultState = {};
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case types.%%REDUCER%%:
+    case types.%%NAME%%:
       console.log(action.extra);
       alert(action.data.text);
       return { ...state, ...action.data };
@@ -192,13 +208,13 @@ if($command === 'loc') {
       if (!file_exists('./src/views/pages/'.$dir)) {
         mkdir('./src/views/pages/'.$dir, 0777, true);
       }
-      file_put_contents("./src/views/pages/$path.js", TemplateEngine($template, $name));
+      file_put_contents("./src/views/pages/$path.js", TemplateEngine($template, ['/%%NAME%%/' => $name]));
       echo "A new page created at ./src/views/pages/$path.js\n";
       echo "\nNEXT STEP:\n===
       Go to ./src/routes/index.js to register this page\n===";
     } else if($command === 'redux'){
-      file_put_contents("./src/redux/actions/$name.action.js", TemplateEngine(REDUX_ACTION_TEMPLATE, strtoupper($name)));
-      file_put_contents("./src/redux/reducers/$name.reducer.js", TemplateEngine(REDUX_REDUCER_TEMPLATE, strtoupper($name)));
+      file_put_contents("./src/redux/actions/$name.action.js", TemplateEngine(REDUX_ACTION_TEMPLATE, ['/%%NAME%%/' => strtoupper($name)]));
+      file_put_contents("./src/redux/reducers/$name.reducer.js", TemplateEngine(REDUX_REDUCER_TEMPLATE, ['/%%NAME%%/' => strtoupper($name)]));
       echo "A new action created at ./src/redux/actions/$name.action.js\n";
       echo "A new reducer created at ./src/redux/reducers/$name.reducer.js\n";
       echo "\nNEXT STEP:\n===
@@ -208,8 +224,13 @@ if($command === 'loc') {
       if (!file_exists('./src/views/components/'.$dir)) {
         mkdir('./src/views/components/'.$dir, 0777, true);
       }
-      file_put_contents("./src/views/components/$path.js", TemplateEngine(COMPONENT_TEMPLATE, $name));
+      file_put_contents("./src/views/components/$path.js", TemplateEngine(COMPONENT_TEMPLATE, ['/%%NAME%%/' => $name]));
       echo "A new component created at ./src/views/components/$path.js\n";
+      if (!file_exists('./src/tests/components/'.$dir)) {
+        mkdir('./src/tests/components/'.$dir, 0777, true);
+      }
+      file_put_contents("./src/tests/components/$path.test.js", TemplateEngine(TEST_COMPONENT_TEMPLATE, ['/%%NAME%%/' => $name, '/%%PATH%%/' => $path]));
+      echo "A new test file created at ./src/tests/components/$path.test.js\n";
     }
   }
 }
@@ -250,6 +271,9 @@ function count_loc($path, $file_type, $verbose=true)
 }
 
 function TemplateEngine ($tpl, $data) {
-  $re = '/%%([^%%]+)?%%/';
-  return preg_replace($re, $data, $tpl);
+  $patterns = array_keys($data);
+  $replacements = array_values($data);
+  //foreach($data as $patterns[] => $replacements[]){}
+  // $re = '/%%([^%%]+)?%%/';
+  return preg_replace($patterns, $replacements, $tpl);
 }
