@@ -1,0 +1,23 @@
+.product-images {
+  .images {
+    margin-bottom: calculateRem(17px);
+  }
+  .thumbnail {
+    .wrapper {
+      padding: 5px;
+    }
+    .slick-current img {
+      border: 1px solid $c-base;
+    }
+    .slick-arrow {
+      display: none !important;
+    }
+  }
+  .wrapper {
+
+  }
+  img {
+    width: 100%;
+    border: 1px solid #dddddd;
+  }
+}

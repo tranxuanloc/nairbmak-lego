@@ -1,0 +1,33 @@
+.pagination-wrapper {
+  @include flexbox;
+  @include flex-flow(row nowrap);
+  margin-bottom: calculateRem(20px);
+  &.text-center {
+    @include justify-content(center);
+  }
+  .pagination {
+    margin: 0;
+    @include inline-flex;
+  }
+  li {
+    padding: 0 calculateRem(8px);
+  }
+  .page-link {
+    border-radius: 0 !important;
+    min-width: calculateRem(31px);
+    height: calculateRem(31px);
+    background-color: #f5f5f5;
+    padding: 0 5px;
+    line-height: calculateRem(31px);
+    font-size: calculateRem(16px);
+    color: #282f39;
+    border: 0 none;
+    @include transition($transition-base);
+  }
+  li.active .page-link,
+  .page-link:hover,
+  .page-link.active {
+    background-color: #282f39;
+    color: $c-white;
+  }
+}

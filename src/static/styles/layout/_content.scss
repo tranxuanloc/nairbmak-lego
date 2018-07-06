@@ -1,0 +1,21 @@
+/* ==========================================================================
+Content
+========================================================================== */
+body,
+html {
+  height: 100%;
+  overflow: hidden;
+}
+#root {
+  height: 100%;
+  overflow: auto;
+}
+
+#site_wrapper {
+  min-height: 100%;
+  @include flexbox;
+  @include flex-flow(column nowrap);
+}
+main.main {
+  @include flex(1);
+}
