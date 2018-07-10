@@ -25,7 +25,7 @@
     "start": "REACT_APP_ENV=development react-scripts start",
     "build": "REACT_APP_ENV=staging react-scripts build",
     "pretest": "eslint --ignore-path .eslintignore . --fix",
-    "test": "mocha --require mocha-snapshots --reporter spec src/config/test.config.js $(find src/tests -name '*.test.js')",
+    "test": "nyc mocha --require mocha-snapshots --reporter spec src/config/test.config.js $(find src/tests -name '*.test.js')",
     "test:watch": "npm test -- --watch",
     "eject": "react-scripts eject"
   },
@@ -53,6 +53,7 @@
     "jsdom": "^11.11.0",
     "mocha": "^5.2.0",
     "mocha-snapshots": "^4.1.0",
+    "nyc": "^12.0.2",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.4.1"
   }
