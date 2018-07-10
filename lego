@@ -134,7 +134,7 @@ export default (state = defaultState, action) => {
 };
 ";
 
-$commands = ['loc', 'page', 'component', 'redux'];
+$commands = ['loc', 'page', 'component', 'test', 'redux'];
 
 $command = isset($argv[1]) ? $argv[1] : '';
 
@@ -148,7 +148,8 @@ Usage: php lego <loc | page | component | redux> <name|path> [--class | --redux]
     + (no option): create a functional page
     + --class: create a class page
     + --redux: create a page connecting to redux
-  - component: (a name/path required) create a new component
+  - component: (a name/path required) create a new component with its test file
+  - test: (a name/path required) create a test file
   - redux: (a name required) create a new action & reducer with provided name
   - -h: display help text\n\n";
   exit;
@@ -224,7 +225,14 @@ if($command === 'loc') {
       }
       file_put_contents("./src/tests/components/$path.test.js", TemplateEngine(TEST_COMPONENT_TEMPLATE, ['/%%NAME%%/' => $name, '/%%PATH%%/' => $path]));
       echo "A new test file created at ./src/tests/components/$path.test.js\n";
+    } else if($command === 'test'){
+      if (!file_exists('./src/tests/components/'.$dir)) {
+        mkdir('./src/tests/components/'.$dir, 0777, true);
+      }
+      file_put_contents("./src/tests/components/$path.test.js", TemplateEngine(TEST_COMPONENT_TEMPLATE, ['/%%NAME%%/' => $name, '/%%PATH%%/' => $path]));
+      echo "A new test file created at ./src/tests/components/$path.test.js\n";
     }
+
   }
 }
 
