@@ -4,7 +4,7 @@ import Button from '../components/common/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NotificationsViewer from '../components/NotificationsViewer';
 
-export default () =>
+const Components = () =>
   <div className="main">
     <div className="container">
       <NotificationsViewer />
@@ -71,3 +71,5 @@ export default () =>
       </section>
     </div>
   </div>;
+
+export default Components;

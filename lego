@@ -1,8 +1,7 @@
 #!/usr/bin/php
 <?php
 
-const PAGE_TEMPLATE = "
-import React from 'react';
+const PAGE_TEMPLATE = "import React from 'react';
 
 const %%NAME%% = () =>
   <main className='main'>
@@ -14,8 +13,7 @@ const %%NAME%% = () =>
 export default %%NAME%%;
 ";
 
-const PAGE_TEMPLATE_CLASS = "
-import React from 'react';
+const PAGE_TEMPLATE_CLASS = "import React from 'react';
 
 class %%NAME%% extends React.Component {
   constructor(props, context) {
@@ -42,8 +40,7 @@ class %%NAME%% extends React.Component {
 export default %%NAME%%;
 ";
 
-const PAGE_TEMPLATE_REDUX = "
-import React from 'react';
+const PAGE_TEMPLATE_REDUX = "import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -86,8 +83,7 @@ export default withRouter(connect(
 )(%%NAME%%));
 ";
 
-const COMPONENT_TEMPLATE = "
-import React from 'react';
+const COMPONENT_TEMPLATE = "import React from 'react';
 
 const %%NAME%% = (props) =>
   <div className='component' style={{border: '1px solid #ccc'}}>
@@ -97,24 +93,22 @@ const %%NAME%% = (props) =>
 export default %%NAME%%;
 ";
 
-const TEST_COMPONENT_TEMPLATE = "
-import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import { expect } from 'chai';
-import sinon from 'sinon';
+const TEST_COMPONENT_TEMPLATE = "// import React from 'react';
+// import Enzyme, { shallow } from 'enzyme';
+// import Adapter from 'enzyme-adapter-react-16';
+// import { expect } from 'chai';
+// import sinon from 'sinon';
 
-import %%NAME%% from 'views/components/%%PATH%%';
+// import %%NAME%% from 'views/components/%%PATH%%';
 
-Enzyme.configure({ adapter: new Adapter() });
+// Enzyme.configure({ adapter: new Adapter() });
 
 describe('Component: <%%NAME%% />', () => {
   it('should have unit test here');
 });
 ";
 
-const REDUX_ACTION_TEMPLATE = "
-import * as types from './actionTypes';
+const REDUX_ACTION_TEMPLATE = "import * as types from './actionTypes';
 
 export const do_%%NAME%% = (param) => {
   return dispatch => {
@@ -124,8 +118,7 @@ export const do_%%NAME%% = (param) => {
 };
 ";
 
-const REDUX_REDUCER_TEMPLATE = "
-import * as types from '../actions/actionTypes';
+const REDUX_REDUCER_TEMPLATE = "import * as types from '../actions/actionTypes';
 
 const defaultState = {};
 

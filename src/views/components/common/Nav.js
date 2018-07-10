@@ -1,8 +1,10 @@
 import React from 'react';
 
-export default (props) => 
+const Nav = (props) =>
       <nav className="navbar">
         <ul className="nav navbar-nav">
           {props.children}
         </ul>
       </nav>;
+
+export default Nav;
