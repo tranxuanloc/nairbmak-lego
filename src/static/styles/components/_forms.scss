@@ -1,0 +1,23 @@
+.btn {
+  &-success {
+    background-color: $c-base;
+    border-color: $c-base;
+    color: #1f1f1f;
+      &:active, &:visited {
+        color: #1f1f1f;
+      }
+  }
+  &-legend {
+    height: calculateRem(60px);
+    width: calculateRem(300px);
+    font-size: calculateRem(18px);
+    border-radius: calculateRem(14px);
+  }
+}
+
+.form-control {
+  &:focus,
+  &:active {
+    box-shadow: 0 0 0 0.2rem rgba($c-base, 0.5);
+  }
+}

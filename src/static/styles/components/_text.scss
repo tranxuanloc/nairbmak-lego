@@ -1,0 +1,16 @@
+.color-gray {
+  color: $c-gray;
+  &-hover {
+    &:hover {
+      color: $c-gray;
+    }
+  }
+}
+.color-base {
+  color: $c-base;
+  &-hover {
+    &:hover {
+      color: $c-base;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+/* ==========================================================================
+Header
+========================================================================== */
+.site-header {
+  width: 100%;
+  background-color: #282f39;
+  .navbar {
+    ul {
+      @include flexbox;
+      @include flex-flow(row wrap);
+      margin: 0 calculateRem(-30px);
+    }
+    li {
+      padding: calculateRem(30px);
+    }
+    a {
+      display: block;
+      padding: calculateRem(15px) 0;
+      color: $c-gray;
+      text-decoration: none;
+      font-size: calculateRem(16px);
+      @include transition($transition-base);
+      &:hover,
+      &.active {
+        color: $c-base;
+      }
+    }
+  }
+  @media (max-width: map_get($grid-breakpoints, 'lg')) {
+    .navbar {
+      ul {
+        margin: 0 calculateRem(-15px);
+      }
+      li {
+        padding: calculateRem(30px) calculateRem(15px);
+      }
+    }
+  }
+  @media (max-width: map_get($grid-breakpoints, 'md')) {
+    .navbar-brand {
+      margin: calculateRem(30px) auto 0;
+    }
+    .navbar {
+      margin: 0 auto;
+      li {
+        padding: calculateRem(15px);
+      }
+    }
+  }
+  @media (max-width: map_get($grid-breakpoints, 'sm')) {
+    .row {
+      @include flex-flow(column nowrap);
+    }
+    .navbar {
+      ul {
+        margin: 0 calculateRem(-10px);
+      }
+      li {
+        padding: calculateRem(15px) calculateRem(10px);
+      }
+      a {
+        font-size: calculateRem(12px);
+      }
+    }
+  }
+}

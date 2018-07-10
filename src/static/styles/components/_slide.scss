@@ -1,0 +1,87 @@
+// @import "../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css"
+
+// .wrapper {
+//   width: 1140px;
+//   margin: 0 auto;
+// }
+/* Slider 3D */
+.responsive-slide-3d {
+  position: relative;
+}
+.responsive-slide-3d .obj3d span {
+  margin-right: 24px;
+  display: inline-block;
+}
+.responsive-slide-3d img {
+  max-width: 100%;
+}
+.responsive-slide-3d .slick-arrow {
+  background: #fff;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 0 none;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+  outline: 0 none !important;
+  cursor: pointer;
+}
+.responsive-slide-3d .slick-arrow.slick-prev {
+  left: -20px;
+  right: auto;
+}
+.responsive-slide-3d .slick-arrow.slick-next {
+  left: auto;
+  right: -10px;
+}
+.i-next {
+  right: 0;
+  line-height: 2.5rem;
+  text-align: center;
+}
+.i-prev {
+  left: -20px;
+  line-height: 2.5rem;
+  text-align: center;
+}
+/* Slider img */
+.responsive-slide-img .slide-img-d {
+  margin-right: 20px;
+  display: inline-block;
+  width: 100%; 
+  display: inline-block;
+}
+.responsive-slide-img .slick-arrow.slick-next {
+    left: auto;
+    right: -10px !important;
+}
+.responsive-slide-img img {
+  max-width: 100%;
+}
+.responsive-slide-img .slick-arrow {
+  background: #fff;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 0 none;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+  outline: 0 none !important;
+  cursor: pointer;
+}
+.responsive-slide-img .slick-arrow.slick-prev {
+  left: -20px;
+  right: auto;
+}
+.responsive-slide-img .slick-arrow.slick-next {
+  left: auto;
+  right: 0;
+}
