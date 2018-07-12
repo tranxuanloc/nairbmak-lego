@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../common/Logo';
+import Logo from '../core/Logo';
 
 const Header = (props) =>
   <header className="site-header">

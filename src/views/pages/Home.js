@@ -1,7 +1,7 @@
 import React from 'react';
 
 import lego from 'static/images/lego.png';
-import Button from 'views/components/common/Button';
+import Button from 'views/components/core/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 

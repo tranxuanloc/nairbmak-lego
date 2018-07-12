@@ -4,7 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import { expect } from 'chai';
 import image from 'logo.svg';
 
-import Logo from 'views/components/common/Logo';
+import Logo from 'views/components/core/Logo';
 
 Enzyme.configure({ adapter: new Adapter() });
 

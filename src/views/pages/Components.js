@@ -1,6 +1,6 @@
 import React from 'react';
-import Card from '../components/common/card/Card';
-import Button from '../components/common/Button';
+import Card from '../components/core/card/Card';
+import Button from '../components/core/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NotificationsViewer from '../components/NotificationsViewer';
 
