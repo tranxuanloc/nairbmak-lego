@@ -6,15 +6,9 @@ exports["should match snapshot for Button(0)"] = {
       "className": "btn btn btn",
       "style": {},
       "disabled": true,
-      "children": [
-        "",
-        "Test"
-      ]
+      "children": "Test"
     },
-    "rendered": [
-      "",
-      "Test"
-    ]
+    "rendered": "Test"
   },
   "type": "button",
   "props": {

@@ -1,18 +1,26 @@
 import React from 'react';
-import Card from '../components/core/card/Card';
-import Button from '../components/core/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {Card, CardDeck, CardHeader, CardImg, CardBody, CardTitle, CardText, CardLink, CardFooter} from '../components/core/card';
+import { Button, IconButton, AnchorButton } from '../components/core/button';
+// Icons
+import { faBars, faBath, faBed, faBell, faBeer, faAddressBook, faAnchor, faPlane } from '@fortawesome/free-solid-svg-icons';
+
+import ComponentSection from '../components/ComponentSection';
 import NotificationsViewer from '../components/NotificationsViewer';
+import SampleTab from '../components/sample/SampleTab';
+import TimeProgress from '../components/core/TimeProgress';
+
+
 
 const Components = () =>
   <div className="main">
     <div className="container">
       <NotificationsViewer />
-      <h1>Components</h1>
-      <Card className='component'>Sample Component</Card>
-      <hr />
-      <section>
-        <h3>Buttons</h3>
+
+      <ComponentSection title='Sample'>
+        <Card className='component'>Sample Component</Card>
+      </ComponentSection>
+
+      <ComponentSection title='Button'>
         <div>
           <h5>Small</h5>
           <Button type='primary' size='sm'>Primary</Button>&nbsp;
@@ -55,20 +63,66 @@ const Components = () =>
         </div>
         <div>
           <h5>Icon</h5>
-          <Button type='primary' size='lg' icon={<FontAwesomeIcon icon="stroopwafel" />}>Primary</Button>&nbsp;
-          <Button type='secondary' size='lg'>Secondary</Button>&nbsp;
-          <Button type='success' size='lg'>Success</Button>&nbsp;
-          <Button type='warning' size='lg'>Warning</Button>&nbsp;
-          <Button type='danger' size='lg'>Danger</Button>&nbsp;
-          <Button type='info' size='lg'>Info</Button>&nbsp;
-          <Button type='default' size='lg'>Default</Button>
+          <IconButton type='primary' size='lg' icon={faBars}>Primary</IconButton>&nbsp;
+          <IconButton type='secondary' size='lg' icon={faBath}>Secondary</IconButton>&nbsp;
+          <IconButton type='success' size='lg' icon={faBed}>Success</IconButton>&nbsp;
+          <IconButton type='warning' size='lg' icon={faBeer}>Warning</IconButton>&nbsp;
+          <IconButton type='danger' size='lg' icon={faBell}>Danger</IconButton>&nbsp;
+          <IconButton type='info' size='lg' icon={faAddressBook}>Info</IconButton>&nbsp;
+          <IconButton type='default' size='lg' icon={faAnchor}>Default</IconButton>
         </div>
         <div>
           <h5>Custom Color</h5>
           <Button type='primary' size='lg' color='blue' bgColor='yellow'>Primary</Button>&nbsp;
           <Button type='default' size='lg' color='yellow' bgColor='blue'>Default</Button>
         </div>
-      </section>
+      </ComponentSection>
+
+      <ComponentSection title='Tab'>
+        <SampleTab />
+      </ComponentSection>
+
+      <ComponentSection title='Card'>
+        <CardDeck>
+          <Card>
+            <CardHeader>Header</CardHeader>
+            <CardImg imgSrc="https://loremflickr.com/320/240/paris" altText='Card cap' />
+            <CardBody>
+              <CardTitle>Card title</CardTitle>
+              <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+              <CardLink href='#!'>Button</CardLink>
+            </CardBody>
+            <CardFooter className='text-muted'>2 days ago</CardFooter>
+          </Card>
+
+          <Card>
+            {/* <CardHeader>Header</CardHeader> */}
+            <div className="view overlay">
+              <CardImg imgSrc="https://loremflickr.com/320/240/brazil,rio" altText='Card cap' />
+              <a href="#!">
+                <div className="mask rgba-white-slight"></div>
+              </a>
+            </div>
+            <CardBody className='text-center bg-dark text-white'>
+              <CardTitle>Card title</CardTitle>
+              <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+              <AnchorButton icon={faPlane} type='success' size='sm' color='black'>Button</AnchorButton>
+            </CardBody>
+            {/* <CardFooter className='text-muted'>2 days ago</CardFooter> */}
+          </Card>
+
+          <Card>
+            <CardHeader>Header</CardHeader>
+            <CardImg imgSrc="https://loremflickr.com/320/240/japan" altText='Card cap' />
+            <CardBody className='text-right'>
+              <CardTitle>Card title</CardTitle>
+              <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+              <CardLink href='#!'>Button</CardLink>
+              <TimeProgress number='4' type='days' progress='75%' />
+            </CardBody>
+          </Card>
+        </CardDeck>
+      </ComponentSection>
     </div>
   </div>;
 

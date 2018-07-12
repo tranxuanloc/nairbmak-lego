@@ -19,10 +19,10 @@ import Fail from 'views/auth/Fail';
 import Error404 from './views/errors/404';
 import { updateInfo } from "redux/actions/blockchain.action";
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faStroopwafel);
+// library.add(faStroopwafel);
 
 class App extends React.Component {
   constructor(props) {
