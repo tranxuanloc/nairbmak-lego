@@ -7,7 +7,7 @@ import config from 'config';
 import Metamask from 'helpers/metamask.class.js';
 import Token from 'helpers/token.class.js';
 
-import 'static/css/index.css';
+import 'static/styles/index.css';
 import logo from 'logo.svg';
 import Header from 'views/components/header';
 import Footer from 'views/components/footer';
