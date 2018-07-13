@@ -84,9 +84,12 @@ const Components = () =>
 
       <ComponentSection title='Card'>
         <CardDeck>
-          <Card>
+          <Card className='shadow-sm'>
             <CardHeader>Header</CardHeader>
             <CardImg imgSrc="https://loremflickr.com/320/240/paris" altText='Card cap' />
+            <div class="card-img-overlay">
+              <h3>50 KATT</h3>
+            </div>
             <CardBody>
               <CardTitle>Card title</CardTitle>
               <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
@@ -97,12 +100,12 @@ const Components = () =>
 
           <Card>
             {/* <CardHeader>Header</CardHeader> */}
-            <div className="view overlay">
+            {/* <div className="view overlay">
               <CardImg imgSrc="https://loremflickr.com/320/240/brazil,rio" altText='Card cap' />
               <a href="#!">
                 <div className="mask rgba-white-slight"></div>
               </a>
-            </div>
+            </div> */}
             <CardBody className='text-center bg-dark text-white'>
               <CardTitle>Card title</CardTitle>
               <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
