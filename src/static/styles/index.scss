@@ -20,21 +20,21 @@
 //
 // =Constants
 // --------------------------------------------------
-@import 'custom-variables';
+@import 'core/custom-variables';
 //
 // =Bootstrap
 // --------------------------------------------------
-@import "custom-bootstrap";
+@import "core/custom-bootstrap";
 
 //
 // =Global
 // --------------------------------------------------
-@import "general/flex";
-@import "general/mixin";
-@import "general/setting";
-@import "components/components";
-@import "partials/constants";
-@import "partials/typography";
+@import "core/general/flex";
+@import "core/general/mixin";
+@import "core/general/setting";
+@import "core/components/components";
+@import "core/partials/constants";
+@import "core/partials/typography";
 //
 // =Modules
 // --------------------------------------------------
