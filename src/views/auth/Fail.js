@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Fail = () =>
-  <div className="redeem">
+  <div className="main auth-fail">
     <div className="container">
       <div className="row">
         <div className="error-section details">

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Error404 = () =>
-      <div className="redeem">
+      <div className="main not-found">
         <div className="container">
           <div className="row">
             <div className="error-section not-found">
