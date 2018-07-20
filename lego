@@ -108,6 +108,66 @@ describe('Component: <%%NAME%% />', () => {
 });
 ";
 
+const TEST_REDUX_ACTION_TEMPLATE = "// import { expect } from 'chai';
+// import configureMockStore from 'redux-mock-store';
+// import thunk from 'redux-thunk';
+
+// import * as types from 'redux/actions/actionTypes.js';
+// import * as actions from 'redux/actions/%%NAME%%.action.js';
+
+// const middlewares = [thunk];
+// const mockStore = configureMockStore(middlewares);
+
+describe('Redux Action: %%NAME%%.action', () => {
+
+  it('should have unit test here');
+
+  // it('should do %%NAME%%', (done) => {
+
+  //   const expectedActions = [
+  //     { type: types.ACTION, data:[] },
+  //   ];
+  //   const store = mockStore({ codebases: [] });
+
+  //   store.dispatch(actions.SOMETHING()).then(() => {
+  //     // return of async actions
+  //     expect(store.getActions()).to.deep.equal(expectedActions);
+  //     done();
+  //   });
+  // });
+});
+";
+
+const TEST_REDUX_REDUCER_TEMPLATE = "// import { expect } from 'chai';
+
+// import * as types from 'redux/actions/actionTypes.js';
+// import reducer from 'redux/reducers/%%NAME%%.reducer.js';
+
+describe('Redux Reducer: %%NAME%%.reducer', () => {
+
+  it('should have unit test here');
+
+  // it('should return the initial state', () => {
+  //   expect(reducer(undefined, {})).to.deep.equal({
+  //     data: null,
+  //     selected: {}
+  //   });
+  // });
+
+  // it('should handle ACTION', () => {
+  //   expect(
+  //     reducer(undefined, {
+  //       type: types.ACTION,
+  //       data: 'Run the tests'
+  //     })
+  //   ).to.deep.equal({
+  //     data: 'Run the tests',
+  //     ...
+  //   });
+  // });
+});
+";
+
 const REDUX_ACTION_TEMPLATE = "import * as types from './actionTypes';
 
 export const do_%%NAME%% = (param) => {
@@ -134,7 +194,7 @@ export default (state = defaultState, action) => {
 };
 ";
 
-$commands = ['loc', 'page', 'component', 'test', 'redux'];
+$commands = ['loc', 'page', 'component', 'test', 'redux', 'test:redux'];
 
 $command = isset($argv[1]) ? $argv[1] : '';
 
@@ -226,11 +286,23 @@ if($command === 'loc') {
       file_put_contents("./src/tests/components/$path.test.js", TemplateEngine(TEST_COMPONENT_TEMPLATE, ['/%%NAME%%/' => $name, '/%%PATH%%/' => $path]));
       echo "A new test file created at ./src/tests/components/$path.test.js\n";
     } else if($command === 'test'){
-      if (!file_exists('./src/tests/components/'.$dir)) {
-        mkdir('./src/tests/components/'.$dir, 0777, true);
+      if (!file_exists('./src/tests/'.$dir)) {
+        mkdir('./src/tests/'.$dir, 0777, true);
       }
-      file_put_contents("./src/tests/components/$path.test.js", TemplateEngine(TEST_COMPONENT_TEMPLATE, ['/%%NAME%%/' => $name, '/%%PATH%%/' => $path]));
-      echo "A new test file created at ./src/tests/components/$path.test.js\n";
+      file_put_contents("./src/tests/$path.test.js", TemplateEngine(TEST_COMPONENT_TEMPLATE, ['/%%NAME%%/' => $name, '/%%PATH%%/' => $path]));
+      echo "A new test file created at ./src/tests/$path.test.js\n";
+    } else if($command === 'test:redux'){
+      if (!file_exists('./src/tests/redux/actions/'.$dir)) {
+        mkdir('./src/tests/redux/actions/'.$dir, 0777, true);
+      }
+      file_put_contents("./src/tests/redux/actions/$path.action.test.js", TemplateEngine(TEST_REDUX_ACTION_TEMPLATE, ['/%%NAME%%/' => $name]));
+      echo "A new test file created at ./src/tests/redux/actions/$path.action.test.js\n";
+
+      if (!file_exists('./src/tests/redux/reducers/'.$dir)) {
+        mkdir('./src/tests/redux/reducers/'.$dir, 0777, true);
+      }
+      file_put_contents("./src/tests/redux/reducers/$path.reducer.test.js", TemplateEngine(TEST_REDUX_REDUCER_TEMPLATE, ['/%%NAME%%/' => $name]));
+      echo "A new test file created at ./src/tests/redux/reducers/$path.reducer.test.js\n";
     }
 
   }
