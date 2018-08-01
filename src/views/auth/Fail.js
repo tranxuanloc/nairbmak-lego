@@ -8,7 +8,7 @@ class Fail extends React.Component {
 
   render() {
     return (
-      <div className="redeem">
+      <div className="main auth-fail">
         <div className="container">
           <div className="row">
             <div className="error-section details">

@@ -9,7 +9,7 @@ class Error404 extends React.Component {
 
   render() {
     return (
-      <div className="redeem">
+      <div className="main not-found">
         <div className="container">
           <div className="row">
             <div className="error-section not-found">
