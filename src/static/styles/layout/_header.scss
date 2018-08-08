@@ -5,6 +5,9 @@ Header
   width: 100%;
   background-color: $c-semi-black !important;
   z-index: 0;
+  .navbar-brand {
+    margin-top: calculateRem(-12px);
+  }
   .navbar {
     ul {
       @include flexbox;
@@ -12,14 +15,15 @@ Header
       margin: 0 calculateRem(-30px);
     }
     li {
-      padding: calculateRem(30px);
+      padding: calculateRem(15px);
     }
     a {
       display: block;
-      padding: calculateRem(15px) 0;
+      padding: calculateRem(15px);
       color: $c-gray;
       text-decoration: none;
-      font-size: calculateRem(16px);
+      font-size: calculateRem(14px);
+      margin-right: calculateRem(-16px);
       @include transition($transition-base);
       &:hover,
       &.active {
@@ -64,4 +68,104 @@ Header
       }
     }
   }
+}
+#search-nav {
+  padding: 33px 30px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  bottom: 20px;
+  right: 10px;
+}
+#search-form {
+  width: 521px;
+  height: 48px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  display: none;
+  float: right;
+}
+
+#search-button {
+  background-repeat: no-repeat;
+  margin-top: 18px;
+  cursor: pointer;
+  &.ic-close {
+    float: right;
+    margin-left: 26px;
+  }
+}
+
+#search-submit {
+  width: 70px;
+  height: 48px;
+  left: 10px;
+  cursor: pointer;
+  border: none;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: #1aeec2;
+  position: relative;
+  background-image: url(../svg/ic-search-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#search-term {
+  font-size: 16px;
+  line-height: 32px;
+  text-align: left;
+  width: 314px;
+  height: 48px;
+  position: relative;
+  padding-left: 21px;
+  top: -18px;
+  right: -3px;
+  border: none;
+  background-color: transparent;
+  &::-webkit-input-placeholder {
+    color: #97a4ad;
+  }
+  &::-moz-placeholder {
+    color: #97a4ad;
+  }
+  &::-ms-input-placeholder {
+    color: #97a4ad;
+  }
+  &:moz-placeholder {
+    color: #97a4ad;
+  }
+}
+#search-type {
+  font-size: 16px;
+  line-height: 32px;
+  text-align: left;
+  text-indent: 26px;
+  width: 130px;
+  height: 48px;
+  position: relative;
+  left: 0;
+  top: -18px;
+  border-radius: 0;
+  background-color: transparent;
+  border: none;
+  border-left: 1px solid #e3e3e3;
+}
+
+.ic-search {
+  width: 24px;
+  height: 18px;
+  object-fit: contain;
+  background-image: url('../svg/ic-search.svg');
+}
+
+.ic-close {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  background-image: url('../svg/ic-close.svg');
 }
