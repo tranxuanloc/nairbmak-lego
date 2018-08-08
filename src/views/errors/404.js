@@ -1,7 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Error404 = () =>
+class Error404 extends React.Component {
+
+  componentDidMount() {
+    this.props.customClass('error-page');
+  }
+
+  render() {
+    return (
       <div className="main not-found">
         <div className="container">
           <div className="row">
@@ -15,6 +22,9 @@ const Error404 = () =>
             </div>
           </div>
         </div>
-      </div>;
+      </div>
+    );
+  }
+}
 
 export default Error404;
