@@ -15,12 +15,10 @@ html {
   min-height: 100%;
   @include flexbox;
   @include flex-flow(column nowrap);
-  background-image: none !important;
+  background-color: $c-semi-black;
 }
 .main {
   @include flex(1);
   min-height: calc(100vh - 185px) !important;
-  &.not-found, &.auth-fail {
-    background-color: $c-semi-black;
-  }
+  padding-bottom: 30px;
 }

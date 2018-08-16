@@ -1,0 +1,189 @@
+.codebase-wrapper:not(.error-page), .codebase-wrapper-config {
+  position: relative;
+  background-color: #282F39;
+  .site-header {
+    background-color: transparent;
+    z-index: 1;
+  }
+  &:after {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('../images/codebase.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 360px;
+    opacity : 1;
+    z-index: 0;
+  }
+}
+header.codebase-header {
+  .navbar-brand, .navbar {
+    z-index: 1;
+  }
+}
+main.codebase {
+  .codebase-hero {
+    margin-top: 110px;
+    position: relative;
+    z-index: 1;
+  }
+  .codebase-heading {
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+    h1.heading {
+      font-size: 32px;
+      line-height: 32px;
+      color: #ffffff;
+    }
+    span.description {
+      color: #8CA0A7;
+      font-size: 18px;
+      line-height: 18px;
+      display: block;
+      margin-bottom: 26px;
+    }
+  }
+  .codebase-slider {
+    position: relative;
+    bottom: 140px;
+    z-index: 1;
+  }
+  .codebase-list {
+    position: relative;
+    margin-top: 100px;
+    color: white;
+    .codebase-section {
+      position: relative;
+      h2 {
+        color: #F4F8F9;
+        font-size: 28px;
+        line-height: 28px;
+        display: block;
+        width: 100%;
+        margin-top: 42px;
+      }
+      .codebase-card {
+        background-color: rgba(255,255,255,0.1);
+        margin: 5px;
+        width: 360px;
+        .card-header, .card-text, .card-footer {
+          color: rgba(255,255,255,0.7);
+        }
+        .card-header {
+          .team-icon {
+            background-image: url(../images/logo-team.png);
+            background-repeat: no-repeat;
+            background-position: left center;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 6px;
+            position: relative;
+            top: 6px;
+          }
+        }
+        .card-footer {
+          .link-icon {
+            background-image: url(../svg/ic-link.svg);
+            background-repeat: no-repeat;
+            background-position: 0 10px;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            position: relative;
+          }
+        }
+      }
+      .view-more {
+        position: absolute;
+        right: 0;
+        top: 42px;
+        color: $c-base;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+#codebase-modal {
+  opacity: 1;
+  div.image {
+    img {
+      width: 620px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+  }
+  span.title {
+    text-align: center;
+    font-size: 24px;
+    line-height: 36px;
+    display: block;
+    margin-top: 20px;
+  }
+  span.value {
+    text-align: center;
+    font-size: 18px;
+    line-height: 18px;
+    display: block;
+    margin-top: 10px;
+  }
+  a.button {
+    background-color: #1aeec2;
+    color: #000;
+    border-radius: 16px;
+    padding: 12px 30px;
+    display: block;
+    width: 130px;
+    text-align: center;
+    margin: 0 auto 35px;
+    &[disabled] {
+      cursor: default;
+    }
+  }
+  .content {
+    padding: 20px;
+    border-top: 1px solid #ECECEC;
+    margin-top: 20px;
+  }
+  ul {
+    list-style-type: square;
+  }
+  .modal-dialog {
+    max-width: 622px;
+    padding: 0;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+    .modal-content {
+      border-radius: 8px;
+    }
+    .modal-body {
+      padding: 0;
+      box-shadow: 0 5px 30px rgba(0,0,0,0.6);
+    }
+    .close-button {
+      background-image: url(../images/ic-close.png);
+      background-repeat: no-repeat;
+      float: right;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background-color: transparent;
+      position: relative;
+      margin-bottom: -32px;
+      bottom: 16px;
+      left: 16px;
+      cursor: pointer;
+    }
+  }
+}

@@ -3,10 +3,10 @@ Header
 ========================================================================== */
 .site-header {
   width: 100%;
-  background-color: $c-semi-black !important;
+  // background-color: $c-semi-black !important;
   z-index: 0;
   .navbar-brand {
-    margin-top: calculateRem(-12px);
+    margin-top: calculateRem(18px);
   }
   .navbar {
     ul {
@@ -69,18 +69,6 @@ Header
     }
   }
 }
-#search-nav {
-  padding: 33px 30px;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  position: relative;
-  bottom: 20px;
-  right: 10px;
-}
 #search-form {
   width: 521px;
   height: 48px;
@@ -92,7 +80,6 @@ Header
 
 #search-button {
   background-repeat: no-repeat;
-  margin-top: 18px;
   cursor: pointer;
   &.ic-close {
     float: right;
@@ -158,14 +145,27 @@ Header
 
 .ic-search {
   width: 24px;
-  height: 18px;
-  object-fit: contain;
+  height: 100%;
   background-image: url('../svg/ic-search.svg');
+  background-position: 50%;
 }
 
 .ic-close {
   width: 18px;
-  height: 18px;
-  object-fit: contain;
+  height: 100%;
   background-image: url('../svg/ic-close.svg');
+  background-position: 50%;
+}
+
+li a.auth {
+  width: 52px;
+  height: 48px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  &.error {
+    background-image: url('../svg/ic-auth-error.svg');
+  }
+  &.success {
+    background-image: url('../svg/ic-auth-success.svg');
+  }
 }
