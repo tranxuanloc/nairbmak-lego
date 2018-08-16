@@ -29,6 +29,34 @@ Header
       &.active {
         color: $c-base;
       }
+      &.sign-up {
+        color: #1AEEC2;
+        border: 1px solid #1AEEC2;
+        font-size: 16px;
+        line-height: 16px;
+        background-color: transparent;
+        border-radius: 16px;
+        &:hover {
+          background-color: #1AEEC2;
+          border: 1px solid #1AEEC2;
+          color: $c-semi-black;
+        }
+      }
+    }
+    li.value {
+      color: #1AE3E9;
+      border: 1px solid #1AE3E9;
+      height: 26px;
+      width: 75px;
+      display: block;
+      border-radius: 4px;
+      padding: 0;
+      padding-top: 2px;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 26px;
+      margin-left: 26px;
+      margin-right: 8px;
     }
   }
   @media (max-width: map_get($grid-breakpoints, 'lg')) {
@@ -165,9 +193,23 @@ li.dropdown {
     background-position: 50%;
     &.error {
       background-image: url('../svg/ic-auth-error.svg');
+      + .dropdown-menu {
+        left: -111px;
+        width: 200px;
+        .dropdown-item {
+          width: 198px;
+        }
+      }
     }
     &.success {
       background-image: url('../svg/ic-auth-success.svg');
+      + .dropdown-menu {
+        left: -272px;
+        width: 360px;
+        .dropdown-item {
+          width: 358px;
+        }
+      }
     }
     &:after, &::after {
       position: relative;
@@ -180,14 +222,11 @@ li.dropdown {
   }
   .dropdown-menu {
     background-color: #3D434C;
-    left: -111px;
-    width: 200px;
   }
   .dropdown-item {
     color: #FFFFFF;
     font-size: 14px;
     line-height: 14px;
-    width: 198px;
     border-bottom: 1px solid rgba(237, 237, 237, 0.05);
     &:last-child {
       border-bottom: 0;
@@ -203,6 +242,14 @@ li.dropdown {
     line-height: 16px;
     &:hover, &:active {
       color: #F84959;
+    }
+  }
+  .address {
+    color: #1AE3E9;
+    font-size: 14px;
+    line-height: 14px;
+    &:hover, &:active {
+      color: #1AE3E9;
     }
   }
   span.alert {

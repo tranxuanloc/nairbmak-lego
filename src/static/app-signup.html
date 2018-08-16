@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Kambria - Fueling the AI &amp; Robotics Future</title>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="icon" href="./images/favicons/favicon.ico" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</head>
+<body class="page-homepage">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+        <div id="site_wrapper" class="app-wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="navbar-brand mr-auto"><a href="https://app.kambria.io/"><img src="./svg/logo-kambria.svg" alt=""></a></div>
+                        <nav class="navbar">
+                            <ul class="nav navbar-nav">
+                                <li><a aria-current="true" href="https://app.kambria.io/" class="active">Home</a></li>
+                                <li><a aria-current="false" href="https://bounty.kambria.io/">Bounty</a></li>
+                                <li><a aria-current="false" href="https://codebase.kambria.io/">Codebase</a></li>
+                                <li><a href="mailto:support@kambria.io">Contact</a></li>
+                                <!--
+                                <li id="search-nav">
+                                    <a id="search-button" class="ic-search"></a>
+                                    <form id="search-form">
+                                        <input type="text" id="search-term" name="search-term" placeholder="Type search...">
+                                        <select id="search-type" name="search-type">
+                                            <option value="all">All</option>
+                                            <option value="projects">Projects</option>
+                                            <option value="products">Products</option>
+                                        </select>
+                                        <button id="search-submit" type="submit" name="search-submit"></button>
+                                    </form>
+                                </li>
+                                -->
+                                <!--
+                                <li class="dropdown">
+                                    <a class="auth error dropdown-toggle" href="javascript:void(0);" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item sign-in" href="#">Sign in Metamash</a>
+                                        <a class="dropdown-item profile" href="#">My profile</a>
+                                        <a class="dropdown-item notification" href="#">Notification <span class="alert">4</span></a>
+                                        <a class="dropdown-item cart" href="#">Shopping cart <span class="alert">2</span></a>
+                                        <a class="dropdown-item history" href="#">Transaction History</a>
+                                        <a class="dropdown-item logout" href="#">Logout</a>
+                                    </div>
+                                </li>
+                                -->
+                                <li>
+                                    <a class="sign-up" href="#">Login / Register</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <main class="main">
+                <div class="container p-0">
+                    <div class="row">
+                        <div class="col-sm-6 vote-box">
+                            <span class="vote-heading">Kambrier</span>
+                            <span class="vote-teaser">Vote for your favorite challenge</span>
+                            <a class="vote-button" href="javascript:void(0);">Vote Here</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <div id="hackathon-banner"></div>
+                        </div>
+                    </div>
+                    <div class="row bounty listing no-gutters card-deck">
+                        <h2 class="heading"><a href="https://bounty.kambria.io/">Bounty</a></h2>
+                        <span class="description">Hunter, explore different bounties that you can conquer</span>
+                        <div class="card shadow">
+                            <div class="image" style="background-image: url('./images/image_1.png');">
+                                <span class="value">298 KAT</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Creative uses of the Ohmni Arm</h3>
+                                <p class="card-text">With Ohmni Arm, develop a complete module to perform meaningful tasks</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="time-remaining"><span class="day">05</span><span class="time-left">days left</span><div class="progress"><div class="done" style="width: 80%;"></div></div></div>
+                                <div class="teams-icon">
+                                    <img src="./images/team-1.png">
+                                    <img src="./images/team-2.png">
+                                    <img src="./images/team-3.png">
+                                </div>
+                                <p class="card-text">3 teams are participating</p>
+                            </div>
+                        </div>
+                        <div class="card shadow">
+                            <div class="image" style="background-image: url('./images/image_2.png');">
+                                <span class="value">298 KAT</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Creative uses of the Ohmni Arm</h3>
+                                <p class="card-text">With Ohmni Arm, develop a complete module to perform meaningful tasks</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="time-remaining"><span class="day">05</span><span class="time-left">days left</span><div class="progress"><div class="done" style="width: 80%;"></div></div></div>
+                                <div class="teams-icon">
+                                    <img src="./images/team-1.png">
+                                    <img src="./images/team-2.png">
+                                    <img src="./images/team-3.png">
+                                </div>
+                                <p class="card-text">3 teams are participating</p>
+                            </div>
+                        </div>
+                        <div class="card shadow">
+                            <div class="image" style="background-image: url('./images/image_3.png');">
+                                <span class="value">298 KAT</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Creative uses of the Ohmni Arm</h3>
+                                <p class="card-text">With Ohmni Arm, develop a complete module to perform meaningful tasks</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="time-remaining"><span class="day">05</span><span class="time-left">days left</span><div class="progress"><div class="done" style="width: 80%;"></div></div></div>
+                                <div class="teams-icon">
+                                    <img src="./images/team-1.png">
+                                    <img src="./images/team-2.png">
+                                    <img src="./images/team-3.png">
+                                </div>
+                                <p class="card-text">3 teams are participating</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row codebase listing no-gutters card-deck">
+                        <h2 class="heading"><a href="https://codebase.kambria.io/">Codebase</a></h2>
+                        <span class="description">Start work? Explore what we have in the codebase</span>
+                        <div class="card shadow">
+                            <div class="card-header">
+                                <span class="team-icon"></span>kambria-team
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Arm angular</h3>
+                                <p class="card-text">One framework. Mobile & desktop.</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="link-icon"></span>23212 projects
+                            </div>
+                        </div>
+                        <div class="card shadow">
+                            <div class="card-header">
+                                <span class="team-icon"></span>kambria-team
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Arm angular</h3>
+                                <p class="card-text">One framework. Mobile & desktop.</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="link-icon"></span>23212 projects
+                            </div>
+                        </div>
+                        <div class="card shadow">
+                            <div class="card-header">
+                                <span class="team-icon"></span>kambria-team
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Arm angular</h3>
+                                <p class="card-text">One framework. Mobile & desktop.</p>
+                            </div>
+                            <div class="card-footer">
+                                <span class="link-icon"></span>23212 projects
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row marketplace listing no-gutters card-deck">
+                        <h2 class="heading"><a href="https://app.kambria.io/">Marketplace</a></h2>
+                        <span class="description">Buy or sell components</span>
+                        <div class="card shadow">
+                            <div class="image" style="background-image: url('./images/ohmni-1.png');">
+                                <span class="value">1290 KAT</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">The Ohmni telepresence robot</h3>
+                                <p class="card-text">With Ohmni Arm, develop a complete module to perform meaningful tasks</p>
+                            </div>
+                        </div>
+                        <div class="card shadow">
+                            <div class="image" style="background-image: url('./images/ohmni-2.png');">
+                                <span class="value">1290 KAT</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">The Ohmni telepresence robot</h3>
+                                <p class="card-text">With Ohmni Arm, develop a complete module to perform meaningful tasks</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row help listing no-gutters card-deck">
+                        <h2 class="heading"><a href="https://app.kambria.io/">Help & Support</a></h2>
+                        <span class="description">Learn from the experts</span>
+                        <div class="card shadow">
+                            <img class="card-img" src="./images/help-1.png">
+                            <div class="card-img-overlay">
+                                <h3 class="card-title">Ohmni for School</h3>
+                                <p class="card-text">Ohmni is being used today by schools for their homebound and hospital students who can’t attend school physically.</p>
+                            </div>
+                        </div>
+                        <div class="card shadow">
+                            <img class="card-img" src="./images/help-2.png">
+                            <div class="card-img-overlay">
+                                <h3 class="card-title">Remote Lesson</h3>
+                                <p class="card-text">Parents tell us that the biggest benefit is that their child receives the same instruction.</p>
+                            </div>
+                        </div>
+                        <div class="card shadow">
+                            <img class="card-img" src="./images/help-3.png">
+                            <div class="card-img-overlay">
+                                <h3 class="card-title">Ohmni DevKit</h3>
+                                <p class="card-text">One framework, Unlimited applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="footer">
+                <div class="container d-flex flex-row flex-wrap align-items-center justify-content-center">
+                    <div class="item copyright">Copyright © 2018 Kambria.io</div>
+                    <div class="item contact"><a href="mailto:info@kambria.io" class="color-gray color-base-hover">info@kambria.io</a></div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $('#search-button').on('click', function(){
+        if ($('#search-form').css('display') == 'none') {
+            $('#search-form').css('display', 'block');
+            $('#search-button').attr('class', 'ic-close');
+            $('ul.navbar-nav > li:not(#search-nav)').hide();
+        } else if ($('#search-form').css('display') == 'block') {
+            $('#search-form').css('display', 'none');
+            $('#search-button').attr('class', 'ic-search');
+            $('ul.navbar-nav > li:not(#search-nav)').show();
+        }
+    });
+    </script>
+</body>
+</html>
