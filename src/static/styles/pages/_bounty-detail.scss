@@ -1,0 +1,1201 @@
+.bounty-detail-wrapper:not(.error-page) {
+  position: relative;
+  background-color: #282F39;
+  position: relative;
+  &:before {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 755px;
+    z-index: 0;
+    background-color: #282F39;
+  }
+  &.teams-clicked {
+    &:before {
+      height: 675px;
+    }
+    main.bounty-detail {
+      &:before {
+        display: none;
+      }
+    }
+    .bounty-heading {
+      &.second {
+        display: none;
+      }
+    }
+    #register-button {
+      display: none;
+    }
+    .list-nav {
+      bottom: 0;
+    }
+  }
+  &.winner-clicked {
+    &:before {
+      height: 675px;
+    }
+    main.bounty-detail {
+      &:before {
+        display: none;
+      }
+    }
+    .bounty-heading {
+      &.second {
+        display: none;
+      }
+    }
+    #register-button {
+      display: none;
+    }
+    .list-nav {
+      bottom: -32px;
+    }
+    .time-remaining, #donate-notify, #stake-kat {
+      display: none;
+    }
+    .bounty-heading.first {
+      span.value {
+        bottom: -17px;
+      }
+    }
+    #closed-button {
+      display: block;
+    }
+  }
+  &.sponsors-clicked {
+    &:before {
+      height: 675px;
+    }
+    main.bounty-detail {
+      &:before {
+        display: none;
+      }
+    }
+    .bounty-heading {
+      &.second {
+        display: none;
+      }
+    }
+    #register-button {
+      display: none;
+    }
+    .list-nav {
+      bottom: 0;
+    }
+    .time-remaining, #stake-kat {
+      display: block;
+    }
+    #donate-notify {
+      display: none;
+    }
+    .bounty-heading.first {
+      span.value {
+        bottom: 15px;
+      }
+    }
+  }
+}
+header.bounty-header, header.bounty-detail-header {
+  height: 114px;
+  .navbar-brand, .navbar {
+    z-index: 1;
+  }
+}
+main.bounty-detail {
+  background-color: white;
+  &:before {
+    content: '';
+    width: 100%;
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+    position: absolute;
+    left: 0;
+    top: 620px;
+    z-index: 1;
+  }
+  .bounty-image {
+    width: 100%;
+    height: 350px;
+    display: block;
+    position: relative;
+  }
+  .bounty-heading {
+    z-index: 1;
+    h1.title {
+      color: #ffffff;
+      font-size: 24px;
+      line-height: 24px;
+      display: block;
+      text-align: left;
+      margin-top: 24px;
+    }
+    span.description {
+      color: #8CA0A7;
+      font-size: 16px;
+      line-height: 21px;
+      display: block;
+      margin-bottom: 26px;
+      width: 350px;
+    }
+    &.first {
+      span.value {
+        display: block;
+        position: absolute;
+        text-align: left;
+        left: 0;
+        bottom: 15px;
+        border-radius: 4px;
+        background-color: rgba(0,0,0,0.85);
+        background-image: url(../svg/ic-coin.svg);
+        background-position: 10px center;
+        background-repeat: no-repeat;
+        color: white;
+        padding: 5px;
+        min-width: 100px;
+        padding-left: 30px;
+      }
+    }
+    &.second {
+      position: relative;
+      top: 15px;
+      h1.title {
+        font-size: 16px;
+        line-height: 21px;
+        float: left;
+        position: relative;
+        left: 40px;
+        bottom: 24px;
+      }
+      span.description {
+        font-size: 14px;
+        line-height: 18px;
+        position: relative;
+        float: left;
+        left: -288px;
+        bottom: -24px;
+        width: 470px;
+      }
+      .teams-icon {
+        display: block;
+        float: left;
+        img {
+          position: relative;
+          margin-right: -32px;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+        }
+      }
+    }
+    div.time-remaining {
+      position: relative;
+      display: block;
+      left: 450px;
+      bottom: 95px;
+      span.day {
+        color: white;
+        font-size: 32px;
+        line-height: 32px;
+        text-align: left;
+        display: block;
+        margin-left: 5px;
+        float: left;
+      }
+      span.time-left {
+        color: white;
+        font-size: 14px;
+        line-height: 14px;
+        display: block;
+        text-align: left;
+        float: left;
+        position: relative;
+        left: 5px;
+      }
+      div.progress {
+        height: 5px;
+        background-color: #888888;
+        position: absolute;
+        width: 280px;
+        top: 18px;
+        right: 25px;
+        div.done {
+          background-color: #1AEEC2;
+          height: 5px;
+        }
+      }
+    }
+  }
+  #stake-kat {
+    background-color: transparent;
+    border: 1px solid #1aeec2;
+    color: #1aeec2;
+    border-radius: 16px;
+    padding: 18px 30px;
+    display: block;
+    width: 220px;
+    text-align: center;
+    height: 60px;
+    position: relative;
+    margin-left: auto;
+    top: 20px;
+    &:hover {
+      background-color: #1aeec2;
+      color: #000;
+    }
+  }
+  #register-button {
+    background-color: #1aeec2;
+    color: #000;
+    border-radius: 16px;
+    padding: 18px 30px;
+    display: block;
+    width: 160px;
+    text-align: center;
+    height: 60px;
+    position: relative;
+    margin-left: auto;
+    top: 10px;
+  }
+  #register-team-button {
+    background-color: #1aeec2;
+    color: #000;
+    border-radius: 16px;
+    padding: 18px 30px;
+    display: block;
+    width: 160px;
+    text-align: center;
+    height: 60px;
+    position: relative;
+    margin: auto;
+  }
+  #submit-bounty-winners-button {
+    background-color: #1aeec2;
+    color: #000;
+    border-radius: 16px;
+    padding: 18px 30px;
+    display: block;
+    width: 240px;
+    text-align: center;
+    height: 60px;
+    position: relative;
+    margin: auto;
+  }
+  #closed-button {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 18px 30px;
+    display: none;
+    width: 150px;
+    text-align: center;
+    height: 60px;
+    position: relative;
+    margin-left: auto;
+    top: 20px;
+  }
+  #donate-notify {
+    display: block;
+    position: absolute;
+    color: rgba(255,255,255,0.8);
+    bottom: 42px;
+    right: 0;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .no-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .list-nav {
+    position: relative;
+    width: 100%;
+    left: 0;
+    background-color: rgba(40,47,57,0.95);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    height: 55px;
+    font-size: 14px;
+    line-height: 14px;
+    bottom: -20px;
+    margin: 0;
+    padding: 0;
+    padding-left: calc(50vw - 454px);
+    padding-right: calc(50vw - 360px);
+    div {
+      padding: 19px;
+      float: left;
+      cursor: pointer;
+      &.active {
+        color: #1AEEC2;
+        border-bottom: 2px solid #1AEEC2;
+      }
+      &.inactive {
+        color: #8CA0A7;
+      }
+    }
+  }
+  .center {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .link {
+    color: #1AEEC2;
+  }
+  #create-team {
+    margin-bottom: 42px;
+  }
+  #filter {
+    background-color: #F4F4F4;
+    background-image: url(../images/ic-filter.svg);
+    background-repeat: no-repeat;
+    background-position: 42px center;
+    color: #000;
+    border-radius: 10px;
+    padding: 18px;
+    padding-right: 0;
+    display: block;
+    width: 160px;
+    text-align: center;
+    height: 60px;
+    position: relative;
+    margin-left: auto;
+  }
+  #search-form {
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #F4F4F4;
+  }
+  #search-term {
+    font-size: 16px;
+    line-height: 32px;
+    text-align: left;
+    width: 230px;
+    height: 60px;
+    bottom: 0;
+    position: relative;
+    padding-left: 21px;
+    border: none;
+    background-color: transparent;
+    &::-webkit-input-placeholder {
+      color: #282F39;
+    }
+    &::-moz-placeholder {
+      color: #282F39;
+    }
+    &::-ms-input-placeholder {
+      color: #282F39;
+    }
+    &:moz-placeholder {
+      color: #282F39;
+    }
+  }
+  #search-submit {
+    width: 70px;
+    height: 60px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    background-image: url(../svg/ic-search-black.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+  }
+  .bounty-detail-content {
+    color: #333333;
+    background-color: white;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 32px;
+    position: relative;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+  p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    padding-left: 1em;
+    text-indent: -.7em;
+  }
+  li::before {
+    content: "• ";
+    color: #1AEEC2;
+  }
+  div.image {
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 120px;
+  }
+  #sections {
+    margin-top: 42px;
+    min-height: calc(100vh - 420px);
+  }
+  .winner-wrapper {
+    &.gold-medal-team {
+        border-bottom: 3px solid #FFDB70;
+    }
+    &.silver-medal-team {
+        border-bottom: 3px solid #BDC3C7;
+        margin-left: -90px;
+    }
+    &.bronze-medal-team {
+        border-bottom: 3px solid #B17208;
+        margin-top: -459px;
+        margin-right: -38px;
+    }
+    .claim-reward-button {
+      background-color: #1aeec2;
+      color: #000;
+      border-radius: 16px;
+      padding: 18px 30px;
+      display: block;
+      width: 190px;
+      text-align: center;
+      height: 60px;
+      position: relative;
+      float: right;
+      margin-top: -60px;
+    }
+    padding: 30px;
+    margin: 100px auto;
+    width: 580px;
+    span.label {
+      color: rgba(40, 47, 57, 0.7);
+      display: block;
+      margin-top: 30px;
+    }
+    .team-logo {
+      background-repeat: no-repeat;
+      width: 48px;
+      height: 48px;
+      margin-bottom: -36px;
+    }
+    .team-name {
+      position: relative;
+      font-size: 24px;
+      line-height: 24px;
+      top: 0;
+      left: 54px;
+    }
+    .codebase-address {
+      color: $c-base;
+    }
+    .position-absolute {
+      right: 0;
+      top: 0;
+      span.value {
+        display: block;
+        position: relative;
+        text-align: left;
+        left: 0;
+        bottom: 0;
+        border-radius: 4px;
+        background-color: transparent;
+        background-image: url(../svg/ic-coin.svg);
+        background-position: left center;
+        background-repeat: no-repeat;
+        color: #282F39;
+        padding: 5px;
+        min-width: 100px;
+        padding-left: 20px;
+        font-size: 24px;
+      }
+      .gold-medal {
+        background-color: transparent;
+        background-image: url(../images/gold-medal.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 57px;
+        height: 67px;
+        position: absolute;
+        top: -29px;
+        right: -29px;
+      }
+      .silver-medal {
+        background-color: transparent;
+        background-image: url(../images/silver-medal.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 34px;
+        height: 55px;
+        position: absolute;
+        top: -17px;
+        right: -17px;
+      }
+      .bronze-medal {
+        background-color: transparent;
+        background-image: url(../images/bronze-medal.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 57px;
+        height: 67px;
+        position: absolute;
+        top: -29px;
+        right: -29px;
+      }
+    }
+  }
+  .sponsors-wrapper {
+    padding: 30px;
+    margin-top: 100px;
+    margin: 100px auto 0;
+    width: 580px;
+    h3 {
+      color: rgba(40, 47, 57, 0.4);
+      display: block;
+      font-size: 24px;
+      text-align: left;
+    }
+    ul {
+      list-style-type: none;
+      li {
+        padding-left: 0;
+        position: relative;
+        margin-bottom: 36px;
+        border-bottom: 1px solid #E1E1E1;
+        padding-bottom: 24px;
+        &:before {
+          display: none;
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+    .sponsor-logo {
+      background-repeat: no-repeat;
+      width: 72px;
+      height: 72px;
+      margin-bottom: -36px;
+    }
+    .sponsor-name {
+      position: relative;
+      font-size: 24px;
+      line-height: 24px;
+      top: -24px;
+      left: 84px;
+    }
+    .sponsor-email {
+      text-align: left;
+      display: block;
+      position: relative;
+      left: 98px;
+      bottom: 20px;
+    }
+    span.value {
+      display: block;
+      position: absolute;
+      text-align: left;
+      right: 0;
+      bottom: 42px;
+      background-color: transparent;
+      background-image: url(../svg/ic-coin.svg);
+      background-position: left center;
+      background-repeat: no-repeat;
+      color: #282F39;
+      padding: 5px;
+      padding-left: 28px;
+      min-width: 100px;
+      font-size: 18px;
+    }
+  }
+  section {
+    &.topics {
+      background-color: rgba(40, 47, 57, 0.95);
+      padding: 42px;
+      text-align: center;
+      height: 600px;
+      margin-bottom: 30px;
+      h2 {
+        color: white;
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 30px;
+      }
+      .topic {
+        background-color: rgba(255,255,255,0.15);
+        margin: 4px;
+        border-radius: 8px;
+        padding-bottom: 20px;
+        width: 360px;
+        float: left;
+        height: 450px;
+      }
+      div.image {
+        width: 360px;
+        height: 320px;
+        background-repeat: no-repeat;
+        background-position: center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+      span.title {
+        color: #ffffff;
+        font-size: 18px;
+        line-height: 18px;
+        display: block;
+        text-align: left;
+        padding: 16px;
+      }
+      span.description {
+        color: rgba(255,255,255,0.5);
+        font-size: 16px;
+        line-height: 21px;
+        display: block;
+        margin-top: 10px;
+        width: 360px;
+        text-align: left;
+        padding: 0 16px;
+      }
+    }
+    &.steps {
+      .step {
+        width: 100%;
+        position: relative;
+        margin: 42px 0;
+      }
+      .image {
+        width: 64px;
+        height: 64px;
+        clear: both;
+        background-repeat: no-repeat;
+      }
+      .title {
+        display: block;
+        width: 160px;
+        margin-top: 20px;
+        color: black;
+      }
+      .time {
+        color: #8CA0A7;
+        border: 1px solid #8CA0A7;
+        display: block;
+        width: 166px;
+        padding: 5px 14px;
+        border-radius: 4px;
+        margin-top: 10px;
+        text-align: center;
+      }
+      .detail {
+        width: 480px;
+        display: block;
+        position: absolute;
+        left: 230px;
+        top: 84px;
+        color: black;
+      }
+      .one {
+        .image {
+          background-image: url('../images/step-1.svg');
+        }
+      }
+      .two {
+        .image {
+          background-image: url('../images/step-2.svg');
+        }
+      }
+      .three {
+        .image {
+          background-image: url('../images/step-3.svg');
+        }
+      }
+      .four {
+        .image {
+          background-image: url('../images/step-4.svg');
+        }
+      }
+    }
+    &.teams {
+      .team {
+        width: 360px;
+        margin: 20px;
+        margin-left: 0;
+        background-color: #3D434C;
+        color: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        .join-team {
+          background-color: #1aeec2;
+          color: #000;
+          border-radius: 16px;
+          padding: 18px 30px;
+          display: block;
+          width: 240px;
+          text-align: center;
+          height: 60px;
+          position: relative;
+          margin: 42px auto;
+        }
+      }
+      div.image {
+        width: 360px;
+        height: 320px;
+        background-repeat: no-repeat;
+        background-position: center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border: 1px solid #3D434C;
+      }
+      span.title {
+        display: block;
+        padding: 10px 15px;
+      }
+      span.vacancy {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background-color: #1BE2BA;
+        height: 40px;
+        padding: 9px;
+        color: black;
+        padding-left: 14px;
+        font-size: 18px;
+        line-height: 24px;
+      }
+      span.description {
+        padding: 15px;
+        display: block;
+        font-size: 16px;
+        line-height: 21px;
+        border-bottom: 1px solid rgba(196, 196, 196, 0.25);
+      }
+      .members {
+        border-bottom: 1px solid rgba(196, 196, 196, 0.25);
+        .member {
+          display: block;
+          text-align: left;
+          padding: 15px;
+          height: 80px;
+          border-bottom: 1px solid rgba(196,196,196,0.25);
+          .avatar {
+            width: 48px;
+            height: 48px;
+          }
+          .name {
+            position: relative;
+            left: 64px;
+            bottom: 50px;
+            font-size: 18px;
+            line-height: 18px;
+          }
+          .description {
+            display: block;
+            position: relative;
+            left: 64px;
+            bottom: 48px;
+            font-size: 14px;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+  }
+}
+#bounty-modal {
+  opacity: 1;
+  div.image {
+    img {
+      width: 620px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+  }
+  span.title {
+    text-align: center;
+    font-size: 24px;
+    line-height: 36px;
+    display: block;
+    margin-top: 20px;
+  }
+  span.value {
+    text-align: center;
+    font-size: 18px;
+    line-height: 18px;
+    display: block;
+    margin-top: 10px;
+  }
+  a.button {
+    background-color: #1aeec2;
+    color: #000;
+    border-radius: 16px;
+    padding: 12px 30px;
+    display: block;
+    width: 130px;
+    text-align: center;
+    margin: 0 auto 35px;
+    &[disabled] {
+      cursor: default;
+    }
+  }
+  .content {
+    padding: 20px;
+    border-top: 1px solid #ECECEC;
+    margin-top: 20px;
+  }
+  ul {
+    list-style-type: square;
+  }
+  .modal-dialog {
+    max-width: 622px;
+    padding: 0;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+    .modal-content {
+      border-radius: 8px;
+    }
+    .modal-body {
+      padding: 0;
+      box-shadow: 0 5px 30px rgba(0,0,0,0.6);
+    }
+    .close-button {
+      background-image: url(../images/ic-close.png);
+      background-repeat: no-repeat;
+      float: right;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background-color: transparent;
+      position: relative;
+      margin-bottom: -32px;
+      bottom: 16px;
+      left: 16px;
+      cursor: pointer;
+    }
+  }
+}
+#create-team-modal, #join-team-modal, #stake-kat-modal, #submit-bounty-winners-modal, #assign-judges-modal, #claim-reward-modal {
+  opacity: 1;
+  span.title {
+    text-align: center;
+    font-size: 24px;
+    line-height: 36px;
+    display: block;
+    margin-top: 20px;
+  }
+  input[type="file"] {
+    display: none;
+  }
+  input[type="text"], select {
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    padding: 20px;
+    border: none;
+    display: block;
+    margin: 20px auto 0;
+    width: 380px;
+    color: #282F39;
+    &::-webkit-input-placeholder {
+      color: #282F39;
+    }
+    &::-moz-placeholder {
+      color: #282F39;
+    }
+    &::-ms-input-placeholder {
+      color: #282F39;
+    }
+    &:moz-placeholder {
+      color: #282F39;
+    }
+  }
+  .file-upload {
+    background-color: #F4F4F4;
+    background-image: url(https://static.kambria.io/icons/ic-upload.svg);
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    padding-top: 64px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 14px;
+    display: block;
+    color: rgba(40, 47, 57, 0.7);
+    border-radius: 10px;
+
+    label {
+      background: #343a40;
+      position: absolute;
+      line-height: 36px;
+      color: white;
+      left: 173px;
+      width: 100px;
+      border-bottom-right-radius: .3rem;
+      border-bottom-left-radius: .3rem;
+      cursor: pointer;
+      font-size: 12px;
+
+      &:hover {
+        opacity: 0.7;
+        cursor: pointer;
+      }
+    }
+  }
+  span.value {
+    text-align: center;
+    font-size: 18px;
+    line-height: 18px;
+    display: block;
+    margin-top: 10px;
+  }
+  a.button {
+    background-color: #1aeec2;
+    color: #000;
+    border-radius: 16px;
+    padding: 12px 30px;
+    display: block;
+    width: 240px;
+    text-align: center;
+    margin: 0 auto 35px;
+    &[disabled] {
+      cursor: default;
+    }
+  }
+  .content {
+    padding: 20px;
+    border-top: 1px solid #ECECEC;
+    margin-top: 20px;
+  }
+  ul {
+    list-style-type: square;
+  }
+  .modal-dialog {
+    max-width: 450px;
+    padding: 0;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+    .modal-content {
+      border-radius: 8px;
+    }
+    .modal-body {
+      padding: 0;
+      box-shadow: 0 5px 30px rgba(0,0,0,0.6);
+    }
+    .close-button {
+      background-image: url(../images/ic-close.png);
+      background-repeat: no-repeat;
+      float: right;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background-color: transparent;
+      position: relative;
+      margin-bottom: -32px;
+      bottom: 16px;
+      left: 16px;
+      cursor: pointer;
+    }
+  }
+}
+#submit-bounty-winners-modal {
+  label {
+    margin-left: 24px;
+    margin-top: 24px;
+    padding-left: 36px;
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    &[for='gold-medal-team'] {
+      background-image: url('../images/ic-gold-medal.svg');
+    }
+    &[for='silver-medal-team'] {
+      background-image: url('../images/ic-silver-medal.svg');
+    }
+    &[for='bronze-medal-team'] {
+      background-image: url('../images/ic-bronze-medal.svg');
+    }
+  }
+  input[type="text"] {
+    cursor: pointer;
+  }
+  select {
+    margin-top: 6px;
+    -webkit-appearance:none;
+    cursor: pointer;
+    option {
+      display: none;
+    }
+  }
+}
+#assign-judges-modal {
+  .modal-dialog {
+    max-width: 500px;
+  }
+  input[type="text"], select {
+    width: 444px;
+  }
+  label {
+    margin-left: 8px;
+    margin-top: 24px;
+  }
+  #add-more-judge {
+    color: $c-base;
+    margin-left: 8px;
+    margin-top: 24px;
+    display: block;
+  }
+  .judge {
+    position: relative;
+    .judge-remove {
+      background-image: url('../images/ic-remove.svg');
+      background-repeat: no-repeat;
+      position: absolute;
+      width: 16px;
+      height: 3px;
+      right: 60px;
+      top: 36px;
+      cursor: pointer;
+    }
+    .judge-minimize {
+      background-image: url('../images/ic-minimize.svg');
+      background-repeat: no-repeat;
+      position: absolute;
+      width: 12px;
+      height: 8px;
+      right: 32px;
+      top: 34px;
+      cursor: pointer;
+    }
+  }
+}
+#bounty-winners-suggestion {
+  li {
+    border-bottom: 1px solid #E8E8E8;
+    padding: 36px 16px 0;
+    position: relative;
+    cursor: pointer;
+    &:last-child {
+      border-bottom: 1px solid transparent;
+    }
+    &:before {
+      display: none;
+    }
+    &::before {
+      display: none;
+    }
+    &.selected {
+      &:after {
+        content: '✓';
+        color: #00edc3;
+        bottom: 54px;
+        font-size: 25px;
+        position: absolute;
+        right: 12px;
+      }
+      &::after {
+        content: '✓';
+        color: #00edc3;
+        bottom: 54px;
+        font-size: 25px;
+        position: absolute;
+        right: 12px;
+      }
+    }
+    &:not(.selected) {
+        opacity: 0.3;
+    }
+    .logo {
+      display: block;
+      width: 48px;
+      height: 48px;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    span.name {
+      display: block;
+      color: $c-semi-black;
+      font-size: 18px;
+      line-height: 18px;
+      position: relative;
+      left: 64px;
+      top: -48px;
+      width: 280px;
+    }
+    span.codebase {
+      display: block;
+      color: rgba(40, 47, 57, 0.8);
+      font-size: 16px;
+      line-height: 16px;
+      position: relative;
+      left: 64px;
+      top: -48px;
+      width: 280px;
+    }
+    span.address {
+      display: block;
+      color: rgba(40, 47, 57, 0.6);
+      font-size: 16px;
+      line-height: 16px;
+      position: relative;
+      left: 64px;
+      top: -48px;
+      width: 280px;
+    }
+  }
+  position: absolute;
+  background-color: white;
+  list-style-type: none !important;
+  width: 380px;
+  padding: 0 !important;
+  -webkit-transform: translate(50%, 50%);
+  transform: translate(50%, 50%);
+  left: calc(50% - 380px);
+  overflow-y: auto;
+  height: 405px;
+  z-index: 1060;
+  &[data-prize="gold-medal-team"] {
+    top: 35px;
+  }
+  &[data-prize="silver-medal-team"] {
+    top: 175px;
+  }
+  &[data-prize="bronze-medal-team"] {
+    top: 315px;;
+  }
+  &[data-winner-count="1"] {
+    height: 135px;
+    &[data-prize="gold-medal-team"] {
+      top: 165px;
+    }
+    &[data-prize="silver-medal-team"] {
+      top: 305px;
+    }
+    &[data-prize="bronze-medal-team"] {
+      top: 445px;
+    }
+  }
+  &[data-winner-count="2"] {
+    height: 270px;
+    &[data-prize="gold-medal-team"] {
+      top: 100px;
+    }
+    &[data-prize="silver-medal-team"] {
+      top: 240px;
+    }
+    &[data-prize="bronze-medal-team"] {
+      top: 380px;
+    }
+  }
+}

@@ -44,17 +44,30 @@
                 <li>
                   <a aria-current="false" href="#">Contact</a>
                 </li>
+                <!--
                 <li id="search-nav">
-                  <a id="search-button" class="ic-search"></a>
-                  <form id="search-form">
-                    <input type="text" id="search-term" name="search-term" placeholder="Type search...">
-                    <select id="search-type" name="search-type">
-                      <option value="all">All</option>
-                      <option value="projects">Projects</option>
-                      <option value="products">Products</option>
-                    </select>
-                    <button id="search-submit" type="submit" name="search-submit"></button>
-                  </form>
+                    <a id="search-button" class="ic-search"></a>
+                    <form id="search-form">
+                        <input type="text" id="search-term" name="search-term" placeholder="Type search...">
+                        <select id="search-type" name="search-type">
+                            <option value="all">All</option>
+                            <option value="projects">Projects</option>
+                            <option value="products">Products</option>
+                        </select>
+                        <button id="search-submit" type="submit" name="search-submit"></button>
+                    </form>
+                </li>
+                -->
+                <li class="dropdown">
+                    <a class="auth error dropdown-toggle" href="javascript:void(0);" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item sign-in" href="#">Sign in Metamash</a>
+                        <a class="dropdown-item profile" href="#">My profile</a>
+                        <a class="dropdown-item notification" href="#">Notification <span class="alert">4</span></a>
+                        <a class="dropdown-item cart" href="#">Shopping cart <span class="alert">2</span></a>
+                        <a class="dropdown-item history" href="#">Transaction History</a>
+                        <a class="dropdown-item logout" href="#">Logout</a>
+                    </div>
                 </li>
               </ul>
             </nav>

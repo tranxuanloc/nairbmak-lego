@@ -26,6 +26,7 @@
                                 <li><a aria-current="false" href="https://bounty.kambria.io/">Home</a></li>
                                 <li><a aria-current="false" href="#">Bounty</a></li>
                                 <li><a aria-current="true" href="#" class="active">Codebase</a></li>
+                                <li><a aria-current="false" href="#">Marketplace</a></li>
                                 <li><a aria-current="false" href="#">Contact</a></li>
                                 <!--
                                 <li id="search-nav">
@@ -41,8 +42,16 @@
                                     </form>
                                 </li>
                                 -->
-                                <li>
-                                    <a class="auth error"></a>
+                                <li class="dropdown">
+                                    <a class="auth error dropdown-toggle" href="javascript:void(0);" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item sign-in" href="#">Sign in Metamash</a>
+                                        <a class="dropdown-item profile" href="#">My profile</a>
+                                        <a class="dropdown-item notification" href="#">Notification <span class="alert">4</span></a>
+                                        <a class="dropdown-item cart" href="#">Shopping cart <span class="alert">2</span></a>
+                                        <a class="dropdown-item history" href="#">Transaction History</a>
+                                        <a class="dropdown-item logout" href="#">Logout</a>
+                                    </div>
                                 </li>
                             </ul>
                         </nav>
@@ -57,7 +66,7 @@
                             <span class="description">Kambrier</span>
                         </div>
                     </div>
-                    <div class="codebase-list container">
+                    <div class="codebase-list container p-0">
                         <section class="codebase-section row">
                             <h2>Arm</h2>
                             <div class="codebase-card card">
@@ -84,7 +93,7 @@
                                     <span class="link-icon"></span>23212 projects
                                 </div>
                             </div>
-                            <div class="codebase-card card">
+                            <div class="codebase-card card mr-0">
                                 <div class="card-header">
                                     <span class="team-icon"></span>kambria-team
                                 </div>
@@ -124,7 +133,7 @@
                                     <span class="link-icon"></span>23212 projects
                                 </div>
                             </div>
-                            <div class="codebase-card card">
+                            <div class="codebase-card card mr-0">
                                 <div class="card-header">
                                     <span class="team-icon"></span>kambria-team
                                 </div>
@@ -164,7 +173,7 @@
                                     <span class="link-icon"></span>23212 projects
                                 </div>
                             </div>
-                            <div class="codebase-card card">
+                            <div class="codebase-card card mr-0">
                                 <div class="card-header">
                                     <span class="team-icon"></span>kambria-team
                                 </div>

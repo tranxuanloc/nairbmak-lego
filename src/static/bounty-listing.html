@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Kambria - Fueling the AI &amp; Robotics Future</title>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="icon" href="./images/favicons/favicon.ico" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</head>
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+        <div id="site_wrapper" class="bounty-wrapper">
+            <header class="site-header bounty-header">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="navbar-brand mr-auto"><a href="https://app.kambria.io/"><img src="./svg/logo-kambria.svg" alt=""></a></div>
+                        <nav class="navbar">
+                            <ul class="nav navbar-nav">
+                                <li><a aria-current="false" href="https://bounty.kambria.io/">Home</a></li>
+                                <li><a aria-current="true" href="#" class="active">Bounty</a></li>
+                                <li><a aria-current="false" href="#">Codebase</a></li>
+                                <li><a aria-current="false" href="#">Marketplace</a></li>
+                                <li><a aria-current="false" href="#">Contact</a></li>
+                                <!--
+                                <li id="search-nav">
+                                    <a id="search-button" class="ic-search"></a>
+                                    <form id="search-form">
+                                        <input type="text" id="search-term" name="search-term" placeholder="Type search...">
+                                        <select id="search-type" name="search-type">
+                                            <option value="all">All</option>
+                                            <option value="projects">Projects</option>
+                                            <option value="products">Products</option>
+                                        </select>
+                                        <button id="search-submit" type="submit" name="search-submit"></button>
+                                    </form>
+                                </li>
+                                -->
+                                <li class="dropdown">
+                                    <a class="auth error dropdown-toggle" href="javascript:void(0);" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item sign-in" href="#">Sign in Metamash</a>
+                                        <a class="dropdown-item profile" href="#">My profile</a>
+                                        <a class="dropdown-item notification" href="#">Notification <span class="alert">4</span></a>
+                                        <a class="dropdown-item cart" href="#">Shopping cart <span class="alert">2</span></a>
+                                        <a class="dropdown-item history" href="#">Transaction History</a>
+                                        <a class="dropdown-item logout" href="#">Logout</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <main class="main bounty auth-error">
+                <div id="content" class="bounty-content container">
+                    <div class="row">
+                        <div class="challenges-heading">
+                            <h1 class="heading">List of challenges</h1>
+                            <span class="description">Explore our diffrent challenges</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!--
+                        <form action="" method="GET" id="search-form">
+                            <input type="text" name="term" placeholder="Search" id="search-term">
+                            <button id="search-submit" type="submit" name="search-submit"></button>
+                        </form>
+                        -->
+                        <a id="create-challenge" class="button" href="#" title="Create your own challenges"></a>
+                    </div>
+                    <section class="open bounties row">
+                        <h2 class="heading">Open Bounty</h2>
+                        <div class="bounty" data-toggle="modal" data-target="#bounty-modal">
+                            <div class="image" style="background-image: url('./images/image_1.png');">
+                              <span class="value">298 KAT</span>
+                            </div>
+                            <span class="title">Creative uses of the Ohmni Arm</span>
+                            <span class="description">With Ohmni Arm, develop a complete module to perform meaningful tasks</span>
+                            <div class="time-remaining"><span class="day">05</span><span class="time-left">days left</span><div class="progress"><div class="done" style="width: 80%;"></div></div></div>
+                        </div>
+                        <div class="bounty" data-toggle="modal" data-target="#bounty-modal">
+                            <div class="image" style="background-image: url('./images/image_2.png');">
+                              <span class="value">123 KAT</span>
+                            </div>
+                            <span class="title">Digital Industry Award 2018</span>
+                            <span class="description">With Ohmni Arm, develop a complete module to perform meaningful tasks</span>
+                            <div class="time-remaining"><span class="day">12</span><span class="time-left">days left</span><div class="progress"><div class="done" style="width: 70%;"></div></div></div>
+                        </div>
+                        <div class="bounty mr-0" data-toggle="modal" data-target="#bounty-modal">
+                            <div class="image" style="background-image: url('./images/image_3.png');">
+                              <span class="value">112 KAT</span>
+                            </div>
+                            <span class="title">Digital Industry Award 2018</span>
+                            <span class="description">With Ohmni Arm, develop a complete module to perform meaningful tasks</span>
+                            <div class="time-remaining"><span class="day">10</span><span class="time-left">days left</span><div class="progress"><div class="done" style="width: 50%;"></div></div></div>
+                        </div>
+                        <div class="bounty" data-toggle="modal" data-target="#bounty-modal">
+                            <div class="image" style="background-image: url('./images/image_4.png');">
+                              <span class="value">298 KAT</span>
+                            </div>
+                            <span class="title">Digital Industry Award 2018</span>
+                            <span class="description">With Ohmni Arm, develop a complete module to perform meaningful tasks</span>
+                            <div class="time-remaining"><span class="day">05</span><span class="time-left">days left</span><div class="progress"><div class="done" style="width: 40%;"></div></div></div>
+                        </div>
+                        <div class="bounty" data-toggle="modal" data-target="#bounty-modal">
+                            <div class="image" style="background-image: url('./images/image_5.png');">
+                              <span class="value">123 KAT</span>
+                            </div>
+                            <span class="title">Digital Industry Award 2018</span>
+                            <span class="description">With Ohmni Arm, develop a complete module to perform meaningful tasks</span>
+                            <div class="time-remaining"><span class="day">12</span><span class="time-left">days left</span><div class="progress"><div class="done" style="width: 60%;"></div></div></div>
+                        </div>
+                    </section>
+                    <section class="in-progress bounties row">
+                        <h2 class="heading">In Progress Bounty</h2>
+                        <div class="bounty" data-toggle="modal" data-target="#bounty-modal">
+                            <div class="image" style="background-image: url('./images/image_6.png');">
+                              <span class="value">323 KAT</span>
+                            </div>
+                            <span class="title">Digital Industry Award 2018</span>
+                            <span class="description">Atos et Siemens s’associent pour créer l’industrie de demain à vos côtés !</span>
+                            <span class="time">Close participants</span>
+                        </div>
+                        <div class="bounty" data-toggle="modal" data-target="#bounty-modal">
+                            <div class="image" style="background-image: url('./images/image_7.png');">
+                              <span class="value">298 KAT</span>
+                            </div>
+                            <span class="title">Digital Industry Award 2018</span>
+                            <span class="description">Atos et Siemens s’associent pour créer l’industrie de demain à vos côtés !</span>
+                            <span class="time">Close participants</span>
+                        </div>
+                        <div class="bounty mr-0" data-toggle="modal" data-target="#bounty-modal">
+                            <div class="image" style="background-image: url('./images/image_8.png');">
+                              <span class="value">253 KAT</span>
+                            </div>
+                            <span class="title">Digital Industry Award 2018</span>
+                            <span class="description">Atos et Siemens s’associent pour créer l’industrie de demain à vos côtés !</span>
+                            <span class="time">Close participants</span>
+                        </div>
+                        <div class="bounty" data-toggle="modal" data-target="#bounty-modal">
+                            <div class="image" style="background-image: url('./images/image_6.png');">
+                              <span class="value">323 KAT</span>
+                            </div>
+                            <span class="title">Digital Industry Award 2018</span>
+                            <span class="description">Atos et Siemens s’associent pour créer l’industrie de demain à vos côtés !</span>
+                            <span class="time">Close participants</span>
+                        </div>
+                        <div class="bounty" data-toggle="modal" data-target="#bounty-modal">
+                            <div class="image" style="background-image: url('./images/image_7.png');">
+                              <span class="value">298 KAT</span>
+                            </div>
+                            <span class="title">Digital Industry Award 2018</span>
+                            <span class="description">Atos et Siemens s’associent pour créer l’industrie de demain à vos côtés !</span>
+                            <span class="time">Close participants</span>
+                        </div>
+                        <div class="bounty mr-0" data-toggle="modal" data-target="#bounty-modal">
+                            <div class="image" style="background-image: url('./images/image_8.png');">
+                              <span class="value">253 KAT</span>
+                            </div>
+                            <span class="title">Digital Industry Award 2018</span>
+                            <span class="description">Atos et Siemens s’associent pour créer l’industrie de demain à vos côtés !</span>
+                            <span class="time">Close participants</span>
+                        </div>
+                    </section>
+                    <a id="see-more" href="#">See more challenges</a>
+                    <section class="closed bounties row">
+                        <h2 class="heading">Closed Bounty</h2>
+                        <div class="bounty" data-toggle="modal" data-target="#bounty-modal">
+                            <div class="image" style="background-image: url('./images/image_6.png');">
+                              <span class="value">323 KAT</span>
+                            </div>
+                            <span class="title">Digital Industry Award 2018</span>
+                            <span class="description">Atos et Siemens s’associent pour créer l’industrie de demain à vos côtés !</span>
+                            <span class="time">Finished</span>
+                        </div>
+                        <div class="bounty" data-toggle="modal" data-target="#bounty-modal">
+                            <div class="image" style="background-image: url('./images/image_7.png');">
+                              <span class="value">298 KAT</span>
+                            </div>
+                            <span class="title">Digital Industry Award 2018</span>
+                            <span class="description">Atos et Siemens s’associent pour créer l’industrie de demain à vos côtés !</span>
+                            <span class="time">Finished</span>
+                        </div>
+                        <div class="bounty mr-0" data-toggle="modal" data-target="#bounty-modal">
+                            <div class="image" style="background-image: url('./images/image_8.png');">
+                              <span class="value">253 KAT</span>
+                            </div>
+                            <span class="title">Digital Industry Award 2018</span>
+                            <span class="description">Atos et Siemens s’associent pour créer l’industrie de demain à vos côtés !</span>
+                            <span class="time">Finished</span>
+                        </div>
+                    </section>
+                </div>
+            </main>
+            <footer class="footer">
+                <div class="container d-flex flex-row flex-wrap align-items-center justify-content-center">
+                    <div class="item copyright">Copyright © 2018 Kambria.io</div>
+                    <div class="item contact"><a href="mailto:info@kambria.io" class="color-gray color-base-hover">info@kambria.io</a></div>
+                </div>
+            </footer>
+            <div id="bounty-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="bountyModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close-button" data-dismiss="modal" aria-label="Close"></button>
+                            <div class="image"><img src="./images/modal-image.png"></div>
+                            <span class="title">Candidate 1 - Creative uses of the Ohmni Arm</span>
+                            <span class="value">52321 KATT</span>
+                            <div class="content">
+                                <p>Entrants will submit a proposal. Kambria Foundation will donate Ohmni arms to the top N projects.</p>
+                                <p>Goal is for them to perform tasks with the Ohmni arm plus any additional 3d printed hardware/electronics that they build.  These will all be open sourced on Kambria after the competition is over.</p>
+                                <p><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>Artist robot arm - create a nice compliant pen/marker mount and have the arm draw</li>
+                                    <li>Cleaning robot arm - attach a mister and spray and/or wipe surfaces using the arm</li>
+                                    <li>Screwdriver arm - be able to place screws into an assembly</li>
+                                </ul>
+                                <p><strong>Marks will be awarded for creativity and technical difficulty. Contestants</strong></p>
+                            </div>
+                            <a class="button" href="javascript:void(0);">Vote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $('#search-button').on('click', function(){
+        if ($('#search-form').css('display') == 'none') {
+            $('#search-form').css('display', 'block');
+            $('#search-button').attr('class', 'ic-close');
+            $('ul.navbar-nav > li:not(#search-nav)').hide();
+        } else if ($('#search-form').css('display') == 'block') {
+            $('#search-form').css('display', 'none');
+            $('#search-button').attr('class', 'ic-search');
+            $('ul.navbar-nav > li:not(#search-nav)').show();
+        }
+    });
+    </script>
+</body>
+</html>
