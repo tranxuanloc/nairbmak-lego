@@ -326,18 +326,18 @@ main {
         display: block;
         margin: 20px auto 0;
         width: 436px;
-        color: #282F39;
+        color: rgba(40, 47, 57, 0.7);
         &::-webkit-input-placeholder {
-            color: #282F39;
+            color: rgba(40, 47, 57, 0.7);
         }
         &::-moz-placeholder {
-            color: #282F39;
+            color: rgba(40, 47, 57, 0.7);
         }
         &::-ms-input-placeholder {
-            color: #282F39;
+            color: rgba(40, 47, 57, 0.7);
         }
         &:moz-placeholder {
-            color: #282F39;
+            color: rgba(40, 47, 57, 0.7);
         }
     }
     span.value {
