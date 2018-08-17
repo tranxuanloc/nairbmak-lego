@@ -102,6 +102,7 @@
 }
 header.bounty-header, header.bounty-detail-header {
   height: 114px;
+  z-index: 1;
   .navbar-brand, .navbar {
     z-index: 1;
   }
