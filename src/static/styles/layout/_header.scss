@@ -58,6 +58,25 @@ Header
       margin-left: 26px;
       margin-right: 8px;
     }
+    li.shopping-cart {
+      width: 25px;
+      height: 24px;
+      background-image: url(../svg/ic-cart.svg);
+      background-repeat: no-repeat;
+      display: block;
+      margin-top: 30px;
+      margin-left: 15px;
+      margin-right: 15px;
+      span.value {
+        font-size: 14px;
+        position: relative;
+        bottom: 24px;
+        color: #333A43;
+        background-color: #1AEEC2;
+        border-radius: 50%;
+        padding: 0px 3px;
+      }
+    }
   }
   @media (max-width: map_get($grid-breakpoints, 'lg')) {
     .navbar {

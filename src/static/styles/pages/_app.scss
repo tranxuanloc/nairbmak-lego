@@ -1,4 +1,4 @@
-#site_wrapper:not(.error-page):not(.marketplace-wrapper) {
+#site_wrapper:not(.error-page):not(.marketplace-wrapper):not(.bounty-detail-wrapper):not(.codebase-wrapper) {
     background-color: $c-semi-black;
     position: relative;
     &:before, &::before {
@@ -23,7 +23,7 @@ main {
     background-color: $c-semi-black;
     .vote-box {
         position: relative;
-        margin-top: 120px;
+        margin-top: 134px;
         height: 290px;
         .vote-heading {
             letter-spacing: 6px;
@@ -304,5 +304,150 @@ main {
                 }
             }
         }
+    }
+}
+#sign-up-modal {
+    opacity: 1;
+    span.title {
+        text-align: center;
+        font-size: 24px;
+        line-height: 36px;
+        display: block;
+        margin-top: 20px;
+    }
+    input[type="file"] {
+        display: none;
+    }
+    input[type="text"], input[type="password"], select {
+        background-color: #F4F4F4;
+        border-radius: 10px;
+        padding: 20px;
+        border: none;
+        display: block;
+        margin: 20px auto 0;
+        width: 436px;
+        color: #282F39;
+        &::-webkit-input-placeholder {
+            color: #282F39;
+        }
+        &::-moz-placeholder {
+            color: #282F39;
+        }
+        &::-ms-input-placeholder {
+            color: #282F39;
+        }
+        &:moz-placeholder {
+            color: #282F39;
+        }
+    }
+    span.value {
+        text-align: center;
+        font-size: 18px;
+        line-height: 18px;
+        display: block;
+        margin-top: 10px;
+    }
+    a.button {
+        background-color: #1aeec2;
+        color: #000;
+        border-radius: 8px;
+        padding: 12px 30px;
+        display: block;
+        width: 436px;
+        text-align: center;
+        margin: 32px auto 35px;
+        &[disabled] {
+            cursor: default;
+        }
+    }
+    .content {
+        padding: 20px;
+        border-top: 1px solid #ECECEC;
+        margin-top: 20px;
+    }
+    ul {
+        list-style-type: none;
+        border: 0;
+    }
+    li[role='presentation'] {
+        a {
+            width: 248px;
+            display: block;
+            text-align: center;
+            height: 84px;
+            padding-top: 27px;
+            border-radius: 8px;
+            &.active {
+                color: #000;
+                font-size: 24px;
+                line-height: 36px;
+                background-color: #FFFFFF;
+                border-top: 4px solid #1AEEC2;
+            }
+            &:not(.active) {
+                color: rgba(0,0,0,0.3);
+                font-size: 18px;
+                line-height: 28px;
+                background-color: #F1F2F3;
+            }
+        }
+    }
+    .modal-dialog {
+        max-width: 500px;
+        padding: 0;
+        -webkit-transform: translate(0,0);
+        transform: translate(0,0);
+        .modal-content {
+            border-radius: 8px;
+        }
+        .modal-body {
+            padding: 0;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.6);
+        }
+        .close-button {
+            background-image: url(../images/ic-close.png);
+            background-repeat: no-repeat;
+            float: right;
+            width: 32px;
+            height: 32px;
+            border: none;
+            background-color: transparent;
+            position: relative;
+            margin-bottom: -32px;
+            bottom: 16px;
+            left: 16px;
+            cursor: pointer;
+        }
+    }
+    .alt-text {
+        color: rgba(40, 47, 57, 0.7);
+        text-align: center;
+        display: block;
+    }
+    .facebook-auth, .google-auth {
+        display: inline-block;
+        width: 208px;
+        height: 60px;
+        background-repeat: no-repeat;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+    .facebook-auth {
+        background-image: url('../images/facebook-auth.png');
+        margin-left: 32px;
+        margin-right: 12px;
+    }
+    .google-auth {
+        background-image: url('../images/google-auth.png');
+    }
+    .forgot-password {
+        position: relative;
+        top: 48px;
+        width: 100%;
+        display: block;
+        text-align: center;
+        font-size: 16px;
+        color: white;
+        line-height: 16px;
     }
 }
