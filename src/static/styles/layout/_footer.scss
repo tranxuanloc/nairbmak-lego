@@ -4,10 +4,6 @@ Footer
 footer.footer {
   color: $c-gray;
   padding: 25px;
-  background-color: $c-semi-black;
-  position: relative;
-  bottom: 0;
-  width: 100%;
   .item {
     position: relative;
     font-size: calculateRem(14px);

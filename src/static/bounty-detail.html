@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Kambria - Fueling the AI &amp; Robotics Future</title>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="icon" href="./images/favicons/favicon.ico" />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</head>
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+        <div id="site_wrapper" class="bounty-detail-wrapper">
+            <header class="site-header bounty-detail-header">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="navbar-brand mr-auto"><a href="https://app.kambria.io/"><img src="./svg/logo-kambria.svg" alt=""></a></div>
+                        <nav class="navbar">
+                            <ul class="nav navbar-nav">
+                                <li><a aria-current="false" href="https://bounty.kambria.io/">Home</a></li>
+                                <li><a aria-current="true" href="#" class="active">Bounty</a></li>
+                                <li><a aria-current="false" href="#">Codebase</a></li>
+                                <li><a aria-current="false" href="#">Contact</a></li>
+                                <li class="shopping-cart">
+                                    <span class="value">2</span>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="auth error dropdown-toggle" href="javascript:void(0);" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item sign-in" href="#">Sign in Metamash</a>
+                                        <a class="dropdown-item profile" href="#">My profile</a>
+                                        <a class="dropdown-item notification" href="#">Notification <span class="alert">4</span></a>
+                                        <a class="dropdown-item cart" href="#">Shopping cart <span class="alert">2</span></a>
+                                        <a class="dropdown-item history" href="#">Transaction History</a>
+                                        <a class="dropdown-item logout" href="#">Logout</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <main class="main bounty-detail">
+                <div class="bounty-hero container">
+                    <div class="row">
+                        <div class="bounty-image" style="background-image: url('./images/bounty-banner-1.png');"></div>
+                    </div>
+                    <div class="row position-relative">
+                        <div class="bounty-heading first">
+                            <h1 class="title">Creative uses of the Ohmni Arm</h1>
+                            <span class="description">With Ohmni Arm, develop a complete module to perform meaningful tasks</span>
+                            <div class="time-remaining"><span class="day">10</span><span class="time-left">days left</span><div class="progress"><div class="done" style="width: 80%;"></div></div></div>
+                            <span class="value">298 KAT</span>
+                        </div>
+                        <a id="stake-kat" class="button" href="#" data-toggle="modal" data-target="#stake-kat-modal">Stake KAT</a>
+                        <a id="closed-button" class="button">Closed</a>
+                        <span id="donate-notify">Currently, 111 KAT have been donated</span>
+                    </div>
+                    <div class="row">
+                        <div class="bounty-heading second">
+                            <div class="teams-icon">
+                                <img src="./images/team-1.png">
+                                <img src="./images/team-2.png">
+                                <img src="./images/team-3.png">
+                            </div>
+                            <h1 class="title">3 teams are looking for additional team-mates</h1>
+                            <span class="description">Want to participate? Create your own team or Join an existing one below</span>
+                        </div>
+                        <a id="register-button" class="button" href="#" data-toggle="modal" data-target="#create-team-modal">Register now</a>
+                    </div>
+                </div>
+                <div class="container-fluid no-padding">
+                    <div class="list-nav row" id="tabs">
+                        <div data-location="brief" class="active">Brief</div>
+                        <div data-location="process" >Process of Selection</div>
+                        <div data-location="judge" >Judging Criteria</div>
+                        <div data-location="teams" >Teams</div>
+                        <div data-location="winner" >Winner</div>
+                        <div data-location="sponsors" >Sponsors</div>
+                        <div data-location="faq" >FAQ</div>
+                        <div data-location="discussion" >Discussion</div>
+                    </div>
+                </div>
+                <div id="sections">
+                    <div id="brief" class="bounty-detail-content">
+                        <div class="container">
+                            <div class="row">
+                                <h2>Creative use of Ohmni Arm & the Ohmni Dev Kit</h2>
+                                <p>Are you a maker? Do you want to do something that is innovative & matter? At Ohmni Lab, we just announced an open development kit for telepresence robotics to enable faster, easier, and less expensive development of customized robotic applications that sit on top of telepresence systems. And guess what? This mission need you!</p>
+                                <h2>Take up the Challenge</h2>
+                                <p class="center">and show the world what you can do with the Ohmni Arm</p>
+                                <p>The objective is to perform the useful tasks with the Ohmni Arm plus any additional 3d printed hardware/electronics that they build. These will all be open sourced on Kambria after the competition is over.</p>
+                                <p>With the Ohmni coding framework for robotics - developers, researchers, and students can get the power of our telepresence platform in one unified package. Until now, truly open platforms for telepresence have not existed, and developers have been reinventing code with little or no reuse. With the Ohmni developer kit built on the proven technology used in our own robots, we enable faster, cheaper, and easier development of your telepresence applications.</p>
+                                <p class="center"><iframe width="700" height="394" src="https://www.youtube.com/embed/xmdOx9hy6f8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+                            </div>
+                        </div>
+                        <section class="topics">
+                            <div class="container">
+                                <h2>A few topics for inspiration</h2>
+                                <div class="topic">
+                                    <div class="image" style="background-image: url('https://static.kambria.io/bounty/artist_robot_arm.png');"></div>
+                                    <span class="title">Artist robot arm</span>
+                                    <span class="description">Create a nice compliant pen/marker mount and have the arm draw</span>
+                                </div>
+                                <div class="topic">
+                                    <div class="image" style="background-image: url('https://static.kambria.io/bounty/cleaning_robot_arm.png');"></div>
+                                    <span class="title">Cleaning robot arm</span>
+                                    <span class="description">Attach a mister and spray and/or wipe surfaces using the arm</span>
+                                </div>
+                                <div class="topic">
+                                    <div class="image" style="background-image: url('https://static.kambria.io/bounty/screwdriver_arm.png');"></div>
+                                    <span class="title">Screwdriver arm</span>
+                                    <span class="description">Be able to place screws into an assembly</span>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="container">
+                            <h2>About the Ohmni DevKit</h2>
+                            <p>The new Ohmni DevKit is based on the affordable, production-grade Ohmni telepresence robot and is designed for maximum hardware and software extensibility.  Any developer can plug in custom hardware (such as Arduino-based electronics, servos, lights), as well as their own USB devices. The newly launched in-call Ohmni API makes it easy to remotely control these devices, with no networking, signaling, or cloud development required. With Ohmni coding framework for robotics, developers can build rich, interactive HTML5/CSS/JS overlays to Ohmni's browser-based calls that can send and receive commands in real time with Ohmni and your custom devices.</p>
+                            <p>The Ohmni DevKit includes:</p>
+                            <ul>
+                                <li>1x Ohmni Dev Edition - ROS dev libraries and modules preinstalled</li>
+                                <li>3D printed mounting bracket kit - attach your devices anywhere on Ohmni</li>
+                                <li>Arduino-based flashlight sample module and reference design</li>
+                                <li>Arduino power + serial adapter kit</li>
+                                <li>Arduino libraries and reference code for packet bus</li>
+                            </ul>
+                            <p>Advantages of new Ohmni DevKit:</p>
+                            <ul>
+                                <li>Easy to extend Ohmni’s browser telepresence UI with your own custom overlays</li>
+                                <li>No need for network development, infrastructure, or signaling</li>
+                                <li>Leverage Ohmni’s hardware accelerated HD audio/video codecs</li>
+                                <li>Full ROS support</li>
+                                <li>Plug and play support for 3rd party electronics and hardware, i.e. Arduino</li>
+                                <li>Ability to add your own USB devices, such as depth cameras</li>
+                                <li>Ohmni OS built on top of open frameworks like Android 7.1</li>
+                                <li>Modifiable, standard Linux kernel makes it easy to add device support</li>
+                                <li>Easy to build and deploy using Ohmni cloud robotics development framework</li>
+                                <li>Customizable height between 4'8" and 4' tall for natural interaction</li>
+                            </ul>
+                            <p>Entrants will submit a proposal. Kambria Foundation will donate Ohmni arms to the top N projects.</p>
+                        </div>
+                    </div>
+                    <div id="process" class="bounty-detail-content container">
+                        <div class="row">
+                            <p>Contestants</p>
+                            <p>Interested? Register now. Submit your idea, form a team, or if you need more inspiration, look for a concept you want to explore with other innovators. Explore our blog for additional inspiration, spark your creativity, generate bold solutions or find talented team members.</p>
+                        </div>
+                        <section class="steps row">
+                            <div class="step one">
+                                <div class="image"></div>
+                                <span class="title">Step 1 - Registration, Ideation, and Team Formation</span>
+                                <span class="time">June 13 - August 8</span>
+                                <div class="detail">
+                                    <p>1. Work alone or as part of a team (6 people maximum)</p>
+                                    <p>2. Register your team here and register a Codebase for  your team</p>
+                                    <p>3. Submit your application before August 8 by committing the proposal into your Codebase</p>
+                                </div>
+                            </div>
+                            <div class="step two">
+                                <div class="image"></div>
+                                <span class="title">Step 2 - Coaching and Collaboration</span>
+                                <span class="time">June 13 - August 8</span>
+                                <div class="detail">
+                                    <p>After momentum has been built over the course of the first four weeks, coaches will begin to provide feedback and encouragement to teams to refine ideas and prepare for submission.</p>
+                                </div>
+                            </div>
+                            <div class="step three">
+                                <div class="image"></div>
+                                <span class="title">Step 3 - Judging</span>
+                                <span class="time">June 13 - August 8</span>
+                                <div class="detail">
+                                    <p>1. Judging Round 1 (August 8 - 15): Private Vote by Kambria expert team</p>
+                                    <p>2. Judging Round 2 (August 15 - 24): Public Vote by Kambria community</p>
+                                </div>
+                            </div>
+                            <div class="step four">
+                                <div class="image"></div>
+                                <span class="title">Step 4 - Winners Selected</span>
+                                <span class="time">September</span>
+                                <div class="detail">
+                                    <p>In September, winners will be selected</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div id="judge" class="bounty-detail-content container">
+                      <a href="#" data-toggle="modal" data-target="#assign-judges-modal">Test assign judges</a>
+                        <p>Vote will be awarded for creativity and technical difficulty. The following matrix will be used to vote for the project</p>
+                        <p>1. Impact to the society and Kambria community</p>
+                        <p>2. Creativity of the developer</p>
+                        <p>3. Technical difficulty of the solution</p>
+                        <p>4. Completeness of the Solution & KDNA </p>
+                        <h3>Eligibility</h3>
+                        <ul>
+                          <li>Participation in the Challenge, and as such, the awarding of prizes, is limited to individuals who are legal adults (and can prove this via identity documents) or, in the event that the person is a minor, have provided permission from their parent or guardian via the parental permission form, duly completed and signed.</li>
+                          <li>At the time of registration, participants must certify that they fulfil the aforementioned criteria. The delivery of prizes to winners will be conditional upon participants’ ability to justify their compliance with the aforementioned conditions.</li>
+                        </ul>
+                        <h3>Participation</h3>
+                        <ul>
+                          <li>Participants may make submissions at any point during which the Challenge is open (June 13 - August 8)</li>
+                          <li>Participants may make as many distinct submissions as they like. Duplicate submissions will be disregarded.</li>
+                        </ul>
+                        <h3>Team Size</h3>
+                        <ul>
+                          <li>Team size should be between one and six users on the platform.</li>
+                          <li>Individuals may submit ideas on behalf of a larger, pre-existing team.</li>
+                        </ul>
+                        <h3>Intellectual Property</h3>
+                        <ul>
+                          <li>The output and other information or documentation submitted by participants will be openly licensed and published in Kambria Codebase.</li>
+                          <li>The solutions proposed under the Challenge remain the property of the participants. Challenge partners are not authorized to commercialize or implement these solutions without receiving prior consent from the appropriate teams.</li>
+                          <li>All the participants guarantee that they are the exclusive authors of the content (ideas, creations, images and more generally any document) of the projects and that these do not violate, directly and/or indirectly, or incorporate any element that may be the object of a property right of a third party, without any limit of territory.</li>
+                        </ul>
+                        <h3>Selection of Winners</h3>
+                        <ul>
+                          <li>The winning solution will be selected after 2 round of votes
+                            <ul>
+                              <li>Judging round 1<br/>Global expert from Kambria will utilize KambriaVote to vote for 10 teams</li>
+                              <li>Judging round 2<br/>The public will do another round of vote for the 10 selected solution. The solution with highest number of votes from both public and expert team will be awarded</li>
+                            </ul>
+                          </li>
+                        </ul>
+                    </div>
+                    <div id="teams" class="bounty-detail-content container">
+                        <h2>3 teams are looking for additional team-mates</h2>
+                        <p class="center">Want to join a team? You can apply to different teams and chat with them to see if it's a good fit.</p>
+                        <a id="submit-bounty-winners-button" class="center button" href="#" data-toggle="modal" data-target="#submit-bounty-winners-modal">Submit Bounty Winners</a>
+                        <!--
+                        <a id="register-team-button" class="center button" href="#" data-toggle="modal" data-target="#create-team-modal">Register now</a>
+                        -->
+                        <div class="row">
+                            <form action="" method="GET" id="search-form">
+                                <input type="text" name="term" placeholder="Search" id="search-term">
+                                <button id="search-submit" type="submit" name="search-submit"></button>
+                            </form>
+                            <a id="filter" href="#">Filter</a>
+                        </div>
+                        <section class="teams row">
+                            <div class="team" data-toggle="modal" data-target="#team-modal">
+                                <div class="image" style="background-image: url('https://static.kambria.io/bounty/team_1.png');"></div>
+                                <span class="title">Herberger Online Learning</span>
+                                <span class="vacancy">2 members - 4 open slots</span>
+                                <span class="description">We are the online learning unit supporting the Herberger Institute for Design & the Arts at Arizona State University. We create modularized learning experiences combined into personalized learning pathways to share design and arts thinking globally.</span>
+                                <div class="members">
+                                    <div class="member">
+                                        <div class="avatar" style="background-image: url('https://static.kambria.io/bounty/avatar.png');"></div>
+                                        <span class="name">Superman</span>
+                                        <div class="description">
+                                            <p>superman@kambria.io</p>
+                                        </div>
+                                    </div>
+                                    <div class="member">
+                                        <div class="avatar" style="background-image: url('https://static.kambria.io/bounty/avatar.png');"></div>
+                                        <span class="name">Ironman</span>
+                                        <div class="description">
+                                            <p>ironman@kambria.io</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="join-team" href="#" data-toggle="modal" data-target="#join-team-modal">Join team</a>
+                            </div>
+                            <div class="team" data-toggle="modal" data-target="#team-modal">
+                                <div class="image" style="background-image: url('https://static.kambria.io/bounty/team_2.png');"></div>
+                                <span class="title">Herberger Online Learning</span>
+                                <span class="vacancy">2 members - 4 open slots</span>
+                                <span class="description">We are the online learning unit supporting the Herberger Institute for Design & the Arts at Arizona State University. We create modularized learning experiences combined into personalized learning pathways to share design and arts thinking globally.</span>
+                                <div class="members">
+                                    <div class="member">
+                                        <div class="avatar" style="background-image: url('https://static.kambria.io/bounty/avatar.png');"></div>
+                                        <span class="name">Thor</span>
+                                        <div class="description">
+                                            <p>thor@kambria.io</p>
+                                        </div>
+                                    </div>
+                                    <div class="member">
+                                        <div class="avatar" style="background-image: url('https://static.kambria.io/bounty/avatar.png');"></div>
+                                        <span class="name">Hulk</span>
+                                        <div class="description">
+                                            <p>hulk@kambria.io</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="join-team" href="#" data-toggle="modal" data-target="#join-team-modal">Join team</a>
+                            </div>
+                            <div class="team" data-toggle="modal" data-target="#team-modal">
+                                <div class="image" style="background-image: url('https://static.kambria.io/bounty/team_3.png');"></div>
+                                <span class="title">Herberger Online Learning</span>
+                                <span class="vacancy">2 members - 4 open slots</span>
+                                <span class="description">We are the online learning unit supporting the Herberger Institute for Design & the Arts at Arizona State University. We create modularized learning experiences combined into personalized learning pathways to share design and arts thinking globally.</span>
+                                <div class="members">
+                                    <div class="member">
+                                        <div class="avatar" style="background-image: url('https://static.kambria.io/bounty/avatar.png');"></div>
+                                        <span class="name">Spiderman</span>
+                                        <div class="description">
+                                            <p>spiderman@kambria.io</p>
+                                        </div>
+                                    </div>
+                                    <div class="member">
+                                        <div class="avatar" style="background-image: url('https://static.kambria.io/bounty/avatar.png');"></div>
+                                        <span class="name">Wonderwoman</span>
+                                        <div class="description">
+                                            <p>wonderwoman@kambria.io</p>
+                                        </div>
+                                    </div>
+                                    <div class="member">
+                                        <div class="avatar" style="background-image: url('https://static.kambria.io/bounty/avatar.png');"></div>
+                                        <span class="name">Wolverine</span>
+                                        <div class="description">
+                                            <p>wolverine@kambria.io</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="join-team" href="#" data-toggle="modal" data-target="#join-team-modal">Join team</a>
+                            </div>
+                        </section>
+                    </div>
+                    <div id="winner" class="bounty-detail-content container">
+                        <div class="winner-wrapper position-relative shadow-lg gold-medal-team">
+                            <div class="team-logo" style="background-image: url('./images/winner-1.png');"></div>
+                            <span class="team-name">Kambria</span>
+                            <span class="label">Codebase name</span>
+                            <span class="codebase-name">Lego</span>
+                            <span class="label">Codebase address</span>
+                            <a class="codebase-address" href="#">github/kambria-io/lego</a>
+                            <span class="label">3 Team members</span>
+                            <div class="teams-icon">
+                                <img src="./images/team-1.png">
+                                <img src="./images/team-2.png">
+                                <img src="./images/team-3.png">
+                            </div>
+                            <a class="claim-reward-button" href="#" data-toggle="modal" data-target="#claim-reward-modal">Claim my reward</a>
+                            <div class="position-absolute">
+                                <span class="label">Win Prize</span>
+                                <span class="value">298 KAT</span>
+                                <div class="gold-medal"></div>
+                            </div>
+                        </div>
+                        <div class="winner-wrapper position-relative shadow-lg silver-medal-team">
+                            <div class="team-logo" style="background-image: url('./images/winner-2.png');"></div>
+                            <span class="team-name">Bhuvan Official</span>
+                            <span class="label">Codebase name</span>
+                            <span class="codebase-name">Lion</span>
+                            <span class="label">Codebase address</span>
+                            <a class="codebase-address" href="#">github/bhuvan-official/lion</a>
+                            <span class="label">2 Team members</span>
+                            <div class="teams-icon">
+                                <img src="./images/team-1.png">
+                                <img src="./images/team-2.png">
+                            </div>
+                            <a class="claim-reward-button" href="#" data-toggle="modal" data-target="#claim-reward-modal">Claim my reward</a>
+                            <div class="position-absolute">
+                                <span class="label">Win Prize</span>
+                                <span class="value">120 KAT</span>
+                                <div class="silver-medal"></div>
+                            </div>
+                        </div>
+                        <div class="winner-wrapper position-relative shadow-lg bronze-medal-team">
+                            <div class="team-logo" style="background-image: url('./images/winner-3.png');"></div>
+                            <span class="team-name">Washington</span>
+                            <span class="label">Codebase name</span>
+                            <span class="codebase-name">Capitals</span>
+                            <span class="label">Codebase address</span>
+                            <a class="codebase-address" href="#">github/washington/capitals</a>
+                            <span class="label">2 Team members</span>
+                            <div class="teams-icon">
+                                <img src="./images/team-1.png">
+                                <img src="./images/team-2.png">
+                            </div>
+                            <a class="claim-reward-button" href="#" data-toggle="modal" data-target="#claim-reward-modal">Claim my reward</a>
+                            <div class="position-absolute">
+                                <span class="label">Win Prize</span>
+                                <span class="value">80 KAT</span>
+                                <div class="bronze-medal"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sponsors" class="bounty-detail-content container">
+                        <div class="sponsors-wrapper position-relative">
+                            <h3>Sponsors</h3>
+                            <ul class="sponsors">
+                                <li class="sponsor">
+                                    <div class="sponsor-logo" style="background-image: url('./images/sponsor-1.svg');"></div>
+                                    <span class="sponsor-name">Hashed</span>
+                                    <span class="sponsor-email">hashed@gmail.com</span>
+                                    <span class="value">500 KAT</span>
+                                </li>
+                                <li class="sponsor">
+                                    <div class="sponsor-logo" style="background-image: url('./images/sponsor-2.svg');"></div>
+                                    <span class="sponsor-name">Dragon Capital</span>
+                                    <span class="sponsor-email">dragoncapital_vn@gmail.com</span>
+                                    <span class="value">500 KAT</span>
+                                </li>
+                            </ul>
+                            <h3>Anonymous Sponsors</h3>
+                            <ul class="sponsors">
+                                <li class="sponsor">
+                                    <div class="sponsor-logo" style="background-image: url('https://static.kambria.io/sponsor/sponsor-anonymous.png');"></div>
+                                    <span class="sponsor-name">Anonymous</span>
+                                    <span class="sponsor-email">N/A</span>
+                                    <span class="value">1500 KAT</span>
+                                </li>
+                                <li class="sponsor">
+                                    <div class="sponsor-logo" style="background-image: url('https://static.kambria.io/sponsor/sponsor-anonymous.png');"></div>
+                                    <span class="sponsor-name">Anonymous</span>
+                                    <span class="sponsor-email">N/A</span>
+                                    <span class="value">2500 KAT</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="footer">
+                <div class="container d-flex flex-row flex-wrap align-items-center justify-content-center">
+                    <div class="item copyright">Copyright © 2018 Kambria.io</div>
+                    <div class="item contact"><a href="mailto:info@kambria.io" class="color-gray color-base-hover">info@kambria.io</a></div>
+                </div>
+            </footer>
+            <div id="bounty-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="bountyModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close-button" data-dismiss="modal" aria-label="Close"></button>
+                            <div class="image"><img src="./images/modal-image.png"></div>
+                            <span class="title">Candidate 1 - Creative uses of the Ohmni Arm</span>
+                            <span class="value">52321 KATT</span>
+                            <div class="content">
+                                <p>Entrants will submit a proposal. Kambria Foundation will donate Ohmni arms to the top N projects.</p>
+                                <p>Goal is for them to perform tasks with the Ohmni arm plus any additional 3d printed hardware/electronics that they build.  These will all be open sourced on Kambria after the competition is over.</p>
+                                <p><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>Artist robot arm - create a nice compliant pen/marker mount and have the arm draw</li>
+                                    <li>Cleaning robot arm - attach a mister and spray and/or wipe surfaces using the arm</li>
+                                    <li>Screwdriver arm - be able to place screws into an assembly</li>
+                                </ul>
+                                <p><strong>Marks will be awarded for creativity and technical difficulty. Contestants</strong></p>
+                            </div>
+                            <a class="button" href="javascript:void(0);">Vote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="create-team-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="teamModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close-button" data-dismiss="modal" aria-label="Close"></button>
+                            <span class="title">Creating team</span>
+                            <div class="content">
+                              <label for="file-upload" class="file-upload">
+                                Upload logo
+                              </label>
+                              <input id="file-upload" type="file"/>
+                              <input type="text" name="team-name" placeholder="Team name">
+                              <input type="text" name="description" placeholder="Description">
+                              <select name="member-quantity">
+                                <option selected value="0">Max number of member</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                              </select>
+                              <input type="text" name="username" placeholder="User name">
+                              <input type="text" name="email" placeholder="Email">
+                            </div>
+                            <a class="button" href="javascript:void(0);">Create team</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="submit-bounty-winners-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="teamModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close-button" data-dismiss="modal" aria-label="Close"></button>
+                            <span class="title">Submit Bounty Winners</span>
+                            <div class="content">
+                              <label for="gold-medal-team">Winner</label>
+                              <select name="gold-medal-team" id="gold-medal-team">
+                                <option selected value="0" readonly="readonly">Select team name</option>
+                              </select>
+                              <label for="silver-medal-team">2nd</label>
+                              <select name="silver-medal-team" id="silver-medal-team">
+                                <option selected value="0" readonly="readonly">Select team name</option>
+                              </select>
+                              <label for="bronze-medal-team">3rd</label>
+                              <select name="bronze-medal-team" id="bronze-medal-team">
+                                <option selected value="0" readonly="readonly">Select team name</option>
+                              </select>
+                            </div>
+                            <a class="button" href="javascript:void(0);">Submit</a>
+                        </div>
+                        <ul id="bounty-winners-suggestion" class="shadow-lg" data-prize="" data-winner-count="">
+                            <li class="winner" data-team-name="Kambria">
+                                <div class="logo" style="background-image: url('./images/winner-1.png');"></div>
+                                <span class="name">Kambria</span>
+                                <span class="codebase">Codebase - lego</span>
+                                <span class="address">github/kambria-io/lego</span>
+                            </li>
+                            <li class="winner selected" data-team-name="Bhuvan Official">
+                                <div class="logo" style="background-image: url('./images/winner-2.png');"></div>
+                                <span class="name">Bhuvan Official</span>
+                                <span class="codebase">Codebase - lion</span>
+                                <span class="address">github/bhuvan-official/lion</span>
+                            </li>
+                            <li class="winner" data-team-name="Washington">
+                                <div class="logo" style="background-image: url('./images/winner-3.png');"></div>
+                                <span class="name">Washington</span>
+                                <span class="codebase">Codebase - capitals</span>
+                                <span class="address">github/washington/capitals</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="assign-judges-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="teamModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close-button" data-dismiss="modal" aria-label="Close"></button>
+                            <span class="title">Assign Judges</span>
+                            <div class="content">
+                              <div id="judges">
+                                <div class="judge">
+                                  <label>Judge 1</label>
+                                  <input type="text" name="judge-name-1" placeholder="Name">
+                                  <input type="text" name="judge-email-1" placeholder="Email">
+                                  <input type="text" name="judge-address-1" placeholder="Address">
+                                  <span class="judge-remove"></span>
+                                  <span class="judge-minimize"></span>
+                                </div>
+                                <div class="judge">
+                                  <label>Judge 2</label>
+                                  <input type="text" name="judge-name-2" placeholder="Name">
+                                  <input type="text" name="judge-email-2" placeholder="Email">
+                                  <input type="text" name="judge-address-2" placeholder="Address">
+                                  <span class="judge-remove"></span>
+                                  <span class="judge-minimize"></span>
+                                </div>
+                              </div>
+                              <a id="add-more-judge" href="javascript:void(0);">+ Add more Judge</a>
+                            </div>
+                            <a class="button" href="javascript:void(0);">Assign Judges</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="join-team-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="teamModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close-button" data-dismiss="modal" aria-label="Close"></button>
+                            <span class="title">Joining team</span>
+                            <div class="content">
+                              <input type="text" name="username" placeholder="User name">
+                              <input type="text" name="email" placeholder="Email">
+                            </div>
+                            <a class="button" href="javascript:void(0);">Join team</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="stake-kat-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="teamModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close-button" data-dismiss="modal" aria-label="Close"></button>
+                            <span class="title">Staking KATT</span>
+                            <div class="content">
+                              <input type="text" name="amount" placeholder="Amount of KATT">
+                              <input type="text" name="sponsor" placeholder="The sponsor">
+                            </div>
+                            <a class="button" href="javascript:void(0);">Stake KATT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="claim-reward-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="teamModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close-button" data-dismiss="modal" aria-label="Close"></button>
+                            <span class="title">Claim my reward</span>
+                            <div class="content">
+                              <input type="text" name="amount" placeholder="Amount of KATT">
+                            </div>
+                            <a class="button" href="javascript:void(0);">Claim</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript">
+$('.bounty-detail-content').hide();
+$('#tabs > div').each(function(){
+    if ($(this).hasClass('active')) {
+        $('#'+$(this).attr('data-location')).show();
+    } else {
+        $('#'+$(this).attr('data-location')).hide();
+    }
+});
+if ($('#tabs > div.active').attr('data-location') == 'teams') {
+    $('.bounty-detail-wrapper').removeClass('teams-clicked').addClass('teams-clicked');
+} else {
+    $('.bounty-detail-wrapper').removeClass('teams-clicked');
+}
+if ($('#tabs > div.active').attr('data-location') == 'winner') {
+    $('.bounty-detail-wrapper').removeClass('winner-clicked').addClass('winner-clicked');
+} else {
+    $('.bounty-detail-wrapper').removeClass('winner-clicked');
+}
+if ($('#tabs > div.active').attr('data-location') == 'sponsors') {
+    $('.bounty-detail-wrapper').removeClass('sponsors-clicked').addClass('sponsors-clicked');
+} else {
+    $('.bounty-detail-wrapper').removeClass('sponsors-clicked');
+}
+$('#tabs > div').on('click', function(){
+    if ($(this).hasClass('active')) {
+        $('#'+$(this).attr('data-location')).show();
+    } else if (!$(this).hasClass('active')) {
+        $('#tabs > div.active').removeClass('active');
+        $(this).removeClass('active').addClass('active');
+        $('#'+$(this).attr('data-location')).hide();
+    }
+    $('.bounty-detail-content').hide();
+    $('#tabs > div').each(function(){
+        if ($(this).hasClass('active')) {
+            $('#'+$(this).attr('data-location')).show();
+        } else {
+            $('#'+$(this).attr('data-location')).hide();
+        }
+    });
+    if ($('#tabs > div.active').attr('data-location') == 'teams') {
+        $('.bounty-detail-wrapper').removeClass('teams-clicked').addClass('teams-clicked');
+    } else {
+        $('.bounty-detail-wrapper').removeClass('teams-clicked');
+    }
+    if ($('#tabs > div.active').attr('data-location') == 'winner') {
+        $('.bounty-detail-wrapper').removeClass('winner-clicked').addClass('winner-clicked');
+    } else {
+        $('.bounty-detail-wrapper').removeClass('winner-clicked');
+    }
+    if ($('#tabs > div.active').attr('data-location') == 'sponsors') {
+        $('.bounty-detail-wrapper').removeClass('sponsors-clicked').addClass('sponsors-clicked');
+    } else {
+        $('.bounty-detail-wrapper').removeClass('sponsors-clicked');
+    }
+});
+$('.judge .judge-minimize').each(function(){
+    $(this).on('click', function(){
+        $(this).parent().children('input[type="text"]').toggle();
+        $(this).toggleClass('rotated');
+    });
+});
+$('.judge .judge-remove').each(function(){
+    $(this).on('click', function(){
+        $(this).parent().remove();
+    });
+    $('.judge .judge-minimize').each(function(){
+        $(this).on('click', function(){
+            $(this).parent().children('input[type="text"]').toggle();
+            $(this).toggleClass('rotated');
+        });
+    });
+});
+$('#add-more-judge').on('click', function(){
+    var judgeCount = $('#assign-judges-modal .judge').length;
+    $('#judges').append('<div class="judge"><label>Judge '+(judgeCount+1)+'</label><input type="text" name="judge-name-'+(judgeCount+1)+'" placeholder="Name"><input type="text" name="judge-email-'+(judgeCount+1)+'" placeholder="Email"><input type="text" name="judge-address-'+(judgeCount+1)+'" placeholder="Address"><span class="judge-remove"></span><span class="judge-minimize"></span></div>');
+    $('.judge .judge-minimize').each(function(){
+        $(this).on('click', function(){
+            $(this).parent().children('input[type="text"]').toggle();
+            $(this).toggleClass('rotated');
+        });
+    });
+    $('.judge .judge-remove').each(function(){
+        $(this).on('click', function(){
+            $(this).parent().remove();
+        });
+    });
+});
+var prizeID = "";
+var winnerName = "";
+var winnerCount = "";
+$('#bounty-winners-suggestion').hide();
+$('#submit-bounty-winners-modal select').each(function(){
+    winnerCount = $('#bounty-winners-suggestion li.winner').length;
+    $('#bounty-winners-suggestion').attr('data-winner-count',winnerCount);
+    $(this).on('click', function(){
+        prizeID = $(this).attr('id');
+        $('#bounty-winners-suggestion').attr('data-prize',prizeID);
+        $('#bounty-winners-suggestion').attr('data-winner-count',winnerCount);
+        $('#bounty-winners-suggestion[data-prize="'+prizeID+'"] li.winner').each(function(){
+            winnerName = $('#'+prizeID).find('option:selected').attr('value');
+            if (winnerName == '0') {
+                $('#bounty-winners-suggestion[data-prize="'+prizeID+'"] li.winner').css('opacity','1');
+            } else {
+                $('#bounty-winners-suggestion[data-prize="'+prizeID+'"] li.winner.selected').css('opacity','1');
+                $('#bounty-winners-suggestion[data-prize="'+prizeID+'"] li.winner:not(".selected")').css('opacity','0.3');
+            }
+            $('#bounty-winners-suggestion li.winner.selected').removeClass('selected');
+            $('#bounty-winners-suggestion[data-prize="'+prizeID+'"] li.winner[data-team-name="'+winnerName+'"]').addClass('selected');
+        });
+        if ($('#bounty-winners-suggestion').css('display') == 'none') {
+            $('#bounty-winners-suggestion').fadeIn();
+        }
+    });
+    $('#bounty-winners-suggestion[data-prize="'+prizeID+'"] li.winner').each(function(){
+        $(this).on('mouseover', function(){
+            $('#bounty-winners-suggestion li.winner.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }).on('click', function(){
+            winnerName = $('#bounty-winners-suggestion[data-prize="'+prizeID+'"] li.winner.selected').attr('data-team-name');
+            $('#'+prizeID).find('option:selected').attr('value',winnerName).text(winnerName);
+            if ($('#bounty-winners-suggestion').css('display') == 'block') {
+                $('#bounty-winners-suggestion').fadeOut();
+            }
+        });
+    });
+});
+$(document).mouseup(function (e){
+    var container = $('#bounty-winners-suggestion[data-prize="'+prizeID+'"]');
+    if (!container.is(e.target) && container.has(e.target).length === 0){
+        container.attr('data-prize',prizeID);
+        if (container.css('display') == 'block' && !$(e.target).is('select')) {
+            container.fadeOut();
+        }
+    }
+});
+</script>
+</body>
+</html>
