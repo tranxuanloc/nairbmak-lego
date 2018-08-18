@@ -3,7 +3,7 @@ import React from 'react';
 class Fail extends React.Component {
 
   componentDidMount() {
-    this.props.customClass('error-page');
+    // this.props.customClass('error-page');
   }
 
   render() {

@@ -6,6 +6,31 @@ var tokenABI = require('./data/tokenABI.json');
 var config = {};
 
 /**
+ * Local configurations
+ */
+config.local = {
+  BLOCKCHAIN_PROVIDER: 'http://172.31.28.106:8545',
+  KATT: {
+    ADDRESS: '0x9dddff7752e1714c99edf940ae834f0d57d68546',
+    ABI: tokenABI,
+    DECIMALS: 18
+  },
+  // BLOCKCHAIN_PROVIDER: 'http://localhost:8545',
+  // KATT: {
+  //   ADDRESS: '0xef75e34c50c1b109fe65ee696f12225de508b9f2',
+  //   ABI: tokenABI,
+  //   DECIMALS: 18
+  // },
+  NETWORK: '4',
+  EVENTS: {
+    TRANSFER: 'Transfer'
+  },
+  BOUNTY: {
+    'MODERATOR_ADDRESS': '0x2cfec30d15dc87a316709373cef259c309289193'
+  }
+};
+
+/**
  * Development configurations
  */
 config.development = {
@@ -24,6 +49,9 @@ config.development = {
   NETWORK: '4',
   EVENTS: {
     TRANSFER: 'Transfer'
+  },
+  BOUNTY: {
+    'MODERATOR_ADDRESS': '0x2cfec30d15dc87a316709373cef259c309289193'
   }
 };
 
@@ -40,6 +68,28 @@ config.staging = {
   NETWORK: '4',
   EVENTS: {
     TRANSFER: 'Transfer'
+  },
+  BOUNTY: {
+    'MODERATOR_ADDRESS': '0x2cfec30d15dc87a316709373cef259c309289193'
+  }
+};
+
+/**
+ * Testnet configurations
+ */
+config.testnet = {
+  BLOCKCHAIN_PROVIDER: 'http://172.31.28.106:8545',
+  KATT: {
+    ADDRESS: '0x9dddff7752e1714c99edf940ae834f0d57d68546',
+    ABI: tokenABI,
+    DECIMALS: 18
+  },
+  NETWORK: '4',
+  EVENTS: {
+    TRANSFER: 'Transfer'
+  },
+  BOUNTY: {
+    'MODERATOR_ADDRESS': '0x2cfec30d15dc87a316709373cef259c309289193'
   }
 };
 
@@ -47,19 +97,22 @@ config.staging = {
  * Production configurations
  */
 config.production = {
-  BLOCKCHAIN_PROVIDER: '',
+  BLOCKCHAIN_PROVIDER: 'http://172.31.28.106:8545',
   KATT: {
-    ADDRESS: '',
+    ADDRESS: '0x9dddff7752e1714c99edf940ae834f0d57d68546',
     ABI: tokenABI,
     DECIMALS: 18
   },
-  NETWORK: '1',
+  NETWORK: '4',
   EVENTS: {
     TRANSFER: 'Transfer'
+  },
+  BOUNTY: {
+    'MODERATOR_ADDRESS': '0x2cfec30d15dc87a316709373cef259c309289193'
   }
 };
 
 /**
  * Module exports
  */
-module.exports = config;
+export default config;

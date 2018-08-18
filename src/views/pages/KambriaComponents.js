@@ -87,7 +87,7 @@ const Components = () =>
           <Card className='shadow-sm'>
             <CardHeader>Header</CardHeader>
             <CardImg imgSrc="https://loremflickr.com/320/240/paris" altText='Card cap' />
-            <div class="card-img-overlay">
+            <div className="card-img-overlay">
               <h3>50 KATT</h3>
             </div>
             <CardBody>
