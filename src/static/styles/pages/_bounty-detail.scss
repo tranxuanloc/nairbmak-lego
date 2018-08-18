@@ -102,7 +102,7 @@
 }
 header.bounty-header, header.bounty-detail-header {
   height: 114px;
-  z-index: 1;
+  z-index: 2;
   .navbar-brand, .navbar {
     z-index: 1;
   }
@@ -327,7 +327,7 @@ main.bounty-detail {
     margin: 0;
     padding: 0;
     padding-left: calc(50vw - 454px);
-    padding-right: calc(50vw - 360px);
+    padding-right: auto;
     div {
       padding: 19px;
       float: left;
