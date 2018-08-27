@@ -105,6 +105,25 @@ class App extends React.Component {
   }
 
   render() {
+    const header = <Header logo={this.state.logo}>
+      <Nav>
+        {this.state.nav.map((item, index) => <NavItem key={index} item={item} />)}
+      </Nav>
+    </Header>;
+
+    const footer = <Footer />;
+
+    return (
+        <Switch>
+          {
+            routes.map((route, i) => route.type === 'public' ? <Route exact key={i} path={route.path} render={(props) => <route.component {...props} header={header} footer={footer} />} /> : <PrivateRouteWithRender exact key={i} condition={this.validateUser()} path={route.path} success={route.component} failure={Fail} header={header} footer={footer} />)
+          }
+          <Route render={(props) => <Error404 {...props} header={header} footer={footer} />} />
+        </Switch>
+    );
+  }
+/*
+  render() {
     return (
       <div id="site_wrapper">
         <Header logo={this.state.logo}>
@@ -122,6 +141,7 @@ class App extends React.Component {
       </div>
     );
   }
+*/
 }
 
 const mapStateToProps = state => ({
