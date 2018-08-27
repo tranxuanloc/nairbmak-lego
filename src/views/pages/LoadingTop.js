@@ -1,18 +1,16 @@
 import React from 'react';
 import { css } from 'react-emotion';
 // First way to import
-import { PropagateLoader } from 'react-spinners';
+import { BarLoader } from 'react-spinners';
  
 const override = css`
     display: block;
-    margin: 0 auto;
-    top: 50%;
-    left: 50%;
-    position: absolute !important;
-    width: 0;
+    position: fixed !important;
+    width: 100%;
+    top: 0;
 `;
  
-export default class LoadingComponent extends React.Component {
+export default class LoadingTopComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,10 +20,12 @@ export default class LoadingComponent extends React.Component {
   render(){
     return (
       <div className='page-loading'>
-        <PropagateLoader
+        <BarLoader
           className={override}
-          sizeUnit={"px"}
-          size={15}
+          widthUnit={"%"}
+          width={100}
+          heightUnit={"px"}
+          height={4}
           color={"#1AEEC2"}
           loading={this.state.loading}
         />

@@ -12,7 +12,7 @@ const override = css`
     width: 0;
 `;
  
-export default class LoadingComponent extends React.Component {
+export default class LoadingCenterComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

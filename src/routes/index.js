@@ -2,7 +2,8 @@ import Home from 'views/pages/Home';
 import KambriaComponents from 'views/pages/KambriaComponents';
 import BootstrapComponents from 'views/pages/BootstrapComponents';
 import Redux from 'views/pages/Redux';
-import Loading from 'views/pages/Loading';
+import LoadingCenter from 'views/pages/LoadingCenter';
+import LoadingTop from 'views/pages/LoadingTop';
 
 export default [
   { path: "/", component: Home, type: 'public' },
