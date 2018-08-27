@@ -7,14 +7,10 @@
   background-position: 50%;
   background-size: cover;
 }
-.main.not-found, .main.auth-fail {
+.main.not-found, .main.auth-fail, .footer {
   background-color: transparent;
-  + .footer {
-    background-color: transparent;
-  }
 }
 .error-section {
-  width:100%;
   text-align: center;
   .image {
     background-image: url('../svg/drone.svg');
