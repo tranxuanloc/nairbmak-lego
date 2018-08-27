@@ -8,8 +8,8 @@ const override = css`
     margin: 0 auto;
     top: 0;
     position: absolute !important;
+    width: 0;
     left: 50%;
-    border-color: red;
 `;
  
 export default class LoadingComponent extends React.Component {
