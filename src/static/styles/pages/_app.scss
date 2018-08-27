@@ -1,4 +1,4 @@
-#site_wrapper:not(.error-page):not(.marketplace-wrapper):not(.bounty-detail-wrapper):not(.codebase-wrapper):not(.contact-wrapper) {
+#site_wrapper.app-wrapper:not(.error-page) {
     background-color: $c-semi-black;
     position: relative;
     &:before, &::before {
