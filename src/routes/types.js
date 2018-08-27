@@ -7,8 +7,8 @@ export const PrivateRouteWithRedirect = ({ component: Component, to, condition, 
       : <Redirect to={to} />}
     />;
 
-export const PrivateRouteWithRender = ({ success: Success, failure: Failure, condition, ...rest }) =>
+export const PrivateRouteWithRender = ({ success: Success, failure: Failure, header, footer, condition, ...rest }) =>
     <Route {...rest} render={(props) => condition === true
-      ? <Success {...props} />
-      : <Failure {...props} />}
+      ? <Success {...props} header={header} footer={footer} />
+      : <Failure {...props} header={header} footer={footer} />}
     />;

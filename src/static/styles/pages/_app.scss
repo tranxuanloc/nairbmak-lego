@@ -1,24 +1,3 @@
-#site_wrapper:not(.error-page):not(.marketplace-wrapper):not(.bounty-detail-wrapper):not(.codebase-wrapper):not(.contact-wrapper) {
-    background-color: $c-semi-black;
-    position: relative;
-    &:before, &::before {
-        content: "";
-        background-color: rgba(255,255,255,0.05);
-        width: 100%;
-        display: block;
-        height: 550px;
-        position: absolute;
-        margin-top: 0;
-        z-index: 0;
-        box-shadow: 0 100px 100px -100px rgba(0,0,0,0.4);
-    }
-}
-.app-wrapper {
-    .site-header {
-        background-color: transparent !important;
-        z-index: 2;
-    }
-}
 main {
     background-color: $c-semi-black;
     .vote-box {
@@ -232,7 +211,7 @@ main {
                 }
             }
         }
-        &.marketplace {    
+        &.marketplace {
             .card {
                 width: 540px;
             }

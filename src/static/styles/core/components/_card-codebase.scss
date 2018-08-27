@@ -1,0 +1,62 @@
+.card-codebase {
+  background-color: #424851;
+  margin: 20px 0px;
+  height: 175px;
+
+  .card-header, .card-footer {
+    background-color: transparent;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+  }
+  .card-header {
+    border: 0;
+  }
+  .card-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 18px;
+    margin-bottom: 4px;
+    color: #e5e5e5;
+  }
+  .team-icon {
+    background-image: url(../images/logo-team.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: -1px;
+    margin-bottom: -7px;
+    position: relative;
+    top: -1px;
+    left: -8px;
+  }
+  .card-body {
+    padding: 8px 14px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .card-footer {
+    border: 0;
+    .link-icon {
+      background-image: url(../svg/ic-link.svg);
+      background-repeat: no-repeat;
+    display: inline-block;
+    width: 20px;
+    height: 18px;
+    margin-left: -6px;
+    vertical-align: middle;
+    }
+  }
+}
+.view-more {
+  position: absolute;
+  right: 0;
+  top: 42px;
+  color: $c-base;
+  &:hover {
+    text-decoration: underline;
+  }
+}

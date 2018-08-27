@@ -19,11 +19,6 @@ import Fail from 'views/auth/Fail';
 import Error404 from './views/errors/404';
 import { updateInfo } from "redux/actions/blockchain.action";
 
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
-
-// library.add(faStroopwafel);
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -41,7 +36,7 @@ class App extends React.Component {
     };
 
     this.metamask = new Metamask();
-    this.token = new Token(config.eth.KATT.ABI, config.eth.KATT.ADDRESS, config.eth.KATT.DECIMALS, this.metamask.web3);
+    this.token = new Token(config.eth.KATT.ADDRESS, config.eth.KATT.DECIMALS, this.metamask.web3);
     this.tWatcher = null;
 
     this.init();
@@ -105,21 +100,21 @@ class App extends React.Component {
   }
 
   render() {
+    const header = <Header logo={this.state.logo}>
+      <Nav>
+        {this.state.nav.map((item, index) => <NavItem key={index} item={item} />)}
+      </Nav>
+    </Header>;
+
+    const footer = <Footer />;
+
     return (
-      <div id="site_wrapper">
-        <Header logo={this.state.logo}>
-          <Nav>
-            {this.state.nav.map((item, index) => <NavItem key={index} item={item} />)}
-          </Nav>
-        </Header>
         <Switch>
           {
-            routes.map((route, i) => route.type === 'public' ? <Route exact key={i} path={route.path} component={route.component} /> : <PrivateRouteWithRender exact key={i} condition={this.validateUser()} path={route.path} success={route.component} failure={Fail} />)
+            routes.map((route, i) => route.type === 'public' ? <Route exact key={i} path={route.path} render={(props) => <route.component {...props} header={header} footer={footer} />} /> : <PrivateRouteWithRender exact key={i} condition={this.validateUser()} path={route.path} success={route.component} failure={Fail} header={header} footer={footer} />)
           }
-          <Route component={Error404} />
+          <Route render={(props) => <Error404 {...props} header={header} footer={footer} />} />
         </Switch>
-        <Footer />
-      </div>
     );
   }
 }

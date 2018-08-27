@@ -22,3 +22,14 @@ html {
   min-height: calc(100vh - 185px) !important;
   padding-bottom: 30px;
 }
+
+section {
+  h2.heading {
+    color: #424851;
+    font-size: 28px;
+    margin-top: 58px;
+    a {
+      color: #424851;
+    }
+  }
+}

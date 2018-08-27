@@ -1,13 +1,8 @@
 import React from 'react';
 
-class Fail extends React.Component {
-
-  componentDidMount() {
-    // this.props.customClass('error-page');
-  }
-
-  render() {
-    return (
+const Fail = (props) =>
+    <div id="site_wrapper" className="error-page">
+      {props.header}
       <div className="main auth-fail">
         <div className="container">
           <div className="row">
@@ -35,8 +30,7 @@ class Fail extends React.Component {
           </div>
         </div>
       </div>
-    );
-  }
-}
+      {props.footer}
+    </div>;
 
 export default Fail;

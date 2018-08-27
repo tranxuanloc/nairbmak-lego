@@ -1,9 +1,12 @@
 @import "error";
 @import "custom";
 @import "app";
-@import "marketplace";
-@import "codebase";
+
+@import "store-home";
+
+@import "codebase-home";
 @import "codebase-detail";
-@import "bounty-listing";
+
+@import "bounty-home";
 @import "bounty-detail";
 @import "contact";

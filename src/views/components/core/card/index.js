@@ -50,7 +50,7 @@ export const Card = (props) => {
 export const CardHeader = (props) => {
   let className = props.className ? 'card-header ' + props.className : 'card-header';
   return <div className={className} style={props.customStyle}>
-    { props.children }
+    {props.children}
   </div>;
 };
 
@@ -62,9 +62,11 @@ export const CardHeader = (props) => {
 */
 
 export const CardImg = (props) => {
-  let position = props.position === 'top' ? 'card-img-top' : 'card-img-bottom';
-  let className = props.className ? position + ' ' + props.className : position;
-  return <img className={className} src={props.imgSrc} alt={props.altText} />;
+  // let position = props.position === 'top' ? 'card-img-top' : 'card-img-bottom';
+  let className = props.className ? 'image ' + props.className : 'image';
+  return <div className={className} style={{ backgroundImage: `url(${props.imgSrc})` }}>
+    {props.children}
+  </div>;
 };
 
 /* PropTypes
@@ -75,21 +77,21 @@ export const CardImg = (props) => {
 export const CardBody = (props) => {
   let className = props.className ? 'card-body ' + props.className : 'card-body';
   return <div className={className} style={props.customStyle}>
-    { props.children }
+    {props.children}
   </div>;
 };
 
 export const CardTitle = (props) => {
   let className = props.className ? 'card-title ' + props.className : 'card-title';
   return <h5 className={className}>
-    { props.children }
+    {props.children}
   </h5>;
 };
 
 export const CardText = (props) => {
   let className = props.className ? 'card-text ' + props.className : 'card-text';
   return <p className={className}>
-    { props.children }
+    {props.children}
   </p>;
 };
 
@@ -101,13 +103,13 @@ export const CardText = (props) => {
 export const CardLink = (props) => {
   let className = props.className ? 'card-link ' + props.className : 'card-link';
   return <a className={className} href={props.href}>
-    { props.children }
+    {props.children}
   </a>;
 };
 
 export const CardFooter = (props) => {
   let className = props.className ? 'card-footer ' + props.className : 'card-footer';
   return <div className={className}>
-    { props.children }
+    {props.children}
   </div>;
 };

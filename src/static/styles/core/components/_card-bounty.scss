@@ -1,4 +1,4 @@
-.card-product {
+.card-bounty {
   background-color: #424851;
   margin: 20px 0px;
   .card-title {
@@ -10,12 +10,12 @@
     line-height: 19px;
   }
   .card-text {
-    color: rgba(255,255,255,0.7) !important;
+    color: rgba(255,255,255,0.6) !important;
     font-size: 16px;
     line-height: 21px;
+    margin-bottom: 27px;
   }
   .card-body {
-    height: 122px;
     overflow: hidden;
   }
   .image {

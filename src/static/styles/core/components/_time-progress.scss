@@ -1,0 +1,23 @@
+.time-progress {
+  position: relative;
+  .day {
+    color: white;
+    font-size: 32px;
+    line-height: 32px;
+    float: left;
+    margin-right: 10px;
+  }
+  .time-left {
+    color: white;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .progress {
+    height: 5px;
+    background-color: #888888;
+    .done {
+      background-color: #1aeec2;
+      height: 5px;
+    }
+  }
+}

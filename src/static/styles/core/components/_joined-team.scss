@@ -1,0 +1,30 @@
+.joined-team {
+  margin-top: 30px;
+  .teams-icon {
+    display: block;
+    float: left;
+    img {
+      margin-right: -14px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+    :last-child {
+      margin-right: 10px;
+    }
+  }
+  .text {
+    font-size: 16px;
+    line-height: 32px;
+    color: rgba(255,255,255,0.6) !important;
+  }
+  span.description {
+    font-size: 14px;
+    line-height: 18px;
+    position: relative;
+    float: left;
+    left: -288px;
+    bottom: -24px;
+    width: 470px;
+  }
+}
