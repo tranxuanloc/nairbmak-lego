@@ -9,25 +9,23 @@ const override = css`
     border-color: red;
 `;
  
-class LoadingComponent extends React.Component {
+export default class LoadingComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       loading: true
     }
   }
-  render() {
+  render(){
     return (
       <div className='page-loading'>
         <PropagateLoader
           className={override}
           sizeUnit={"px"}
           size={15}
-          color={'#1AEEC2'}
+          color={"#1AEEC2"}
           loading={this.state.loading}
-        />
-      </div>; 
-    )
+      >
+      </div>);
   }
 }
-export default LoadingComponent;
