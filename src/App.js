@@ -105,21 +105,21 @@ class App extends React.Component {
   }
 
   render() {
+    const header = <Header logo={this.state.logo}>
+      <Nav>
+        {this.state.nav.map((item, index) => <NavItem key={index} item={item} />)}
+      </Nav>
+    </Header>;
+
+    const footer = <Footer />;
+
     return (
-      <div id="site_wrapper">
-        <Header logo={this.state.logo}>
-          <Nav>
-            {this.state.nav.map((item, index) => <NavItem key={index} item={item} />)}
-          </Nav>
-        </Header>
         <Switch>
           {
-            routes.map((route, i) => route.type === 'public' ? <Route exact key={i} path={route.path} component={route.component} /> : <PrivateRouteWithRender exact key={i} condition={this.validateUser()} path={route.path} success={route.component} failure={Fail} />)
+            routes.map((route, i) => route.type === 'public' ? <Route exact key={i} path={route.path} render={(props) => <route.component {...props} header={header} footer={footer} />} /> : <PrivateRouteWithRender exact key={i} condition={this.validateUser()} path={route.path} success={route.component} failure={Fail} header={header} footer={footer} />)
           }
-          <Route component={Error404} />
+          <Route render={(props) => <Error404 {...props} header={header} footer={footer} />} />
         </Switch>
-        <Footer />
-      </div>
     );
   }
 }
@@ -129,7 +129,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  updateInfo: (data) => updateInfo(data)
+  updateInfo
 }, dispatch);
 
 export default withRouter(connect(
