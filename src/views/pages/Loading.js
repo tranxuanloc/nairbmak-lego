@@ -6,9 +6,9 @@ import { PropagateLoader } from 'react-spinners';
 const override = css`
     display: block;
     margin: 0 auto;
-    top: 0;
-    position: absolute !important;
+    top: 50%;
     left: 50%;
+    position: absolute !important;
     width: 0;
 `;
  
