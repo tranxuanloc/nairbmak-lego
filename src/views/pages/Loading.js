@@ -25,7 +25,8 @@ export default class LoadingComponent extends React.Component {
           size={15}
           color={"#1AEEC2"}
           loading={this.state.loading}
-      >
-      </div>);
+        />
+      </div>
+    )
   }
 }
