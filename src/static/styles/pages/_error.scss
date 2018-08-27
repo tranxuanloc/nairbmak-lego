@@ -6,6 +6,9 @@
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: cover;
+  main, footer {
+    background-color: transparent;
+  }
 }
 .error-section {
   width:100%;
