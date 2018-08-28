@@ -7,8 +7,8 @@ import Utils from 'helpers/utils';
 import TimeProgress from './TimeProgress';
 import JoinedTeam from './JoinedTeam';
 import BountyStatus from './BountyStatus';
-import in_progress_icon from 'static/images/ic-closed.svg';
-import closed_icon from 'static/images/ic-finished.svg';
+import in_progress_icon from 'static/svg/ic-closed.svg';
+import closed_icon from 'static/svg/ic-finished.svg';
 
 import config from "config";
 import Metamask from "helpers/metamask.class";
