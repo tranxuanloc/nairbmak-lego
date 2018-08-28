@@ -1,6 +1,5 @@
-
 import React from 'react';
-import NotificationsService from '../../services/NotificationsService';
+import NotificationsService from 'services/NotificationsService';
 
 class NotificationsViewer extends React.Component {
   constructor(props, context) {

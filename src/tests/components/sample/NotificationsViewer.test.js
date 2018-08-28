@@ -4,7 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import { expect } from 'chai';
 import { spy } from 'sinon';
 
-import NotificationsViewer from 'views/components/NotificationsViewer';
+import NotificationsViewer from 'views/components/sample/NotificationsViewer';
 import { delay } from 'redux-saga';
 
 Enzyme.configure({ adapter: new Adapter() });

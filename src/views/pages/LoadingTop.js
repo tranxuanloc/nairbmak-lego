@@ -15,7 +15,7 @@ export default class LoadingTopComponent extends React.Component {
     super(props);
     this.state = {
       loading: true
-    }
+    };
   }
   render(){
     return (
@@ -30,6 +30,6 @@ export default class LoadingTopComponent extends React.Component {
           loading={this.state.loading}
         />
       </div>
-    )
+    );
   }
 }
