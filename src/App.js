@@ -4,19 +4,24 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import config from 'config';
-import Metamask from 'helpers/metamask.class.js';
-import Token from 'helpers/token.class.js';
+import Metamask from 'helpers/metamask.class';
+import Token from 'helpers/token.class';
 
 import 'static/styles/index.css';
 import logo from 'logo.svg';
+
 import Header from 'views/components/header';
 import Footer from 'views/components/footer';
 import Nav from 'views/components/core/Nav';
 import NavItem from 'views/components/core/NavItem';
+import PageLoader from 'views/components/core/PageLoader';
+
 import routes from 'routes';
 import {PrivateRouteWithRender} from 'routes/types';
+
 import Fail from 'views/auth/Fail';
 import Error404 from './views/errors/404';
+
 import { updateInfo } from "redux/actions/blockchain.action";
 
 class App extends React.Component {
@@ -104,6 +109,7 @@ class App extends React.Component {
       <Nav>
         {this.state.nav.map((item, index) => <NavItem key={index} item={item} />)}
       </Nav>
+      {this.props.ui.status === 'loading' && <PageLoader type='top' />}
     </Header>;
 
     const footer = <Footer />;
@@ -120,11 +126,12 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  blockchain: state.blockchain
+  blockchain: state.blockchain,
+  ui: state.ui
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  updateInfo: (data) => updateInfo(data)
+  updateInfo
 }, dispatch);
 
 export default withRouter(connect(

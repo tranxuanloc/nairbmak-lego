@@ -1,4 +1,10 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
+// Redux
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { updatePageStatus } from 'redux/actions/ui.action';
 
 import Section from "views/components/core/Section";
 import PageHero from "views/components/core/PageHero";
@@ -9,6 +15,9 @@ import CardCodebase from "views/components/core/CardCodebase";
 import CardProduct from "views/components/core/CardProduct";
 
 import { Tabs, Tab, TabContainer } from 'views/components/core/tab';
+
+import PageLoader from 'views/components/core/PageLoader';
+import NotificationsService from 'services/NotificationsService';
 
 const bountiesData = [
   {
@@ -83,16 +92,23 @@ const products = [
   }
 ];
 
-export default class KambriaComponents extends React.Component {
+class KambriaComponents extends React.Component {
 
   state = {
     value: 0,
     labels: ['Description', 'Github', 'Readme'],
-    classes: 'container'
+    classes: 'container',
   };
 
-  handleChange = (value) => {
-    this.setState({ value });
+  async componentDidMount() {
+    await NotificationsService.getNotifications(2000);
+    this.props.updatePageStatus('loaded');
+  }
+
+  handleClick = async () => {
+    this.props.updatePageStatus('loading');
+    await NotificationsService.getNotifications(3000);
+    this.props.updatePageStatus('loaded');
   };
 
   render() {
@@ -104,103 +120,121 @@ export default class KambriaComponents extends React.Component {
           {this.props.header}
         </div>
         <main className="main bg-white">
+          {this.props.ui.status === 'init' ?
+            <PageLoader /> :
+            <div className="container">
+              <Section title='Top Bar Loader'>
+                <button onClick={this.handleClick}>Load Data</button>
+              </Section>
 
-          <div className="container">
-            <Section title='Page Hero'>
-              <PageHero headline='List our products' description='Explore our products bring to feature' />
-            </Section>
+              <Section title='Page Hero'>
+                <PageHero headline='List our products' description='Explore our products bring to feature' />
+              </Section>
 
-            <Section title='Top Action Bar'>
-              <TopActionsBar />
-            </Section>
-
-
-            <Section title='Card Bounty'>
-              <div className='row'>
-                {bountiesData.map((item, index) => {
-                  return <div key={index} className='col col-4'><CardBounty key={index} data={item} status='open' /></div>;
-                })}
-              </div>
-            </Section>
+              <Section title='Top Action Bar'>
+                <TopActionsBar />
+              </Section>
 
 
-            <Section title='Card Codebase'>
-              <div className='row'>
-                {codebases.map((item, index) => {
-                  return <div key={index} className='col col-4'><CardCodebase data={item} descLen={135} /></div>;
-                })}
-              </div>
-            </Section>
-
-            <Section title="Card Product">
-              <div className='row'>
-                {products.map((item, index) => {
-                  return <div key={index} className='col col-6'><CardProduct key={index} data={item} descLen={135} /></div>;
-                })}
-              </div>
-            </Section>
+              <Section title='Card Bounty'>
+                <div className='row'>
+                  {bountiesData.map((item, index) => {
+                    return <div key={index} className='col col-4'><CardBounty key={index} data={item} status='open' /></div>;
+                  })}
+                </div>
+              </Section>
 
 
-            <Section title="Tab">
-              <div>Tab Light</div>
-              <Tabs className="light">
-                {this.state.labels.map((label, key) => <Tab className={value === key ? 'col-2 active' : 'col-2'} key={key} tabId={key} label={label} handleChange={this.handleChange} />)}
-              </Tabs>
-              <div className="tab-content">
-                {value === 0 &&
-                  <TabContainer className={classes}>
-                    tab1
+              <Section title='Card Codebase'>
+                <div className='row'>
+                  {codebases.map((item, index) => {
+                    return <div key={index} className='col col-4'><CardCodebase data={item} descLen={135} /></div>;
+                  })}
+                </div>
+              </Section>
+
+              <Section title="Card Product">
+                <div className='row'>
+                  {products.map((item, index) => {
+                    return <div key={index} className='col col-6'><CardProduct key={index} data={item} descLen={135} /></div>;
+                  })}
+                </div>
+              </Section>
+
+
+              <Section title="Tab">
+                <div>Tab Light</div>
+                <Tabs className="light">
+                  {this.state.labels.map((label, key) => <Tab className={value === key ? 'col-2 active' : 'col-2'} key={key} tabId={key} label={label} handleChange={this.handleChange} />)}
+                </Tabs>
+                <div className="tab-content">
+                  {value === 0 &&
+                    <TabContainer className={classes}>
+                      tab1
                   </TabContainer>
-                }
+                  }
 
-                {value === 1 &&
-                  <TabContainer className={classes}>
-                    tab2
+                  {value === 1 &&
+                    <TabContainer className={classes}>
+                      tab2
                   </TabContainer>
-                }
+                  }
 
-                {value === 2 &&
-                  <TabContainer className={classes}>
-                    tab3
+                  {value === 2 &&
+                    <TabContainer className={classes}>
+                      tab3
                   </TabContainer>
-                }
-              </div><br/>
+                  }
+                </div><br />
 
-              <div>Tab Dark</div>
-              <Tabs className="dark">
-                {this.state.labels.map((label, key) => <Tab className={value === key ? 'active' : null} key={key} tabId={key} label={label} handleChange={this.handleChange} />)}
-              </Tabs>
-              <div className="tab-content">
-              {value === 0 &&
-                  <TabContainer className={classes}>
-                    tab1
+                <div>Tab Dark</div>
+                <Tabs className="dark">
+                  {this.state.labels.map((label, key) => <Tab className={value === key ? 'active' : null} key={key} tabId={key} label={label} handleChange={this.handleChange} />)}
+                </Tabs>
+                <div className="tab-content">
+                  {value === 0 &&
+                    <TabContainer className={classes}>
+                      tab1
                   </TabContainer>
-                }
+                  }
 
-                {value === 1 &&
-                  <TabContainer className={classes}>
-                    tab2
+                  {value === 1 &&
+                    <TabContainer className={classes}>
+                      tab2
                   </TabContainer>
-                }
+                  }
 
-                {value === 2 &&
-                  <TabContainer className={classes}>
-                    tab3
+                  {value === 2 &&
+                    <TabContainer className={classes}>
+                      tab3
                   </TabContainer>
-                }
-              </div>
-            </Section>
+                  }
+                </div>
+              </Section>
 
 
-            <Section title="Modal">
-              <div className='row'>
+              <Section title="Modal">
+                <div className='row'>
 
-              </div>
-            </Section>
-          </div>
+                </div>
+              </Section>
+            </div>}
         </main>
         {this.props.footer}
       </div>);
   }
 
 }
+
+const mapStateToProps = state => ({
+  ui: state.ui
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  updatePageStatus
+}, dispatch);
+
+export default withRouter(connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(KambriaComponents));
