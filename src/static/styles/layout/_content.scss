@@ -1,0 +1,55 @@
+/* ==========================================================================
+Content
+========================================================================== */
+body,
+html {
+  height: 100%;
+  overflow: hidden;
+}
+#root {
+  height: 100%;
+  overflow: auto;
+}
+
+#site_wrapper {
+  min-height: 100%;
+  @include flexbox;
+  @include flex-flow(column nowrap);
+  background-color: $c-semi-black;
+}
+
+.main {
+  @include flex(1);
+  min-height: calc(40vh) !important;
+  padding-bottom: 30px;
+  position: relative;
+  section {
+    h2.heading {
+      color: #F4F8F9;
+      font-size: 28px;
+      margin-top: 58px;
+      a {
+        color: #F4F8F9;
+      }
+    }
+    .sub-heading {
+      color: #97A4AD;
+    }
+  }
+}
+
+.bg-white {
+  section {
+    h2.heading {
+      color: #424851;
+      font-size: 28px;
+      margin-top: 58px;
+      a {
+        color: #424851;
+      }
+    }
+    .sub-heading {
+      color: #97A4AD;
+    }
+  }
+}

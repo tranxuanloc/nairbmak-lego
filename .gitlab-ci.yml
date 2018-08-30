@@ -1,0 +1,57 @@
+variables:
+  S3_BUCKET_DEVELOPMENT: "kambria-lego"
+  S3_BUCKET_STAGING: "kambria-lego-staging"
+  S3_BUCKET_PRODUCTION: "lego.kambria.io"
+  CLOUDFRONT_DISTRIBUTION_ID: "LEGO"
+
+deploy development:
+  stage: build
+  image: nikolaik/python-nodejs:latest
+  script:
+  - yarn
+  - REACT_APP_ENV=development yarn test
+  - REACT_APP_ENV=development yarn build
+  - pip install awscli
+  - aws s3 cp ./build/ s3://$S3_BUCKET_DEVELOPMENT/ --recursive --include "*"
+  - echo "Deploy to http://kambria-lego.s3-website-us-west-2.amazonaws.com"
+  environment:
+        name: development
+        url: http://kambria-lego.s3-website-us-west-2.amazonaws.com
+  only:
+  - develop
+
+deploy staging:
+  stage: build
+  image: nikolaik/python-nodejs:latest
+  script:
+  - yarn
+  - REACT_APP_ENV=staging yarn test
+  - REACT_APP_ENV=staging yarn build
+  - pip install awscli
+  - aws s3 cp ./build/ s3://$S3_BUCKET_STAGING/ --recursive --include "*"
+  - echo "Deploy to http://kambria-lego-staging.s3-website-us-west-2.amazonaws.com"
+  environment:
+        name: staging
+        url: http://kambria-lego-staging.s3-website-us-west-2.amazonaws.com
+  only:
+  - staging
+
+# deploy production:
+#   stage: build
+#   image: nikolaik/python-nodejs:latest
+#   script:
+#   - yarn
+#   - REACT_APP_ENV=production yarn test
+#   - REACT_APP_ENV=production yarn build
+#   - pip install awscli
+#   - aws s3 cp ./build/ s3://$S3_BUCKET_PRODUCTION/ --recursive --include "*"
+#   - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+#   - echo "Deploy to https://lego.kambria.io"
+#   artifacts:
+#       paths:
+#       - build
+#   environment:
+#       name: production
+#       url: https://lego.kambria.io
+#   only:
+#   - master

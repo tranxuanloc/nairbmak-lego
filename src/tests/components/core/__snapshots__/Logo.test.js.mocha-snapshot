@@ -1,0 +1,107 @@
+exports["snapshot for logo(0)"] = {
+  "node": {
+    "nodeType": "host",
+    "type": "div",
+    "props": {
+      "className": "navbar mr",
+      "children": {
+        "type": "a",
+        "props": {
+          "href": "/",
+          "children": {
+            "type": "img",
+            "props": {
+              "src": {},
+              "className": "kambria",
+              "alt": "kambria-logo"
+            },
+            "_store": {}
+          }
+        },
+        "_store": {}
+      }
+    },
+    "rendered": {
+      "nodeType": "host",
+      "type": "a",
+      "props": {
+        "href": "/",
+        "children": {
+          "type": "img",
+          "props": {
+            "src": {},
+            "className": "kambria",
+            "alt": "kambria-logo"
+          },
+          "_store": {}
+        }
+      },
+      "rendered": {
+        "nodeType": "host",
+        "type": "img",
+        "props": {
+          "src": {},
+          "className": "kambria",
+          "alt": "kambria-logo"
+        }
+      }
+    }
+  },
+  "type": "div",
+  "props": {
+    "className": "navbar mr"
+  },
+  "children": [
+    {
+      "node": {
+        "nodeType": "host",
+        "type": "a",
+        "props": {
+          "href": "/",
+          "children": {
+            "type": "img",
+            "props": {
+              "src": {},
+              "className": "kambria",
+              "alt": "kambria-logo"
+            },
+            "_store": {}
+          }
+        },
+        "rendered": {
+          "nodeType": "host",
+          "type": "img",
+          "props": {
+            "src": {},
+            "className": "kambria",
+            "alt": "kambria-logo"
+          }
+        }
+      },
+      "type": "a",
+      "props": {
+        "href": "/"
+      },
+      "children": [
+        {
+          "node": {
+            "nodeType": "host",
+            "type": "img",
+            "props": {
+              "src": {},
+              "className": "kambria",
+              "alt": "kambria-logo"
+            }
+          },
+          "type": "img",
+          "props": {
+            "src": {},
+            "className": "kambria",
+            "alt": "kambria-logo"
+          }
+        }
+      ]
+    }
+  ]
+};
+

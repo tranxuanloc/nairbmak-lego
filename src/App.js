@@ -4,19 +4,24 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import config from 'config';
-import Metamask from 'helpers/metamask.class.js';
-import Token from 'helpers/token.class.js';
+import Metamask from 'helpers/metamask.class';
+import Token from 'helpers/token.class';
 
-import 'static/css/index.css';
+import 'static/styles/index.css';
 import logo from 'logo.svg';
+
 import Header from 'views/components/header';
 import Footer from 'views/components/footer';
-import Nav from 'views/components/common/Nav';
-import NavItem from 'views/components/common/NavItem';
+import Nav from 'views/components/core/Nav';
+import NavItem from 'views/components/core/NavItem';
+import PageLoader from 'views/components/core/PageLoader';
+
 import routes from 'routes';
 import {PrivateRouteWithRender} from 'routes/types';
+
 import Fail from 'views/auth/Fail';
 import Error404 from './views/errors/404';
+
 import { updateInfo } from "redux/actions/blockchain.action";
 
 class App extends React.Component {
@@ -29,14 +34,14 @@ class App extends React.Component {
         image: logo
       },
       nav: [
-        { url: '/', title: 'Kambria.io', exact: true },
-        { url: '/redux', title: 'Redux', exact: false },
-        { url: '/components', title: 'Components', exact: false }
+        { url: '/kambria-components', title: 'Kambria', exact: true },
+        { url: '/bootstrap-components', title: 'Bootstrap', exact: false },
+        { url: '/redux', title: 'Redux', exact: false }
       ]
     };
 
     this.metamask = new Metamask();
-    this.token = new Token(config.eth.KATT.ABI, config.eth.KATT.ADDRESS, config.eth.KATT.DECIMALS, this.metamask.web3);
+    this.token = new Token(config.eth.KATT.ADDRESS, config.eth.KATT.DECIMALS, this.metamask.web3);
     this.tWatcher = null;
 
     this.init();
@@ -100,31 +105,33 @@ class App extends React.Component {
   }
 
   render() {
+    const header = <Header logo={this.state.logo}>
+      <Nav>
+        {this.state.nav.map((item, index) => <NavItem key={index} item={item} />)}
+      </Nav>
+      {this.props.ui.status === 'loading' && <PageLoader type='top' />}
+    </Header>;
+
+    const footer = <Footer />;
+
     return (
-      <div id="site_wrapper">
-        <Header logo={this.state.logo}>
-          <Nav>
-            {this.state.nav.map((item, index) => <NavItem key={index} item={item} />)}
-          </Nav>
-        </Header>
         <Switch>
           {
-            routes.map((route, i) => route.type === 'public' ? <Route exact key={i} path={route.path} component={route.component} /> : <PrivateRouteWithRender exact key={i} condition={this.validateUser()} path={route.path} success={route.component} failure={Fail} />)
+            routes.map((route, i) => route.type === 'public' ? <Route exact key={i} path={route.path} render={(props) => <route.component {...props} header={header} footer={footer} />} /> : <PrivateRouteWithRender exact key={i} condition={this.validateUser()} path={route.path} success={route.component} failure={Fail} header={header} footer={footer} />)
           }
-          <Route component={Error404} />
+          <Route render={(props) => <Error404 {...props} header={header} footer={footer} />} />
         </Switch>
-        <Footer />
-      </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  blockchain: state.blockchain
+  blockchain: state.blockchain,
+  ui: state.ui
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  updateInfo: (data) => updateInfo(data)
+  updateInfo
 }, dispatch);
 
 export default withRouter(connect(

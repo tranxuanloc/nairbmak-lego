@@ -1,0 +1,22 @@
+<svg width="23" height="23" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="Mask Group">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="-5" y="-4" width="32" height="32">
+<g id="Rectangle 4">
+<rect width="32" height="32" transform="translate(-5 -4)" fill="#C4C4C4"/>
+</g>
+</mask>
+<g mask="url(#mask0)">
+<g id="search 2">
+<g id="Vector">
+<path d="M 17.5 8.75C 17.5 13.5825 13.5825 17.5 8.75 17.5C 3.91751 17.5 0 13.5825 0 8.75C 0 3.91751 3.91751 0 8.75 0C 13.5825 0 17.5 3.91751 17.5 8.75Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(1 1)" stroke="#292F39"/>
+</g>
+<g id="Vector_2">
+<path d="M 6.06667 6.06667L 2.22524e-07 2.22524e-07" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(15.9333 15.9333)" stroke="#292F39"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+

@@ -1,0 +1,55 @@
+@import "../core/lib/slick/slick.scss";
+
+.slick-arrow {
+  @include center-y();
+  z-index: 2;
+  width: calculateRem(40px);
+  height: calculateRem(40px);
+  border-radius: 50%;
+  border: 0 none;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+  outline: 0 none !important;
+  cursor: pointer;
+  &.slick-prev {
+    left: -20px;
+    right: auto;
+  }
+  &.slick-next {
+    left: auto;
+    right: -20px;
+  }
+}
+
+.slick-dots {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  li {
+    display: inline-block;
+    font-size: calculateRem(16px);
+    padding: calculateRem(5px);
+    &.slick-active button {
+      border: 2px solid $c-white;
+      box-shadow: 0 0 1px $c-black;
+      &:before {
+        background-color: $c-base;
+      }
+    }
+  }
+  button {
+    padding: 0;
+    border: 2px solid transparent;
+    font-size: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    outline: 0 none;
+    &:before {
+      content: '';
+      width: calculateRem(10px);
+      height: calculateRem(10px);
+      background-color: $c-gray;
+      display: block;
+    }
+  }
+}

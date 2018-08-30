@@ -1,0 +1,793 @@
+exports["snapshot for Home(0)"] = {
+  "node": {
+    "nodeType": "host",
+    "type": "div",
+    "props": {
+      "className": "main",
+      "children": {
+        "type": "div",
+        "props": {
+          "className": "container text",
+          "children": [
+            {
+              "type": "img",
+              "props": {
+                "src": {},
+                "className": "lego",
+                "alt": "Lego logo"
+              },
+              "_store": {}
+            },
+            {
+              "type": "hr",
+              "props": {},
+              "_store": {}
+            },
+            {
+              "type": "h1",
+              "props": {
+                "children": "Welcome to Kambria Lego!"
+              },
+              "_store": {}
+            },
+            {
+              "type": "p",
+              "props": {
+                "className": "App",
+                "children": [
+                  "To get started, edit ",
+                  {
+                    "type": "code",
+                    "props": {
+                      "children": "src/App.js"
+                    },
+                    "_store": {}
+                  },
+                  " and save to reload."
+                ]
+              },
+              "_store": {}
+            },
+            {
+              "type": "p",
+              "props": {
+                "children": {
+                  "type": "[function]",
+                  "props": {
+                    "type": "secondary",
+                    "icon": {
+                      "type": "FontAwesomeIcon",
+                      "props": {
+                        "icon": {
+                          "prefix": "fas",
+                          "iconName": "coffee",
+                          "icon": [
+                            640,
+                            512,
+                            [],
+                            "f0f4",
+                            "M192 384h192c53 0 96-43 96-96h32c70.6 0 128-57.4 128-128S582.6 32 512 32H120c-13.3 0-24 10.7-24 24v232c0 53 43 96 96 96zM512 96c35.3 0 64 28.7 64 64s-28.7 64-64 64h-32V96h32zm47.7 384H48.3c-47.6 0-61-64-36-64h583.3c25 0 11.8 64-35.9 64z"
+                          ]
+                        },
+                        "border": false,
+                        "className": "",
+                        "fixedWidth": false,
+                        "inverse": false,
+                        "listItem": false,
+                        "pulse": false,
+                        "spin": false,
+                        "symbol": false
+                      },
+                      "_store": {}
+                    },
+                    "onButtonClick": "[function]",
+                    "children": "Learn More"
+                  },
+                  "_store": {}
+                }
+              },
+              "_store": {}
+            }
+          ]
+        },
+        "_store": {}
+      }
+    },
+    "rendered": {
+      "nodeType": "host",
+      "type": "div",
+      "props": {
+        "className": "container text",
+        "children": [
+          {
+            "type": "img",
+            "props": {
+              "src": {},
+              "className": "lego",
+              "alt": "Lego logo"
+            },
+            "_store": {}
+          },
+          {
+            "type": "hr",
+            "props": {},
+            "_store": {}
+          },
+          {
+            "type": "h1",
+            "props": {
+              "children": "Welcome to Kambria Lego!"
+            },
+            "_store": {}
+          },
+          {
+            "type": "p",
+            "props": {
+              "className": "App",
+              "children": [
+                "To get started, edit ",
+                {
+                  "type": "code",
+                  "props": {
+                    "children": "src/App.js"
+                  },
+                  "_store": {}
+                },
+                " and save to reload."
+              ]
+            },
+            "_store": {}
+          },
+          {
+            "type": "p",
+            "props": {
+              "children": {
+                "type": "[function]",
+                "props": {
+                  "type": "secondary",
+                  "icon": {
+                    "type": "FontAwesomeIcon",
+                    "props": {
+                      "icon": {
+                        "prefix": "fas",
+                        "iconName": "coffee",
+                        "icon": [
+                          640,
+                          512,
+                          [],
+                          "f0f4",
+                          "M192 384h192c53 0 96-43 96-96h32c70.6 0 128-57.4 128-128S582.6 32 512 32H120c-13.3 0-24 10.7-24 24v232c0 53 43 96 96 96zM512 96c35.3 0 64 28.7 64 64s-28.7 64-64 64h-32V96h32zm47.7 384H48.3c-47.6 0-61-64-36-64h583.3c25 0 11.8 64-35.9 64z"
+                        ]
+                      },
+                      "border": false,
+                      "className": "",
+                      "fixedWidth": false,
+                      "inverse": false,
+                      "listItem": false,
+                      "pulse": false,
+                      "spin": false,
+                      "symbol": false
+                    },
+                    "_store": {}
+                  },
+                  "onButtonClick": "[function]",
+                  "children": "Learn More"
+                },
+                "_store": {}
+              }
+            },
+            "_store": {}
+          }
+        ]
+      },
+      "rendered": [
+        {
+          "nodeType": "host",
+          "type": "img",
+          "props": {
+            "src": {},
+            "className": "lego",
+            "alt": "Lego logo"
+          }
+        },
+        {
+          "nodeType": "host",
+          "type": "hr",
+          "props": {}
+        },
+        {
+          "nodeType": "host",
+          "type": "h1",
+          "props": {
+            "children": "Welcome to Kambria Lego!"
+          },
+          "rendered": "Welcome to Kambria Lego!"
+        },
+        {
+          "nodeType": "host",
+          "type": "p",
+          "props": {
+            "className": "App",
+            "children": [
+              "To get started, edit ",
+              {
+                "type": "code",
+                "props": {
+                  "children": "src/App.js"
+                },
+                "_store": {}
+              },
+              " and save to reload."
+            ]
+          },
+          "rendered": [
+            "To get started, edit ",
+            {
+              "nodeType": "host",
+              "type": "code",
+              "props": {
+                "children": "src/App.js"
+              },
+              "rendered": "src/App.js"
+            },
+            " and save to reload."
+          ]
+        },
+        {
+          "nodeType": "host",
+          "type": "p",
+          "props": {
+            "children": {
+              "type": "[function]",
+              "props": {
+                "type": "secondary",
+                "icon": {
+                  "type": "FontAwesomeIcon",
+                  "props": {
+                    "icon": {
+                      "prefix": "fas",
+                      "iconName": "coffee",
+                      "icon": [
+                        640,
+                        512,
+                        [],
+                        "f0f4",
+                        "M192 384h192c53 0 96-43 96-96h32c70.6 0 128-57.4 128-128S582.6 32 512 32H120c-13.3 0-24 10.7-24 24v232c0 53 43 96 96 96zM512 96c35.3 0 64 28.7 64 64s-28.7 64-64 64h-32V96h32zm47.7 384H48.3c-47.6 0-61-64-36-64h583.3c25 0 11.8 64-35.9 64z"
+                      ]
+                    },
+                    "border": false,
+                    "className": "",
+                    "fixedWidth": false,
+                    "inverse": false,
+                    "listItem": false,
+                    "pulse": false,
+                    "spin": false,
+                    "symbol": false
+                  },
+                  "_store": {}
+                },
+                "onButtonClick": "[function]",
+                "children": "Learn More"
+              },
+              "_store": {}
+            }
+          },
+          "rendered": {
+            "nodeType": "function",
+            "type": "[function]",
+            "props": {
+              "type": "secondary",
+              "icon": {
+                "type": "FontAwesomeIcon",
+                "props": {
+                  "icon": {
+                    "prefix": "fas",
+                    "iconName": "coffee",
+                    "icon": [
+                      640,
+                      512,
+                      [],
+                      "f0f4",
+                      "M192 384h192c53 0 96-43 96-96h32c70.6 0 128-57.4 128-128S582.6 32 512 32H120c-13.3 0-24 10.7-24 24v232c0 53 43 96 96 96zM512 96c35.3 0 64 28.7 64 64s-28.7 64-64 64h-32V96h32zm47.7 384H48.3c-47.6 0-61-64-36-64h583.3c25 0 11.8 64-35.9 64z"
+                    ]
+                  },
+                  "border": false,
+                  "className": "",
+                  "fixedWidth": false,
+                  "inverse": false,
+                  "listItem": false,
+                  "pulse": false,
+                  "spin": false,
+                  "symbol": false
+                },
+                "_store": {}
+              },
+              "onButtonClick": "[function]",
+              "children": "Learn More"
+            },
+            "rendered": "Learn More"
+          }
+        }
+      ]
+    }
+  },
+  "type": "div",
+  "props": {
+    "className": "main"
+  },
+  "children": [
+    {
+      "node": {
+        "nodeType": "host",
+        "type": "div",
+        "props": {
+          "className": "container text",
+          "children": [
+            {
+              "type": "img",
+              "props": {
+                "src": {},
+                "className": "lego",
+                "alt": "Lego logo"
+              },
+              "_store": {}
+            },
+            {
+              "type": "hr",
+              "props": {},
+              "_store": {}
+            },
+            {
+              "type": "h1",
+              "props": {
+                "children": "Welcome to Kambria Lego!"
+              },
+              "_store": {}
+            },
+            {
+              "type": "p",
+              "props": {
+                "className": "App",
+                "children": [
+                  "To get started, edit ",
+                  {
+                    "type": "code",
+                    "props": {
+                      "children": "src/App.js"
+                    },
+                    "_store": {}
+                  },
+                  " and save to reload."
+                ]
+              },
+              "_store": {}
+            },
+            {
+              "type": "p",
+              "props": {
+                "children": {
+                  "type": "[function]",
+                  "props": {
+                    "type": "secondary",
+                    "icon": {
+                      "type": "FontAwesomeIcon",
+                      "props": {
+                        "icon": {
+                          "prefix": "fas",
+                          "iconName": "coffee",
+                          "icon": [
+                            640,
+                            512,
+                            [],
+                            "f0f4",
+                            "M192 384h192c53 0 96-43 96-96h32c70.6 0 128-57.4 128-128S582.6 32 512 32H120c-13.3 0-24 10.7-24 24v232c0 53 43 96 96 96zM512 96c35.3 0 64 28.7 64 64s-28.7 64-64 64h-32V96h32zm47.7 384H48.3c-47.6 0-61-64-36-64h583.3c25 0 11.8 64-35.9 64z"
+                          ]
+                        },
+                        "border": false,
+                        "className": "",
+                        "fixedWidth": false,
+                        "inverse": false,
+                        "listItem": false,
+                        "pulse": false,
+                        "spin": false,
+                        "symbol": false
+                      },
+                      "_store": {}
+                    },
+                    "onButtonClick": "[function]",
+                    "children": "Learn More"
+                  },
+                  "_store": {}
+                }
+              },
+              "_store": {}
+            }
+          ]
+        },
+        "rendered": [
+          {
+            "nodeType": "host",
+            "type": "img",
+            "props": {
+              "src": {},
+              "className": "lego",
+              "alt": "Lego logo"
+            }
+          },
+          {
+            "nodeType": "host",
+            "type": "hr",
+            "props": {}
+          },
+          {
+            "nodeType": "host",
+            "type": "h1",
+            "props": {
+              "children": "Welcome to Kambria Lego!"
+            },
+            "rendered": "Welcome to Kambria Lego!"
+          },
+          {
+            "nodeType": "host",
+            "type": "p",
+            "props": {
+              "className": "App",
+              "children": [
+                "To get started, edit ",
+                {
+                  "type": "code",
+                  "props": {
+                    "children": "src/App.js"
+                  },
+                  "_store": {}
+                },
+                " and save to reload."
+              ]
+            },
+            "rendered": [
+              "To get started, edit ",
+              {
+                "nodeType": "host",
+                "type": "code",
+                "props": {
+                  "children": "src/App.js"
+                },
+                "rendered": "src/App.js"
+              },
+              " and save to reload."
+            ]
+          },
+          {
+            "nodeType": "host",
+            "type": "p",
+            "props": {
+              "children": {
+                "type": "[function]",
+                "props": {
+                  "type": "secondary",
+                  "icon": {
+                    "type": "FontAwesomeIcon",
+                    "props": {
+                      "icon": {
+                        "prefix": "fas",
+                        "iconName": "coffee",
+                        "icon": [
+                          640,
+                          512,
+                          [],
+                          "f0f4",
+                          "M192 384h192c53 0 96-43 96-96h32c70.6 0 128-57.4 128-128S582.6 32 512 32H120c-13.3 0-24 10.7-24 24v232c0 53 43 96 96 96zM512 96c35.3 0 64 28.7 64 64s-28.7 64-64 64h-32V96h32zm47.7 384H48.3c-47.6 0-61-64-36-64h583.3c25 0 11.8 64-35.9 64z"
+                        ]
+                      },
+                      "border": false,
+                      "className": "",
+                      "fixedWidth": false,
+                      "inverse": false,
+                      "listItem": false,
+                      "pulse": false,
+                      "spin": false,
+                      "symbol": false
+                    },
+                    "_store": {}
+                  },
+                  "onButtonClick": "[function]",
+                  "children": "Learn More"
+                },
+                "_store": {}
+              }
+            },
+            "rendered": {
+              "nodeType": "function",
+              "type": "[function]",
+              "props": {
+                "type": "secondary",
+                "icon": {
+                  "type": "FontAwesomeIcon",
+                  "props": {
+                    "icon": {
+                      "prefix": "fas",
+                      "iconName": "coffee",
+                      "icon": [
+                        640,
+                        512,
+                        [],
+                        "f0f4",
+                        "M192 384h192c53 0 96-43 96-96h32c70.6 0 128-57.4 128-128S582.6 32 512 32H120c-13.3 0-24 10.7-24 24v232c0 53 43 96 96 96zM512 96c35.3 0 64 28.7 64 64s-28.7 64-64 64h-32V96h32zm47.7 384H48.3c-47.6 0-61-64-36-64h583.3c25 0 11.8 64-35.9 64z"
+                      ]
+                    },
+                    "border": false,
+                    "className": "",
+                    "fixedWidth": false,
+                    "inverse": false,
+                    "listItem": false,
+                    "pulse": false,
+                    "spin": false,
+                    "symbol": false
+                  },
+                  "_store": {}
+                },
+                "onButtonClick": "[function]",
+                "children": "Learn More"
+              },
+              "rendered": "Learn More"
+            }
+          }
+        ]
+      },
+      "type": "div",
+      "props": {
+        "className": "container text"
+      },
+      "children": [
+        {
+          "node": {
+            "nodeType": "host",
+            "type": "img",
+            "props": {
+              "src": {},
+              "className": "lego",
+              "alt": "Lego logo"
+            }
+          },
+          "type": "img",
+          "props": {
+            "src": {},
+            "className": "lego",
+            "alt": "Lego logo"
+          }
+        },
+        {
+          "node": {
+            "nodeType": "host",
+            "type": "hr",
+            "props": {}
+          },
+          "type": "hr",
+          "props": {}
+        },
+        {
+          "node": {
+            "nodeType": "host",
+            "type": "h1",
+            "props": {
+              "children": "Welcome to Kambria Lego!"
+            },
+            "rendered": "Welcome to Kambria Lego!"
+          },
+          "type": "h1",
+          "props": {},
+          "children": [
+            "Welcome to Kambria Lego!"
+          ]
+        },
+        {
+          "node": {
+            "nodeType": "host",
+            "type": "p",
+            "props": {
+              "className": "App",
+              "children": [
+                "To get started, edit ",
+                {
+                  "type": "code",
+                  "props": {
+                    "children": "src/App.js"
+                  },
+                  "_store": {}
+                },
+                " and save to reload."
+              ]
+            },
+            "rendered": [
+              "To get started, edit ",
+              {
+                "nodeType": "host",
+                "type": "code",
+                "props": {
+                  "children": "src/App.js"
+                },
+                "rendered": "src/App.js"
+              },
+              " and save to reload."
+            ]
+          },
+          "type": "p",
+          "props": {
+            "className": "App"
+          },
+          "children": [
+            "To get started, edit ",
+            {
+              "node": {
+                "nodeType": "host",
+                "type": "code",
+                "props": {
+                  "children": "src/App.js"
+                },
+                "rendered": "src/App.js"
+              },
+              "type": "code",
+              "props": {},
+              "children": [
+                "src/App.js"
+              ]
+            },
+            " and save to reload."
+          ]
+        },
+        {
+          "node": {
+            "nodeType": "host",
+            "type": "p",
+            "props": {
+              "children": {
+                "type": "[function]",
+                "props": {
+                  "type": "secondary",
+                  "icon": {
+                    "type": "FontAwesomeIcon",
+                    "props": {
+                      "icon": {
+                        "prefix": "fas",
+                        "iconName": "coffee",
+                        "icon": [
+                          640,
+                          512,
+                          [],
+                          "f0f4",
+                          "M192 384h192c53 0 96-43 96-96h32c70.6 0 128-57.4 128-128S582.6 32 512 32H120c-13.3 0-24 10.7-24 24v232c0 53 43 96 96 96zM512 96c35.3 0 64 28.7 64 64s-28.7 64-64 64h-32V96h32zm47.7 384H48.3c-47.6 0-61-64-36-64h583.3c25 0 11.8 64-35.9 64z"
+                        ]
+                      },
+                      "border": false,
+                      "className": "",
+                      "fixedWidth": false,
+                      "inverse": false,
+                      "listItem": false,
+                      "pulse": false,
+                      "spin": false,
+                      "symbol": false
+                    },
+                    "_store": {}
+                  },
+                  "onButtonClick": "[function]",
+                  "children": "Learn More"
+                },
+                "_store": {}
+              }
+            },
+            "rendered": {
+              "nodeType": "function",
+              "type": "[function]",
+              "props": {
+                "type": "secondary",
+                "icon": {
+                  "type": "FontAwesomeIcon",
+                  "props": {
+                    "icon": {
+                      "prefix": "fas",
+                      "iconName": "coffee",
+                      "icon": [
+                        640,
+                        512,
+                        [],
+                        "f0f4",
+                        "M192 384h192c53 0 96-43 96-96h32c70.6 0 128-57.4 128-128S582.6 32 512 32H120c-13.3 0-24 10.7-24 24v232c0 53 43 96 96 96zM512 96c35.3 0 64 28.7 64 64s-28.7 64-64 64h-32V96h32zm47.7 384H48.3c-47.6 0-61-64-36-64h583.3c25 0 11.8 64-35.9 64z"
+                      ]
+                    },
+                    "border": false,
+                    "className": "",
+                    "fixedWidth": false,
+                    "inverse": false,
+                    "listItem": false,
+                    "pulse": false,
+                    "spin": false,
+                    "symbol": false
+                  },
+                  "_store": {}
+                },
+                "onButtonClick": "[function]",
+                "children": "Learn More"
+              },
+              "rendered": "Learn More"
+            }
+          },
+          "type": "p",
+          "props": {},
+          "children": [
+            {
+              "node": {
+                "nodeType": "function",
+                "type": "[function]",
+                "props": {
+                  "type": "secondary",
+                  "icon": {
+                    "type": "FontAwesomeIcon",
+                    "props": {
+                      "icon": {
+                        "prefix": "fas",
+                        "iconName": "coffee",
+                        "icon": [
+                          640,
+                          512,
+                          [],
+                          "f0f4",
+                          "M192 384h192c53 0 96-43 96-96h32c70.6 0 128-57.4 128-128S582.6 32 512 32H120c-13.3 0-24 10.7-24 24v232c0 53 43 96 96 96zM512 96c35.3 0 64 28.7 64 64s-28.7 64-64 64h-32V96h32zm47.7 384H48.3c-47.6 0-61-64-36-64h583.3c25 0 11.8 64-35.9 64z"
+                        ]
+                      },
+                      "border": false,
+                      "className": "",
+                      "fixedWidth": false,
+                      "inverse": false,
+                      "listItem": false,
+                      "pulse": false,
+                      "spin": false,
+                      "symbol": false
+                    },
+                    "_store": {}
+                  },
+                  "onButtonClick": "[function]",
+                  "children": "Learn More"
+                },
+                "rendered": "Learn More"
+              },
+              "type": "Component",
+              "props": {
+                "type": "secondary",
+                "icon": {
+                  "type": "FontAwesomeIcon",
+                  "props": {
+                    "icon": {
+                      "prefix": "fas",
+                      "iconName": "coffee",
+                      "icon": [
+                        640,
+                        512,
+                        [],
+                        "f0f4",
+                        "M192 384h192c53 0 96-43 96-96h32c70.6 0 128-57.4 128-128S582.6 32 512 32H120c-13.3 0-24 10.7-24 24v232c0 53 43 96 96 96zM512 96c35.3 0 64 28.7 64 64s-28.7 64-64 64h-32V96h32zm47.7 384H48.3c-47.6 0-61-64-36-64h583.3c25 0 11.8 64-35.9 64z"
+                      ]
+                    },
+                    "border": false,
+                    "className": "",
+                    "fixedWidth": false,
+                    "inverse": false,
+                    "listItem": false,
+                    "pulse": false,
+                    "spin": false,
+                    "symbol": false
+                  },
+                  "_store": {}
+                },
+                "onButtonClick": "[function]"
+              },
+              "children": [
+                "Learn More"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+

@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import {sampleAction} from 'redux/actions/sample.action.js';
+import { sampleAction } from 'redux/actions/sample.action.js';
 
 class Sample extends React.Component {
   constructor(props, context) {
@@ -20,11 +20,17 @@ class Sample extends React.Component {
   }
 
   render() {
-    return <main className='main'>
-      <div id='content' className='container'>
-        <a className='btn btn-sm btn-success' onClick={() => this.props.sampleAction('Hello World!')}>Sample Action: {this.props.sample.text}</a>
+    return <div id="site_wrapper">
+      <div className="site-upper">
+        {this.props.header}
       </div>
-    </main>;
+      <main className='main bg-white'>
+        <div id='content' className='container' style={{marginTop: 40}}>
+          <a className='btn btn-sm btn-success' onClick={() => this.props.sampleAction('Hello World!')}>Sample Action: {this.props.sample.text}</a>
+        </div>
+      </main>
+      {this.props.footer}
+    </div>;
   }
 }
 

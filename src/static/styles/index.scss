@@ -1,0 +1,55 @@
+// Include Sass Mixins
+// @import './mixins/box-shadow';
+// @import './mixins/border-radius';
+// @import './mixins/placeholder';
+// @import './mixins/transform';
+/*!--------------------------------------------------------------------------------
+
+    Theme Name: Frontend Seed 4
+    Version:    1.1.1
+    Author:     trungnghia112 <trungnghia112@gmail.com>
+
+-----------------------------------------------------------------------------------*/
+//  Bootstrap
+//  Fonts
+//  Global
+//  Third party
+//  Layout
+//  Content
+//---------------------------------------------------------------------------------*/
+//
+// =Constants
+// --------------------------------------------------
+@import 'core/custom-variables';
+//
+// =Bootstrap
+// --------------------------------------------------
+@import "core/custom-bootstrap";
+
+//
+// =Global
+// --------------------------------------------------
+@import "core/general/flex";
+@import "core/general/mixin";
+@import "core/general/setting";
+@import "core/components/components";
+@import "core/partials/constants";
+@import "core/partials/typography";
+//
+// =Modules
+// --------------------------------------------------
+@import "modules/modules";
+//
+//
+// =Layout
+// --------------------------------------------------
+@import "layout/layout";
+//
+// =Third party
+// --------------------------------------------------
+//
+// =Content
+// --------------------------------------------------
+@import "pages/pages";
+
+// @import 'typography';

@@ -1,0 +1,23 @@
+exports["should match snapshot for Button(0)"] = {
+  "node": {
+    "nodeType": "host",
+    "type": "button",
+    "props": {
+      "className": "btn btn btn",
+      "style": {},
+      "disabled": true,
+      "children": "Test"
+    },
+    "rendered": "Test"
+  },
+  "type": "button",
+  "props": {
+    "className": "btn btn btn",
+    "style": {},
+    "disabled": true
+  },
+  "children": [
+    "Test"
+  ]
+};
+

@@ -1,0 +1,65 @@
+.top-actions-bar {
+  background-color: $c-semi-black;
+  background-image: linear-gradient(to right, rgba(#000000, 0.07), rgba(#ffffff, 0.07) 54%, rgba(#f1f1f1, 0.07) 57%, rgba(#f1f1f1, 0.07) 57%, rgba(#efefef, 0.07) 57%, rgba(#000000, 0.07));
+  text-align: center;
+  font-size: 0;
+  .wrapper {
+    @include inline-flex;
+    @include flex-flow(row wrap);
+    font-size: calculateRem(16px);
+    padding: calculateRem(18px) 0;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 calculateRem(20px);
+    position: relative;
+    @include flexbox;
+    @include flex-flow(row wrap);
+    @include align-items(center);
+    ~ ul {
+      &:before {
+        content: '';
+        display: block;
+        height: calculateRem(26px);
+        width: 1px;
+        background-color: $c-gray;
+        position: absolute;
+        left: 0;
+        @include center-y();
+      }
+    }
+  }
+  li {
+    padding: 0 calculateRem(30px);
+  }
+  .item {
+    @include flexbox;
+    @include flex-flow(row wrap);
+    @include align-items(center);
+    color: $c-gray;
+    font-size: calculateRem(16px);
+    font-weight: 400;
+    text-decoration: none;
+    @include transition($transition-base);
+    &:hover {
+      color: $c-base;
+    }
+    .icon {
+      @include flexbox;
+      @include flex-flow(row wrap);
+      @include align-items(center);
+      position: relative;
+      padding-right: calculateRem(20px);
+      .badge {
+        position: absolute;
+        right: calculateRem(10px);
+        top: calculateRem(-5px);
+        min-width: calculateRem(18px);
+      }
+    }
+    .text {
+      @include flex(1);
+    }
+  }
+}

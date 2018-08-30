@@ -1,0 +1,25 @@
+exports["should match snapshot(0)"] = {
+  "node": {
+    "nodeType": "host",
+    "type": "div",
+    "props": {
+      "className": "bounty",
+      "style": {
+        "backgroundImage": "url([object Object])"
+      },
+      "children": "Bounty Status Text"
+    },
+    "rendered": "Bounty Status Text"
+  },
+  "type": "div",
+  "props": {
+    "className": "bounty",
+    "style": {
+      "backgroundImage": "url([object Object])"
+    }
+  },
+  "children": [
+    "Bounty Status Text"
+  ]
+};
+

@@ -1,0 +1,9 @@
+{
+  "presets": ["es2015", ["env", { "modules": false }], "react", "react-app"],
+  "plugins": [
+    "transform-react-jsx",
+    "transform-runtime",
+    "emotion",
+    ["resolver", { "resolveDirs": ["src"] }]
+  ]
+}

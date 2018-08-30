@@ -1,7 +1,7 @@
 import React from 'react';
-import Logo from '../common/Logo';
+import Logo from '../core/Logo';
 
-export default (props) => 
+const Header = (props) =>
   <header className="site-header">
     <div className="container">
       <div className="row align-items-center">
@@ -10,3 +10,5 @@ export default (props) =>
       </div>
     </div>
   </header>;
+
+export default Header;

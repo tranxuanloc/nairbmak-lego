@@ -38,7 +38,7 @@ class Metamask {
 
   /**
    * Check valid address
-   * @param {*} address 
+   * @param {*} address
    */
   isAddress(address) {
     return this.web3.isAddress(address);
@@ -72,7 +72,7 @@ class Metamask {
 
   /**
    * Get account balance
-   * @param {*} address 
+   * @param {*} address
    */
   getBalance(address) {
     var self = this;

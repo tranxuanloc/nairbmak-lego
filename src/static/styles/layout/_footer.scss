@@ -1,0 +1,41 @@
+/* ==========================================================================
+Footer
+========================================================================== */
+footer.footer {
+  color: $c-gray;
+  padding: 25px;
+  .item {
+    position: relative;
+    font-size: calculateRem(14px);
+    ~ .item {
+      padding-left: 40px;
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 18px;
+        background-color: $c-gray;
+        position: absolute;
+        left: 19px;
+        top: 0;
+      }
+    }
+    a {
+      @include transition($transition-base);
+      text-decoration: none;
+    }
+  }
+  @media (max-width: map_get($grid-breakpoints, 'md')) {
+    .item {
+      width: 100%;
+      padding-left: 0 !important;
+      text-align: center;
+      ~ .item {
+        margin-top: 10px;
+      }
+      &:before {
+        display: none !important;
+      }
+    }
+  }
+}

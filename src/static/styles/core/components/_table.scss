@@ -1,0 +1,31 @@
+.table {
+  margin-bottom: calculateRem(30px);
+  &.align-middle {
+    td, th {
+      vertical-align: middle;
+    }
+  }
+}
+.table-striped {
+  td {
+    border: 0 none;
+    font-size: calculateRem(16px);
+    color: #6b7a84;
+  }
+  th,
+  thead th {
+    border-bottom: 1px solid #dddddd;
+    border-top: 0 none;
+    font-size: calculateRem(18px);
+    color: #282f39;
+  }
+
+  tbody tr {
+    &:nth-of-type(odd) {
+      background-color: transparent;
+    }
+    &:nth-of-type(even) {
+      background-color: #f7f7f7;
+    }
+  }
+}
