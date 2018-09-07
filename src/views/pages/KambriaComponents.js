@@ -111,6 +111,10 @@ class KambriaComponents extends React.Component {
     this.props.updatePageStatus('loaded');
   };
 
+  handleChange = (value) => {
+    this.setState({ value });
+  };
+
   render() {
     const { value, classes } = this.state;
 

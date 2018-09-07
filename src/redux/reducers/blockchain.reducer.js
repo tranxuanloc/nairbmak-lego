@@ -1,6 +1,15 @@
 import * as types from '../actions/actionTypes';
 
-const defaultState = {};
+const defaultState = {
+  NETWORK: null,
+  NETWORK_NAME: null,
+  ACCOUNT: null,
+  BALANCE: null,
+  CHANGED: 'init',
+  TOKEN_BALANCE: null,
+  STATUS: null,
+  MESSAGE: null
+};
 
 export default (state = defaultState, action) => {
   switch (action.type) {
