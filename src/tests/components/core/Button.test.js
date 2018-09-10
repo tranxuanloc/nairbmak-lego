@@ -4,7 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-import { Button } from 'views/components/core/button';
+import { Button } from 'views/components/core/buttons';
 
 Enzyme.configure({ adapter: new Adapter() });
 
