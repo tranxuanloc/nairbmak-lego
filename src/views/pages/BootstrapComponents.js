@@ -1,8 +1,8 @@
 import React from 'react';
 import { Card, CardDeck, CardHeader, CardImg, CardBody, CardTitle, CardText, CardLink, CardFooter } from '../components/core/card';
-import { Button, IconButton, AnchorButton } from '../components/core/button';
+import { Button, IconButton } from '../components/core/buttons';
 // Icons
-import { faBars, faBath, faBed, faBell, faBeer, faAddressBook, faAnchor, faPlane } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faBath, faPlane } from '@fortawesome/free-solid-svg-icons';
 
 import ComponentSection from '../components/core/Section';
 import NotificationsViewer from '../components/sample/NotificationsViewer';
@@ -25,57 +25,40 @@ const Components = (props) =>
           <div>
             <h5>Small</h5>
             <Button type='primary' size='sm'>Primary</Button>&nbsp;
-          <Button type='secondary' size='sm'>Secondary</Button>&nbsp;
-          <Button type='success' size='sm'>Success</Button>&nbsp;
-          <Button type='warning' size='sm'>Warning</Button>&nbsp;
-          <Button type='danger' size='sm'>Danger</Button>&nbsp;
-          <Button type='info' size='sm'>Info</Button>&nbsp;
-          <Button type='default' size='sm'>Default</Button>
+            <Button type='secondary' size='sm'>Secondary</Button>&nbsp;
+            <Button type='fb' size='sm'>Login with Facebook</Button>&nbsp;
+            <Button type='gg' size='sm'>Login with Google</Button>&nbsp;
           </div>
           <div>
             <h5>Normal</h5>
             <Button type='primary'>Primary</Button>&nbsp;
-          <Button type='secondary'>Secondary</Button>&nbsp;
-          <Button type='success'>Success</Button>&nbsp;
-          <Button type='warning'>Warning</Button>&nbsp;
-          <Button type='danger'>Danger</Button>&nbsp;
-          <Button type='info'>Info</Button>&nbsp;
-          <Button type='default'>Default</Button>
+            <Button type='secondary'>Secondary</Button>&nbsp;
+            <Button type='fb'>Login with Facebook</Button>&nbsp;
+            <Button type='gg'>Login with Google</Button>&nbsp;
           </div>
           <div>
             <h5>Large</h5>
             <Button type='primary' size='lg'>Primary</Button>&nbsp;
-          <Button type='secondary' size='lg'>Secondary</Button>&nbsp;
-          <Button type='success' size='lg'>Success</Button>&nbsp;
-          <Button type='warning' size='lg'>Warning</Button>&nbsp;
-          <Button type='danger' size='lg'>Danger</Button>&nbsp;
-          <Button type='info' size='lg'>Info</Button>&nbsp;
-          <Button type='default' size='lg'>Default</Button>
+            <Button type='secondary' size='lg'>Secondary</Button>&nbsp;
+            <Button type='fb' size='lg'>Login with Facebook</Button>&nbsp;
+            <Button type='gg' size='lg'>Login with Google</Button>&nbsp;
           </div>
           <div>
             <h5>Disabled</h5>
             <Button type='primary' size='lg' disabled>Primary</Button>&nbsp;
-          <Button type='secondary' size='lg' disabled>Secondary</Button>&nbsp;
-          <Button type='success' size='lg' disabled>Success</Button>&nbsp;
-          <Button type='warning' size='lg' disabled>Warning</Button>&nbsp;
-          <Button type='danger' size='lg' disabled>Danger</Button>&nbsp;
-          <Button type='info' size='lg' disabled>Info</Button>&nbsp;
-          <Button type='default' size='lg' disabled>Default</Button>
+            <Button type='secondary' size='lg' disabled>Secondary</Button>&nbsp;
+            <Button type='fb' size='lg' disabled>Login with Facebook</Button>&nbsp;
+            <Button type='gg' size='lg' disabled>Login with Google</Button>&nbsp;
           </div>
           <div>
             <h5>Icon</h5>
             <IconButton type='primary' size='lg' icon={faBars}>Primary</IconButton>&nbsp;
-          <IconButton type='secondary' size='lg' icon={faBath}>Secondary</IconButton>&nbsp;
-          <IconButton type='success' size='lg' icon={faBed}>Success</IconButton>&nbsp;
-          <IconButton type='warning' size='lg' icon={faBeer}>Warning</IconButton>&nbsp;
-          <IconButton type='danger' size='lg' icon={faBell}>Danger</IconButton>&nbsp;
-          <IconButton type='info' size='lg' icon={faAddressBook}>Info</IconButton>&nbsp;
-          <IconButton type='default' size='lg' icon={faAnchor}>Default</IconButton>
+            <IconButton type='secondary' size='lg' icon={faBath}>Secondary</IconButton>&nbsp;
           </div>
           <div>
             <h5>Custom Color</h5>
-            <Button type='primary' size='lg' color='blue' bgColor='yellow'>Primary</Button>&nbsp;
-          <Button type='default' size='lg' color='yellow' bgColor='blue'>Default</Button>
+            <Button type='primary' size='lg' textColor='blue' bgColor='yellow'>Primary</Button>&nbsp;
+            <Button type='secondary' size='lg' textColor='yellow' bgColor='blue' customStyle={{border: 0}}>Default</Button>
           </div>
         </ComponentSection>
 
@@ -106,7 +89,7 @@ const Components = (props) =>
               <CardBody className='text-center bg-dark text-white'>
                 <CardTitle>Card title</CardTitle>
                 <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <AnchorButton icon={faPlane} type='success' size='sm' color='black'>Button</AnchorButton>
+                <Button icon={faPlane} type='success' size='sm' color='black'>Button</Button>
               </CardBody>
               {/* <CardFooter className='text-muted'>2 days ago</CardFooter> */}
             </Card>
