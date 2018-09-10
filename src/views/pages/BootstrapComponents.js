@@ -89,7 +89,7 @@ const Components = (props) =>
               <CardBody className='text-center bg-dark text-white'>
                 <CardTitle>Card title</CardTitle>
                 <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                <AnchorButton icon={faPlane} type='success' size='sm' color='black'>Button</AnchorButton>
+                <Button icon={faPlane} type='success' size='sm' color='black'>Button</Button>
               </CardBody>
               {/* <CardFooter className='text-muted'>2 days ago</CardFooter> */}
             </Card>
