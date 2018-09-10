@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardDeck, CardHeader, CardImg, CardBody, CardTitle, CardText, CardLink, CardFooter } from '../components/core/card';
 import { Button, IconButton } from '../components/core/buttons';
 // Icons
-import { faBars, faBath, faBed, faBell, faBeer, faAddressBook, faAnchor, faPlane } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faBath, faPlane } from '@fortawesome/free-solid-svg-icons';
 
 import ComponentSection from '../components/core/Section';
 import NotificationsViewer from '../components/sample/NotificationsViewer';
