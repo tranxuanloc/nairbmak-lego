@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 export const Button = (props) => {
-  let className = 'btn', customStyle = {};
+  let className = 'btn', customStyle = {}, onClickFunc = null;
   switch (props.type) {
     case 'primary':
       className += ' btn-primary';
@@ -36,10 +36,15 @@ export const Button = (props) => {
   if (props.className) className += ' ' + props.className;
 
   customStyle = props.customStyle ? props.customStyle : {};
+  onClickFunc = props.onClick ? props.onClick : null;
   if (props.bgColor) customStyle.backgroundColor = props.bgColor;
   if (props.textColor) customStyle.color = props.textColor;
 
-  return <button className={className} style={customStyle} >
+  return props.disabled ?
+    <button className={className} style={customStyle} onClick={onClickFunc} disabled>
+      {props.children}
+    </button> :
+    <button className={className} style={customStyle} onClick={onClickFunc}>
       {props.children}
     </button>;
 };
@@ -78,5 +83,7 @@ Button.propTypes = {
   modalTarget: PropTypes.string,
   customStyle: PropTypes.object,
   textColor: PropTypes.string,
+  onClickFunc: PropTypes.func,
+  disabled: PropTypes.bool,
   bgColor: PropTypes.string
 };
