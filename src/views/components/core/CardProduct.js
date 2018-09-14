@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { Card, CardImg, CardBody, CardTitle, CardText } from 'views/components/core/card';
+import { Card, CardImg, CardBody, CardTitle, CardText } from '@kambria/kambria-lego';
 import Utils from 'helpers/utils';
 
 const CardProduct = (props) => {

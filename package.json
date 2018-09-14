@@ -6,6 +6,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
     "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
     "@fortawesome/react-fontawesome": "0.1.0-11",
+    "@kambria/contract-cli": "^1.0.14",
     "history": "^4.7.2",
     "i": "^0.3.6",
     "npm": "^6.4.0",
