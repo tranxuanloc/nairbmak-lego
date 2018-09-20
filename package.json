@@ -28,7 +28,7 @@
     "start": "REACT_APP_ENV=development react-scripts start",
     "build": "react-scripts build",
     "pretest": "eslint --ignore-path .eslintignore . --fix",
-    "test": "nyc mocha --require mocha-snapshots --reporter spec src/config/test.config.js $(find src/tests -name '*.test.js')",
+    "test": "nyc mocha --timeout 10000 --require mocha-snapshots --reporter spec src/config/test.config.js $(find src/tests -name '*.test.js')",
     "test:watch": "npm test -- --watch",
     "eject": "react-scripts eject"
   },

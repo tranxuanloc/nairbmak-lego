@@ -6,7 +6,7 @@ import { expect } from 'chai';
 var webdriver = require("selenium-webdriver");
 // require("geckodriver");
 // Application Server
-const serverUri = "http://localhost:3000/#";
+const serverUri = "http://localhost:3000/redux#";
 /**
  * Config for Chrome browser
  * @type {webdriver}
@@ -37,38 +37,28 @@ function logTitle() {
   });
 }
 
-describe("Home Page", function () {
+describe("Redux Page", function () {
   /**
    * Test case to load our application and check the title.
    */
-  it("Should load the page and get title", function () {
-    return new Promise((resolve, reject) => {
-      browser
-        .get(serverUri)
-        .then(logTitle)
-        .then(title => {
-          expect(title).to.equal('Kambria Lego');
-          resolve();
-        })
-        .catch(err => reject(err));
-    });
+  it("Should load the page and get title", function (done) {
+    browser
+      .get(serverUri)
+      .then(logTitle)
+      .then(title => {
+        expect(title).to.equal('Kambria Lego');
+        done();
+      })
+      .catch(err => done(err));
   });
   /**
     * Test case to check whether the given element is loaded.
     */
-  it("Should check whether the given element is loaded", function () {
-    return new Promise((resolve, reject) => {
-      browser
-        .findElement({ id: "site_wrapper" })
-        .then(elem => resolve())
-        .catch(err => reject(err));
-    });
-  });
 
   it("Should have a button", function () {
     return new Promise((resolve, reject) => {
       browser
-        .findElement({ className: "btn-secondary" })
+        .findElement({ id: "site_wrapper" })
         .then(elem => resolve())
         .catch(err => reject(err));
     });
