@@ -128,7 +128,7 @@ class KambriaComponents extends React.Component {
               </Section>
 
               <Section title='Page Hero'>
-                <PageHero headline='List our products' description='Explore our products bring to feature' />
+                <PageHero headline='List our products' description='Explore our products bring to feature' customStyle={{backgroundColor: '#424851'}} />
               </Section>
 
               <Section title='Top Action Bar'>

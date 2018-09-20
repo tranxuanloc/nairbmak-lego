@@ -55,7 +55,7 @@ const Components = (props) =>
           <div>
             <h5>Custom Color</h5>
             <Button type='primary' size='lg' textColor='blue' bgColor='yellow'>Primary</Button>&nbsp;
-            <Button type='secondary' size='lg' textColor='yellow' bgColor='blue' customStyle={{border: 0}}>Default</Button>
+            <Button type='secondary' size='lg' textColor='yellow' bgColor='blue'>Default</Button>
           </div>
         </Section>
 
