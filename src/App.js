@@ -4,17 +4,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import config from 'config';
-import Metamask from 'helpers/metamask.class';
-import Token from 'helpers/token.class';
+import { Metamask, Token } from '@kambria/contract-cli';
 
 import 'static/styles/index.css';
 import logo from 'logo.svg';
 
-import Header from 'views/components/header';
-import Footer from 'views/components/footer';
-import Nav from 'views/components/core/Nav';
-import NavItem from 'views/components/core/NavItem';
-import PageLoader from 'views/components/core/PageLoader';
+import { Header, Footer, Nav, NavItem, PageLoader } from '@kambria/kambria-lego';
 
 import routes from 'routes';
 import {PrivateRouteWithRender} from 'routes/types';

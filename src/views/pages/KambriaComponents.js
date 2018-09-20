@@ -6,17 +6,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updatePageStatus } from 'redux/actions/ui.action';
 
-import Section from "views/components/core/Section";
-import PageHero from "views/components/core/PageHero";
+import { Section, PageHero, Tabs, Tab, TabContainer, PageLoader } from "@kambria/kambria-lego";
 import TopActionsBar from 'views/components/core/TopActionsBar';
 
 import CardBounty from "views/components/core/CardBounty";
 import CardCodebase from "views/components/core/CardCodebase";
 import CardProduct from "views/components/core/CardProduct";
 
-import { Tabs, Tab, TabContainer } from 'views/components/core/tab';
-
-import PageLoader from 'views/components/core/PageLoader';
 import NotificationsService from 'services/NotificationsService';
 
 const bountiesData = [
@@ -111,6 +107,10 @@ class KambriaComponents extends React.Component {
     this.props.updatePageStatus('loaded');
   };
 
+  handleChange = (value) => {
+    this.setState({ value });
+  };
+
   render() {
     const { value, classes } = this.state;
 
@@ -128,7 +128,7 @@ class KambriaComponents extends React.Component {
               </Section>
 
               <Section title='Page Hero'>
-                <PageHero headline='List our products' description='Explore our products bring to feature' />
+                <PageHero headline='List our products' description='Explore our products bring to feature' customStyle={{backgroundColor: '#424851'}} />
               </Section>
 
               <Section title='Top Action Bar'>

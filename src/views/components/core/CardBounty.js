@@ -2,17 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { Card, CardImg, CardBody, CardTitle, CardText } from 'views/components/core/card';
+import { Card, CardImg, CardBody, CardTitle, CardText, TimeProgress, JoinedTeam, BountyStatus } from '@kambria/kambria-lego';
 import Utils from 'helpers/utils';
-import TimeProgress from './TimeProgress';
-import JoinedTeam from './JoinedTeam';
-import BountyStatus from './BountyStatus';
 import in_progress_icon from 'static/svg/ic-closed.svg';
 import closed_icon from 'static/svg/ic-finished.svg';
 
 import config from "config";
-import Metamask from "helpers/metamask.class";
-import Token from "helpers/token.class";
+import { Metamask, Token } from '@kambria/contract-cli';
 
 class CardBounty extends React.Component {
 

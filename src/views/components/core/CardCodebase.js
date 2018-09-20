@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { Card, CardHeader, CardBody, CardTitle, CardText, CardFooter } from 'views/components/core/card';
+import { Card, CardHeader, CardBody, CardTitle, CardText, CardFooter } from '@kambria/kambria-lego';
 import Utils from 'helpers/utils';
 
 const CardCodebase = (props) => {
@@ -12,7 +12,6 @@ const CardCodebase = (props) => {
     <Link to={`/codebase/${props.data._id}`}>
       <CardHeader><span className="team-icon" /> {props.data.gitInfo.repo}</CardHeader>
       <CardBody>
-
         <CardTitle>
           {props.data.name}
         </CardTitle>

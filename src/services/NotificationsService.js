@@ -1,9 +1,9 @@
 import {delay} from 'redux-saga';
 
 export default {
-  async getNotifications(miliseconds = 0){
+  async getNotifications(){
     // console.warn("REAL NOTIFICATION SERVICE! REALLY CONTACTING APIS!");
-    await delay(miliseconds);
+    await delay(1000);
     return {count: 42};
   }
 };

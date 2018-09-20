@@ -1,0 +1,67 @@
+.btn {
+    border-radius: 16px;
+    padding: 16px 32px;
+    display: inline-block;
+    cursor: pointer;
+    border-width: 0;
+}
+
+.btn-primary {
+    background-color: $c-base;
+    color: white;
+    &:hover {
+        background-color: rgba(0, 237, 195, 0.8);
+    }
+}
+.btn-secondary {
+    color: $c-base;
+    border: 1px solid $c-base;
+    background-color: transparent;
+    &:hover {
+        background-color: $c-base;
+        border: 1px solid $c-base;
+        color: white;
+    }
+}
+.btn-fb, .btn-gg {
+    padding-left: 64px;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: 24px;
+}
+.btn-fb {
+    background-image: url('../svg/ic-logo-facebook.svg');
+    background-color: #415DAE;
+    &:hover {
+        background-color: rgba(65, 93, 174, 0.8);
+    }
+}
+.btn-gg {
+    background-image: url('../svg/ic-logo-google-plus.svg');
+    background-color: #DC493C;
+    &:hover {
+        background-color: rgba(220, 73, 60, 0.8);
+    }
+}
+.btn-sm {
+    padding: 12px 24px;
+    &.btn-fb {
+        background-size: 4%;
+        padding: 12px 24px 12px 48px;
+    }
+    &.btn-gg {
+        background-size: 10%;
+        padding: 12px 24px 12px 48px;
+    }
+}
+.btn-lg {
+    padding: 20px 40px;
+    &.btn-fb {
+        background-size: 8%;
+        padding: 20px 40px 20px 80px;
+    }
+    &.btn-gg {
+        background-size: 20%;
+        padding: 20px 40px 20px 80px;
+    }
+}
