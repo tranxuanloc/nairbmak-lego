@@ -36,7 +36,7 @@ function logTitle() {
   });
 }
 
-describe("Home Page", function () {
+xdescribe("Home Page", function () {
   /**
    * Test case to load our application and check the title.
    */

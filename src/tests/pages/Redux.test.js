@@ -37,7 +37,7 @@ function logTitle() {
   });
 }
 
-describe("Redux Page", function () {
+xdescribe("Redux Page", function () {
   /**
    * Test case to load our application and check the title.
    */
