@@ -13,28 +13,28 @@ deploy development:
   - REACT_APP_ENV=development yarn build
   - pip install awscli
   - aws s3 cp ./build/ s3://$S3_BUCKET_DEVELOPMENT/ --recursive --include "*"
-  - echo "Deploy to http://kambria-lego.s3-website-us-west-2.amazonaws.com"
+  - echo "Deploy to http://kambria-lego.s3-website-ap-southeast-1.amazonaws.com"
   environment:
         name: development
-        url: http://kambria-lego.s3-website-us-west-2.amazonaws.com
+        url: http://kambria-lego.s3-website-ap-southeast-1.amazonaws.com
   only:
   - develop
 
-deploy staging:
-  stage: build
-  image: nikolaik/python-nodejs:latest
-  script:
-  - yarn
-  - REACT_APP_ENV=staging yarn test
-  - REACT_APP_ENV=staging yarn build
-  - pip install awscli
-  - aws s3 cp ./build/ s3://$S3_BUCKET_STAGING/ --recursive --include "*"
-  - echo "Deploy to http://kambria-lego-staging.s3-website-us-west-2.amazonaws.com"
-  environment:
-        name: staging
-        url: http://kambria-lego-staging.s3-website-us-west-2.amazonaws.com
-  only:
-  - staging
+# deploy staging:
+#   stage: build
+#   image: nikolaik/python-nodejs:latest
+#   script:
+#   - yarn
+#   - REACT_APP_ENV=staging yarn test
+#   - REACT_APP_ENV=staging yarn build
+#   - pip install awscli
+#   - aws s3 cp ./build/ s3://$S3_BUCKET_STAGING/ --recursive --include "*"
+#   - echo "Deploy to http://kambria-lego-staging.s3-website-us-west-2.amazonaws.com"
+#   environment:
+#         name: staging
+#         url: http://kambria-lego-staging.s3-website-us-west-2.amazonaws.com
+#   only:
+#   - staging
 
 # deploy production:
 #   stage: build
