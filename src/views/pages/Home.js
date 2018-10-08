@@ -1,7 +1,6 @@
 import React from 'react';
 
 import lego from 'static/images/lego.png';
-import { Button } from '@kambria/kambria-lego';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
