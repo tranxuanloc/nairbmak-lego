@@ -10,7 +10,6 @@
     "@kambria/kambria-lego": "^1.0.10",
     "axios": "^0.18.0",
     "history": "^4.7.2",
-    "i": "^0.3.6",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-redux": "^5.0.7",
