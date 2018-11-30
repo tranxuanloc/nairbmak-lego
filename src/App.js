@@ -7,7 +7,7 @@ import config from 'config';
 import { Metamask, Token } from '@kambria/contract-cli';
 
 import 'static/styles/index.css';
-import logo from 'logo.svg';
+import logo from 'logo.png';
 
 import { Header, Footer, Nav, NavItem, PageLoader } from '@kambria/kambria-lego';
 
